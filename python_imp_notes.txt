@@ -5,6 +5,13 @@ Tech Upgrade
 
 https://pythoninstitute.org/
 
+PCEP™ – Certified Entry-Level Python Programmer
+https://pythoninstitute.org/pcep
+
+PCAP™ – Certified Associate Python Programmer
+https://pythoninstitute.org/pcap
+
+
 1.1 Crash course on Python by Google
 https://www.coursera.org/learn/python-crash-course
 
