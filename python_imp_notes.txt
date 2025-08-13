@@ -2,6 +2,9 @@ Ramp up Plan
 ------------
 Tech Upgrade
 1. Python Tutorial  Source : https://www.python.org
+
+https://pythoninstitute.org/
+
 1.1 Crash course on Python by Google
 https://www.coursera.org/learn/python-crash-course
 
@@ -12,6 +15,7 @@ https://www.coursera.org/learn/python-crash-course
 6. Node JS
 
 ML/AI Reading Plan for PMs
+--------------------------
 Intro
 7. AI for Everyone https://www.coursera.org/learn/ai-for-everyone
 8. Generative AI for Everyone https://www.coursera.org/learn/generative-ai-for-everyone
@@ -57,6 +61,9 @@ The Python Standard Library.
 The Python Tutorial.
 Extending and Embedding the Python Interpreter 
 Python/C API Reference Manual  
+
+A List of - Confluence
+
 https://www.geeksforgeeks.org/angular-js/angularjs/ | Learning platform
 https://huggingface.co/ | AI Community
 https://docs.djangoproject.com/en/5.2/intro/tutorial01/
@@ -65,9 +72,67 @@ Integer literals
 Floating-point literals
 git py
 https://www.greatfrontend.com/
+Debugging at Command line
+>>> f"{today=:%B %d, %Y}" # using date format specifier and debugging
+>>>'today=January 27, 2017''
+
+>>> f"Today is {today:%B %d, %Y}"
+'Today is August 07, 2025'
+
+Code Explainer
+---------------
+https://zzzcode.ai/python/code-explain
+
+Code Checker
+------------
+https://techbeamers.com/python-code-checker/
+
+Python Test
+-----------
+https://www.learnx.org/dashboard/python/2/10
+
+Package Layout
+--------------
+package/
+    __init__.py
+    subpackage1/
+        __init__.py
+        moduleX.py
+        moduleY.py
+    subpackage2/
+        __init__.py
+        moduleZ.py
+    moduleA.py
+	
+from .moduleY import spam
+from .moduleY import spam as ham
+from . import moduleY
+from ..subpackage1 import moduleY
+from ..subpackage2.moduleZ import eggs
+from ..moduleA import foo
+
 
 
 Python, pointers to note
+
+Python Variables
+----------------
+In Python, variables are created the moment a value is assigned to them. Unlike some other programming languages, 
+Python does not require explicit variable declaration or type specification before assignment.
+
+To create a variable, use the assignment operator (=) to assign a value to a name. The variable's type is automatically 
+inferred based on the assigned value. 
+
+# Assigning an integer value
+my_integer = 10
+
+# Assigning a string value
+my_string = "Hello, Python!"
+
+# Assigning a floating-point value
+my_float = 3.14
+
+
 
 Data Type : Numbers
 -------------------
@@ -345,8 +410,8 @@ while True:
         print("Oops!  That was no valid number.  Try again...")
 		
 		
-List Comprehension
-------------------
+List Comprehension - with dual for statements
+----------------------------------------------
 [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
 
 and it’s equivalent to:
@@ -401,10 +466,63 @@ percentage = yes_votes / total_votes
 
 print format : fancy print
 --------------------------
+A formatted string literal or f-string is a string literal that is prefixed with 'f' or 'F'. 
+These strings may contain replacement fields, which are expressions delimited by curly braces {}
+
+name = "Alice"
+age = 30
+salary = 50000
+
+# Without the '=' sign
+print(f"Name: {name}, Age: {age}")
+
+# With the '=' sign for self-documenting expressions
+print(f"{name=}, {age=}, {salary=}")
+
+# Using it with an expression
+print(f"Next year's age: {age + 1=}")
+
+
+
 table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
 for name, phone in table.items():
     print(f'{name:10} ==> {phone:10d}')
-	
+
+If a conversion is specified, the result of evaluating the expression is converted before 
+formatting. Conversion '!s' calls str() on the result, '!r' calls repr(), and '!a' calls ascii().
+
+name = "Fred"
+f"He said his name is {name!r}."
+f"He said his name is {repr(name)}."  # repr() is equivalent to !r
+
+>>> "He said his name is 'Fred'."
+
+width = 10
+precision = 4
+value = decimal.Decimal("12.34567")
+f"result: {value:{width}.{precision}}"  # nested fields
+
+>>>  'result:      12.35'
+
+today = datetime(year=2017, month=1, day=27)
+f"{today:%B %d, %Y}"  # using date format specifier
+>>> January 27, 2017'
+
+f"{today=:%B %d, %Y}" # using date format specifier and debugging
+
+
+number = 1024
+f"{number:#0x}"  # using integer format specifier
+
+foo = "bar"
+f"{ foo = }" # preserves whitespace
+
+line = "The mill's closed"
+f"{line = }"
+
+f"{line = :20}"
+
+f"{line = !r:20}"
 
 Encapsulation is one of the core concepts in object-oriented programming and 
 describes the bundling of data and methods operating on this data into one unit
@@ -1159,5 +1277,207 @@ class MyClass(metaclass=Meta):
 
 class MySubclass(MyClass):
     pass
+
+
+Escape Sequence
+----------------
+'This string will not include \
+backslashes or newline characters.'
+
+Explicit Join
+-------------
+A Logical statement or one/more physical lines with "\"
+-------------------------------------------------------
+if 1900 < year < 2100 and 1 <= month <= 12 \
+   and 1 <= day <= 31 and 0 <= hour < 24 \
+   and 0 <= minute < 60 and 0 <= second < 60:   # Looks like a valid date
+        return 1
+		
+Implicit Join
+-------------
+month_names = ['Januari', 'Februari', 'Maart',      # These are the
+               'April',   'Mei',      'Juni',       # Dutch names
+               'Juli',    'Augustus', 'September',  # for the months
+               'Oktober', 'November', 'December']   # of the year
+
+		
+			
+Code with Indentation
+--------------------- 
+def perm(l):
+        # Compute the list of all permutations of l
+    if len(l) <= 1:
+                  return [l]
+    r = []
+    for i in range(len(l)):
+             s = l[:i] + l[i+1:]
+             p = perm(s)
+             for x in p:
+              r.append(l[i:i+1] + x)
+    return r
+
+
+res = 'Test'
+res1=perm(res)
+print(res1)
+
+
+Same Code with Indentation errors
+---------------------------------
+def perm(l):
+ 
+     if len(lstr) <= 1:
+					return [lstr]
+
+	r = []
+	for i in range(len(l)):             
+		s = l[:i] + l[i+1:]
+		p = perm(l[:i] + l[i+1:])    
+		for x in p:
+			r.append(l[i:i+1] + x)
+
+	return r                
+			
+
+res = 'Test'
+res1=perm(res)
+print(res1)
+
+Same code after indentation corrected
+-------------------------------------
+def perm(lstr): #runtime error
+    
+    if len(lstr) <= 1:
+                  return [lstr]
+        
+	r = []
+	for i in range(len(lstr)):             
+		s = lstr[:i] + lstr[i+1:]
+		print ('Inside 1st loop',s)
+		pass
+		p = perm(lstr[:i] + lstr[i+1:])    
+		for x in p:
+			r.append(lstr[i:i+1] + x)
+			print ('Inside 2nd loop',r)
+
+	return r                
+			
+
+res = 'Test'
+res1=perm(res)
+print(res1)
+
+Atlast corrected
+----------------
+def perm(l):             
+	if len(l) <=1 :
+		return [l]
 	
+	r = []
+	for i in range(len(l)):              
+		s = l[:i] + l[i+1:]
+		p = perm(l[:i] + l[i+1:])    
+		for x in p:
+			r.append(l[i:i+1] + x)
+
+	return r    
 	
+
+Identifiers
+-----------
+False      await      else       import     pass
+None       break      except     in         raise
+True       class      finally    is         return
+and        continue   for        lambda     try
+as         def        from       nonlocal   while
+assert     del        global     not        with
+async      elif       if         or         yield
+
+
+
+import typing
+typing.__name__, typing.__spec__.name
+
+typing.__spec__.name = 'spelling'
+typing.__name__, typing.__spec__.name
+
+typing.__name__ = 'keyboard_smashing'
+typing.__name__, typing.__spec__.name
+
+lambda
+------
+a lambda function is a small, anonymous function defined using the lambda keyword. Unlike functions
+defined with def, lambda functions are restricted to a single expression, which is implicitly returned. 
+
+
+A lambda function can take any number of arguments, but can only have one expression.
+
+
+add_two = lambda x: x + 2
+print(add_two(5))  # Output: 7
+	
+# A lambda function that takes two arguments and returns their sum
+add = lambda x, y: x + y
+print(add(5, 3)) # Output: 8
+
+# A lambda function that takes three arguments and returns their product
+multiply_three = lambda a, b, c: a * b * c
+print(multiply_three(2, 4, 6)) # Output: 48
+
+
+For Loops
+--------- 
+Example 1:
+
+[(x) for x in [1,2,3] ]
+>>> [1, 2, 3]
+
+The else keyword in a for loop specifies a block of code to be executed when the loop is finished:
+
+Example
+Print all numbers from 0 to 5, and print a message when the loop has ended:
+
+Example 2:
+for x in range(6):
+  print(x)
+else:
+  print("Finally finished!")
+
+>>> 
+0
+1
+2
+3
+4
+5
+Finally finished!  
+
+Example 3:
+>>> for x in range(1,10):
+...   print (x)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+Precedence
+----------
+result = 10 + 5 * 2
+# Output: 20 (Multiplication is performed before addition)
+
+result_with_parentheses = (10 + 5) * 2
+# Output: 30 (Parentheses force addition to be performed first)
+
+<-----
+* / + -
+10 + 50/10 * 4 - 6  >>>> result is 24
+34 + 12/4 - 45      >>>> result is -8
+
+
+
+
