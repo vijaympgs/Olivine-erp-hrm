@@ -1,19 +1,30 @@
+Last Up : 08/19/2025
 Ramp up Plan
 ------------
-Tech Upgrade
+Learning Platforms for Python
+-----------------------------
 1. Python Tutorial  Source : https://www.python.org
+2. https://pythoninstitute.org/
+3. https://git-scm.com/downloads/win
 
-https://pythoninstitute.org/
+Best
+https://edube.org/learn/pe-1/programming-absolute-basics-compilation-vs-interpretation-11
 
-PCEP™ – Certified Entry-Level Python Programmer
+3.1 PCEP™ – Certified Entry-Level Python Programmer
 https://pythoninstitute.org/pcep
 
-PCAP™ – Certified Associate Python Programmer
+3.2 PCAP™ – Certified Associate Python Programmer
 https://pythoninstitute.org/pcap
 
 
-1.1 Crash course on Python by Google
+3.3 Crash course on Python by Google
 https://www.coursera.org/learn/python-crash-course
+
+3.4. Hugging face
+	 Firebase
+	 Claude
+	 *** Model, Training, AI ****
+	 *** Alogirthms extract from Claude ***
 
 2. HTML
 3. CSS
@@ -68,6 +79,7 @@ The Python Standard Library.
 The Python Tutorial.
 Extending and Embedding the Python Interpreter 
 Python/C API Reference Manual  
+https://betterstack.com/community/guides/scaling-python/python-errors/
 
 A List of - Confluence
 
@@ -79,12 +91,61 @@ Integer literals
 Floating-point literals
 git py
 https://www.greatfrontend.com/
+
+Hugging face
+Firebase
+Claude
+*** Model, Training, AI ****
+*** Alogirthms extract from Claude ***
+
 Debugging at Command line
 >>> f"{today=:%B %d, %Y}" # using date format specifier and debugging
 >>>'today=January 27, 2017''
 
 >>> f"Today is {today:%B %d, %Y}"
 'Today is August 07, 2025'
+
+
+Where do you use Python?
+Do you remember Battlefield 2, Battlefield 2142 and Battlefield Heroes - strategy and first person shooter games from EA DICE? All the games use Python for logic and server controls. Python is frequently used for creating open-source, free games, e.g., OpenRTS, PySol, Metin 2, or Frets On Fire - famous Guitar Hero-like games written in pygame.
+
+And what about the major websites and services? Dropbox? UBER? Spotify? Pintrest? BuzzFeed? Yes. They were all written, to a greater or lesser extent, in Python. Other examples?
+
+Internet Applications (BitTorrent, Jogger Publishing Assistant, TheCircle, TwistedMatrix)
+3D CAD/CAM (FreeCAD, Fandango, Blender, Vintech RCAM)
+Enterprise Applications (Odoo, Tryton, Picalo, LinOTP 2, RESTx)
+Image Applications (Gnofract 4D, Gogh, imgSeek, MayaVi, VPython)
+Mobile Applications (Aarlogic C05/3, AppBackup, Pyroute)
+Office Applications (calibre, faces, Notalon, pyspread)
+Personal Information Managers (BitPim, Narval, Prioritise, Task Coach, WikidPad)
+(Source: https://wiki.python.org/moin/PythonProjects)
+
+
+Generally, Python is a great choice for:
+
+Web and Internet development (e.g., Django and Pyramid frameworks, Flask and Bottle micro-frameworks)
+Scientific and numeric computing (e.g., SciPy - a collection of packages for the purposes of mathematics, science, and engineering; Ipython - an interactive shell that features editing and recording of work sessions)
+Education (it's a brilliant language for teaching programming! And that's why we're offering this course to you!)
+Desktop GUIs (e.g., wxWidgets, Kivy, Qt)
+Software Development (build control, management, and testing - Scons, Buildbot, Apache Gump, Roundup, Trac)
+Business applications (ERP and e-commerce systems - Odoo, Tryton)
+(Source: https://www.python.org/about/apps)
+And many, many other projects and development tools.
+
+
+Python is a great choice for:
+
+Web and Internet development (e.g., Django and Pyramid frameworks, Flask and Bottle micro-frameworks)
+Scientific and numeric computing (e.g., SciPy - a collection of packages for the purposes of mathematics, science, and engineering; Ipython - an interactive shell that features editing and recording of work sessions)
+Education (it's a brilliant language for teaching programming! And that's why we're offering this course to you!)
+Desktop GUIs (e.g., wxWidgets, Kivy, Qt)
+Software Development (build control, management, and testing - Scons, Buildbot, Apache Gump, Roundup, Trac)
+Business applications (ERP and e-commerce systems - Odoo, Tryton)
+(Source: https://www.python.org/about/apps)
+
+Python eBook
+Python Essentials 1: Aligned with PCEP-30-0X
+
 
 Code Explainer
 ---------------
@@ -97,6 +158,19 @@ https://techbeamers.com/python-code-checker/
 Python Test
 -----------
 https://www.learnx.org/dashboard/python/2/10
+
+Several websites and browser extensions can help you identify the technologies used to build a website
+Websites	
+BuiltWith	https://builtwith.com/
+Ful.io	https://ful.io/
+	
+Browser extensions	
+BuiltWith:	https://builtwith.com/toolbar
+Wappalyzer:	https://www.wappalyzer.com
+WhatRuns:	https://www.whatruns.com
+Snov.io	https://snov.io/
+Webspotter:	https://webspotters.in
+
 
 Package Layout
 --------------
@@ -1486,5 +1560,289 @@ result_with_parentheses = (10 + 5) * 2
 34 + 12/4 - 45      >>>> result is -8
 
 
+#There are 2 errors in the below code, but while compiling the interpreter
+#will detect #err1 first, later the #err2
 
+employees = {"pam" 30,
+             "jim": 28} #err1
+
+for name, age in employees.items():
+    print(f"{name.capitalize()} is {age} years old.")
+
+employees1 = {"jack" 30,
+             "john": 28} #err2
+
+
+
+https://edube.org/learn/pe-1/programming-absolute-basics-compilation-vs-interpretation-11
+
+Compiler : Advantages
+•	the execution of the translated code is usually faster;
+•	only the user has to have the compiler - the end-user may use the code without it;
+•	the translated code is stored using machine language - as it is very hard to understand it, 
+•	your own inventions and programming tricks are likely to remain your secret.
+
+Compiler : Dis-Advantages
+•	the compilation itself may be a very time-consuming process - you may not be able to run 
+	your code immediately after making an amendment;
+•	you have to have as many compilers as hardware platforms you want your code to be run on.
+
+Interpreter : Advantages
+•	you can run the code as soon as you complete it - there are no additional phases of translation;
+•	the code is stored using programming language, not machine language - this means that it can be run on 
+	computers using different machine languages; you don't compile your code separately for each different architecture.
+
+Interpreter : Dis-Advantages
+•	don't expect interpretation to ramp up your code to high speed - your code will share the computer's power with the interpreter, 
+	so it can't be really fast;
+•	both you and the end user have to have the interpreter to run your code.
+
+
+What does this all mean for you?
+
+Python is an interpreted language. This means that it inherits all the described advantages and disadvantages. Of course, 
+it adds some of its unique features to both sets.
+If you want to program in Python, you'll need the Python interpreter. You won't be able to run your code without it. 
+Fortunately, Python is free. This is one of its most important advantages.
+
+Due to historical reasons, languages designed to be utilized in the interpretation manner are 
+often called scripting languages, while the source programs encoded using them are called scripts.
+
+What makes Python special?
+How does it happen that programmers, young and old, experienced and novice, want to use it? How did it happen that large companies adopted Python and implemented their flagship products using it?
+
+There are many reasons – we've listed some of them already, but let's enumerate them again in a more practical manner:
+
+it's easy to learn – the time needed to learn Python is shorter than for many other languages; this means that it's possible to start the actual programming faster;
+it's easy to teach – the teaching workload is smaller than that needed by other languages; this means that the teacher can put more emphasis on general (language-independent) programming techniques, not wasting energy on exotic tricks, strange exceptions and incomprehensible rules;
+it's easy to use for writing new software – it's often possible to write code faster when using Python;
+it's easy to understand - it's also often easier to understand someone else's code faster if it is written in Python;
+it's easy to obtain, install and deploy – Python is free, open and multiplatform; not all languages can boast that.
+Of course, Python has its drawbacks, too:
+
+it's not a speed demon – Python does not deliver exceptional performance;
+in some cases it may be resistant to some simpler testing techniques – this may mean that debugging Python code can be more difficult than with other languages; fortunately, 
+making mistakes is also harder in Python.
+
+
+Python rivals?
+Python has two direct competitors, with comparable properties and predispositions. These are:
+
+Perl – a scripting language originally authored by Larry Wall;
+Ruby – a scripting language originally authored by Yukihiro Matsumoto.
+The former is more traditional and more conservative than Python, and resembles some of the old languages derived from the classic C programming language.
+
+In contrast, the latter is more innovative and more full of fresh ideas than Python. Python itself lies somewhere between these two creations.
+
+The Internet is full of forums with infinite discussions on the superiority of one of these three over the others, should you wish to learn more about each of them.
+
+Where can we see Python in action?
+We see it every day and almost everywhere. It's used extensively to implement complex Internet services like search engines, cloud storage and tools, social media and so on. Whenever you use any of these services, you are actually very close to Python, although you wouldn't know it.
+
+Many developing tools are implemented in Python. More and more everyday-use applications are being written in Python. Lots of scientists have abandoned expensive proprietary tools and switched to Python. Lots of IT project testers have started using Python to carry out repeatable test procedures. The list is long.
+
+Why not Python?
+Despite Python's growing popularity, there are still some niches where Python is absent, or is rarely seen:
+
+low-level programming (sometimes called "close to metal" programming): if you want to implement an extremely effective driver or graphical engine, you wouldn't use Python;
+applications for mobile devices: although this territory is still waiting to be conquered by Python, it will most likely happen someday.
+
+
+Resume Point
+------------
+https://edube.org/learn/pe-1/there-is-more-than-one-python-cpython-and-cython-3
+
+
+print("\"I\'m\"")
+print('""learning""')
+print('"""Python"""')
+
+>>>  
+  
+"I'm"
+""learning""
+"""Python"""
+
+
+Operators and their priorities
+2 + 3 * 5
+---------> 3*5 (1) , 2+15 (2)
+
+multiplications precede additions.
+First multiply 3 by 5 and, keeping the 15 in your memory, 
+then add it to 2, thus getting the result of 17.
+
+Operators and their bindings
+Most of Python's operators have left-sided binding, which means that the calculation of the expression is conducted from left to right.
+print(9 % 6 % 2)
+from left to right: first 9 % 6 gives 3, and then 3 % 2 gives 1;
+since both the operartors are same, 9%6 (3) first then 3%2 =>   1
+
+Operators and their bindings: exponentiation
+print(2 ** 2 ** 3)
+The result clearly shows that the exponentiation operator uses right-sided binding.
+
+Claude
+------
+
+
+
+
+
+
+
+https://claude.ai/public/artifacts/5f9bdfbf-457f-40fd-8aa5-3abf163eca4f
+
+I want to generate the model in local with billions of data (with mentioned json schema) in csv file. These data will have all data including failures and normal cases. It follows the user wise historical pattern, device model wise historical pattern analysis and prediction. Can you write python code to generate model with production grade efficient algorithms.
+
+Correct me if I'm wrong. These are the telemetry information I'll collect and store it in cloud db. We have service centres where they have the failure mobile devices list with device id. So I map the failed device id with the telemetry to get the telemetry of the failure device and give it with label of failure details. Generally I want to label the data to train the model. The model will be trained with billions of data. Finally the model will be deployed, if any telemetry is going to be stored in the cloud database before that model will predict the failure type of the incoming telemetry data. If that prediction from the model is of failure type, we will label that telemetry data of that device with failure details and show some notifications in the app with the failure details.
+
+JSON schema for the telemetry information
+{
+  // === Identifiers ===
+  "record_id": "string",                  // unique log entry id
+  "device_id": "string",                  // unique device identifier
+  "user_id": "string",                    // unique user identifier
+  "timestamp": "string",                  // ISO 8601 timestamp
+
+  // === Device Metadata ===
+  "device_model": "string",               // e.g. "Samsung-Galaxy-S22"
+  "device_manufacturer": "string",        // e.g. "Samsung"
+  "device_batch_number": "string",        // batch/lot id
+  "device_production_date": "string",     // YYYY-MM-DD
+  "device_age_days": "int",
+  "warranty_status": "string",            // in_warranty / expired
+
+  // === OS & Software Metadata ===
+  "os_name": "string",                    // "Android"
+  "os_version": "string",                 // "13"
+  "os_build_number": "string",            // build id
+  "software_firmware_version": "string",
+  "software_security_patch": "string",    // YYYY-MM-DD
+  "software_uptime_hours": "float",
+  "software_system_crashes": "int",
+  "software_app_crashes": "int",
+
+  // === Battery Telemetry ===
+  "battery_level_percent": "float",
+  "battery_health_status": "string",
+  "battery_temperature_c": "float",
+  "battery_voltage_mv": "int",
+  "battery_charge_cycles": "int",
+  "battery_charging_status": "string",    // charging / discharging
+  "battery_current_ma": "int",
+  "battery_resistance_mohm": "int",
+  "battery_sudden_shutdowns": "int",
+
+  // === CPU Telemetry ===
+  "cpu_usage_percent": "float",
+  "cpu_temperature_c_avg": "float",
+  "cpu_throttle_events": "int",
+  "cpu_core_frequencies_mhz": "string",   // comma-separated list
+  "cpu_voltage_scaling_errors": "int",
+  "cpu_watchdog_resets": "int",
+
+  // === GPU Telemetry ===
+  "gpu_usage_percent": "float",
+  "gpu_temperature_c": "float",
+  "gpu_driver_resets": "int",
+  "gpu_frequency_mhz": "int",
+
+  // === Memory Telemetry ===
+  "memory_total_mb": "int",
+  "memory_used_mb": "int",
+  "memory_swap_used_mb": "int",
+  "memory_page_faults": "int",
+  "memory_oom_kills": "int",
+  "memory_ecc_corrected_errors": "int",
+  "memory_dma_faults": "int",
+
+  // === Storage Telemetry ===
+  "storage_total_gb": "int",
+  "storage_used_gb": "int",
+  "storage_read_errors": "int",
+  "storage_write_errors": "int",
+  "storage_bad_block_count": "int",
+  "storage_io_latency_ms": "float",
+  "storage_wear_level_percent": "float",
+
+  // === Thermal Sensors ===
+  "thermal_hotspot_temp_c": "float",
+  "thermal_sensor_battery_c": "float",
+  "thermal_sensor_cpu_cluster0_c": "float",
+  "thermal_sensor_cpu_cluster1_c": "float",
+  "thermal_sensor_gpu_c": "float",
+  "thermal_sensor_pmic_c": "float",
+  "thermal_shutdowns": "int",
+
+  // === Connectivity ===
+  "wifi_signal_dbm": "int",
+  "wifi_disconnects": "int",
+  "wifi_firmware_crashes": "int",
+  "wifi_packet_loss_percent": "float",
+  "cellular_rsrp_dbm": "int",
+  "cellular_drop_calls": "int",
+  "cellular_modem_resets": "int",
+  "cellular_handshake_failures": "int",
+
+  // === Peripheral Sensors ===
+  "peripheral_touchscreen_errors": "int",
+  "peripheral_camera_init_failures": "int",
+  "peripheral_mic_speaker_faults": "int",
+  "peripheral_sensor_hub_desyncs": "int",
+
+  // === Kernel & System ===
+  "kernel_panics": "int",
+  "kernel_anrs": "int",
+  "kernel_irq_storms": "int",
+  "kernel_driver_probe_failures": "int",
+  "kernel_system_crash_count": "int",
+  "kernel_last_boot_reason": "string",
+
+  // === User Metadata ===
+  "user_region": "string",                // e.g. "US", "EU"
+  "user_account_age_days": "int",
+  "user_device_count": "int",             // # devices linked to user
+  "user_failure_history_count": "int",    // historical device failures for user
+  "user_behavior_profile": "string",      // e.g. "heavy_gamer", "light_user"
+
+  // === Labels for ML ===
+  "failure_occurred": "boolean",          // 0 = normal, 1 = failure
+  "failure_type": "string",               // e.g. battery, cpu, storage, none
+  "failure_timestamp": "string"           // ISO 8601 (if occurred)
+}
+
+Consider the telemetry data of mulitple devices of one brand (Samsung devices only)
+
+Requirements
+
+Handle scale: Efficient I/O (e.g. Polars, Dask, streaming).
+Feature engineering:
+Raw features (CPU, memory, temperature, etc.)
+Encoded categoricals (network_status, os_version, oem_model)
+Aggregated historical features per user, device, and device model (e.g., rolling means, failure frequency, moving std).
+Algorithms (must try multiple):
+LightGBM
+XGBoost
+CatBoost
+Graph Neural Networks (GNNs) (If you map telemetry across devices (e.g., same model batch, OS version). Can detect systemic failures across related devices.)
+Model Selection:
+Use Macro PR-AUC and F1-score as key metrics.
+Evaluate per-class performance (not just accuracy).
+Support device-wise prediction and per-class threshold tuning.
+Output Artifacts:
+Trained model (joblib/pickle).
+Preprocessing pipeline (scalers, encoders).
+Thresholds per class.
+Feature importance / explainability summary.
+Metrics report (JSON).
+Goal
+
+Generate a Python training pipeline that:
+
+Reads the above schema in CSVs.
+Trains models with device-wise, model-wise, and user-wise historical features.
+Benchmarks multiple algorithms and saves the best production-ready model.
+:zap: Your task:
+Generate the end-to-end training code (with comments, modular structure, best practices) that fulfills these requirements.
 
