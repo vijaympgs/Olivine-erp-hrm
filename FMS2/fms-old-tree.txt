@@ -1,0 +1,311 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 8AFF-8E88
+D:.
+|   00.masterindex.md
+|   fms-old-tree.txt
+|   FMS.md
+|   refer_for_new_fms_bbp.md
+|   
++---01.Masters
+|       1.1 Chart of Accounts.md
+|       1.1 Financial Dashboard.md
+|       1.2 Account Groups.md
+|       1.2 Key Performance Indicators.md
+|       1.3 Cash Flow Summary.md
+|       1.3 Ledgers.md
+|       1.4 Cost Centers.md
+|       1.4 Profit & Loss Summary.md
+|       1.5 Balance Sheet Summary.md
+|       1.5 Currencies.md
+|       1.6 Budget vs Actual.md
+|       1.6 Tax Categories.md
+|       1.7 Financial Alerts.md
+|       1.7 Voucher Types.md
+|       1.8 Budgets.md
+|       1.9 Custom Fields.md
+|       
++---02.Transactions
+|       2.1 Chart of Accounts.md
+|       2.1 Journal Entries (with Cost Center & Budget mapping).md
+|       2.10 Fixed Assets.md
+|       2.10 Trial Balance.md
+|       2.11 Ledger Reports.md
+|       2.11 Payroll.md
+|       2.12 Multi-currency.md
+|       2.13 Expense Reports (with Cost Center & Budget mapping).md
+|       2.14 Inter-company Transactions.md
+|       2.2 Account Groups & Hierarchies.md
+|       2.2 Sales Invoices (with Cost Center & Budget mapping).md
+|       2.3 General Ledger.md
+|       2.3 Purchase Invoices (with Cost Center & Budget mapping).md
+|       2.4 Credit Notes (with Cost Center & Budget mapping).md
+|       2.4 Journal Entries.md
+|       2.5 Debit Notes (with Cost Center & Budget mapping).md
+|       2.5 Journal Vouchers.md
+|       2.6 Payment Receipts (with Cost Center & Budget mapping).md
+|       2.6 Recurring Journal Entries.md
+|       2.7 Payment Vouchers (with Cost Center & Budget mapping).md
+|       2.7 Reversing Entries.md
+|       2.8 Bank Reconciliation.md
+|       2.8 Inter-company Transactions.md
+|       2.9 Inventory Transactions.md
+|       2.9 Period-End Adjustments.md
+|       
++---03.Reports
+|       3.1 Customer Invoices.md
+|       3.1 Trial Balance.md
+|       3.10 Aging Analysis.md
+|       3.10 Inventory Reports.md
+|       3.11 Collection Management.md
+|       3.11 Company wise Reports.md
+|       3.12 Custom Reports.md
+|       3.12 Dunning & Reminders.md
+|       3.13 Customer Statements.md
+|       3.14 Bad Debt Provisioning.md
+|       3.15 Write-offs.md
+|       3.2 Sales Invoices.md
+|       3.3 Balance Sheet.md
+|       3.3 Proforma Invoices.md
+|       3.4 Cash Flow.md
+|       3.4 Credit Notes.md
+|       3.5 Debit Notes.md
+|       3.5 Fund Flow.md
+|       3.6 Payment Receipts.md
+|       3.6 Ratio Analysis.md
+|       3.7 Budget vs Actual.md
+|       3.7 Payment Allocation.md
+|       3.8 Cost Center Reports.md
+|       3.8 Customer Advances.md
+|       3.9 Aging Reports.md
+|       3.9 Outstanding Receivables.md
+|       
++---04.Period-End
+|       4.1 Month-End Closing.md
+|       4.1 Vendor Bills.md
+|       4.10 Aging Analysis.md
+|       4.11 Payment Terms Management.md
+|       4.12 Vendor Statements.md
+|       4.13 Expense Claims.md
+|       4.14 TDS_TCS Management.md
+|       4.2 Purchase Invoices.md
+|       4.2 Year-End Closing.md
+|       4.3 Audit Trail.md
+|       4.3 Debit Notes (Purchase Returns).md
+|       4.4 Credit Notes (Vendor).md
+|       4.4 Data Backup.md
+|       4.5 Data Restore.md
+|       4.5 Payment Vouchers.md
+|       4.6 Configuration.md
+|       4.6 Payment Processing.md
+|       4.7 Multi-entity Consolidation.md
+|       4.7 Payment Runs.md
+|       4.8 Compliance Reports.md
+|       4.8 Vendor Advances.md
+|       4.9 Outstanding Payables.md
+|       
++---05.Cash & Bank Management
+|       5.1 Bank Accounts.md
+|       5.10 Cheque Management.md
+|       5.11 Cheque Printing.md
+|       5.12 Post-dated Cheques (PDC).md
+|       5.13 Dishonored Cheques.md
+|       5.14 Bank Charges.md
+|       5.15 Inter-bank Transfers.md
+|       5.2 Cash Accounts.md
+|       5.3 Bank Deposits.md
+|       5.4 Bank Withdrawals.md
+|       5.5 Cash Receipts.md
+|       5.6 Cash Payments.md
+|       5.7 Bank Reconciliation.md
+|       5.8 Auto Reconciliation.md
+|       5.9 Bank Statement Import.md
+|       
++---06.Payment Processing
+|       6.1 Payment Gateway Integration.md
+|       6.10 Payment Reconciliation.md
+|       6.11 Electronic Fund Transfer (EFT).md
+|       6.2 Online Payments.md
+|       6.3 Payment Methods.md
+|       6.4 Payment Terms.md
+|       6.5 Payment Schedules.md
+|       6.6 Batch Payments.md
+|       6.7 Payment Approval Workflow.md
+|       6.8 Payment Reversals.md
+|       6.9 Payment Refunds.md
+|       
++---07.Fixed Assets Management
+|       7.1 Asset Register.md
+|       7.10 Asset Maintenance.md
+|       7.11 Asset Insurance.md
+|       7.12 Asset Physical Verification.md
+|       7.13 Asset Reports.md
+|       7.2 Asset Categories.md
+|       7.3 Asset Acquisition.md
+|       7.4 Asset Disposal.md
+|       7.5 Asset Transfer.md
+|       7.6 Asset Revaluation.md
+|       7.7 Depreciation Calculation.md
+|       7.8 Depreciation Methods.md
+|       7.9 Depreciation Schedules.md
+|       
++---08.Inventory Accounting
+|       8.1 Inventory Valuation.md
+|       8.10 Inventory Reports.md
+|       8.2 Cost of Goods Sold (COGS).md
+|       8.3 Stock Valuation Methods.md
+|       8.4 Inventory Adjustments.md
+|       8.5 Inventory Write-offs.md
+|       8.6 Inventory Reserves.md
+|       8.7 Landed Cost Allocation.md
+|       8.8 Inter-location Transfer Accounting.md
+|       8.9 Inventory Reconciliation.md
+|       
++---09.Cost Accounting & Job Costing
+|       9.1 Cost Centers.md
+|       9.10 Cost Reports.md
+|       9.11 Profitability Analysis.md
+|       9.2 Cost Categories.md
+|       9.3 Cost Allocation.md
+|       9.4 Job Costing.md
+|       9.5 Project Costing.md
+|       9.6 Work Orders.md
+|       9.7 Cost Tracking.md
+|       9.8 Overhead Allocation.md
+|       9.9 Variance Analysis.md
+|       
++---10.Budgeting & Planning
+|       10.1 Budget Creation.md
+|       10.10 What-if Analysis.md
+|       10.11 Budget Consolidation.md
+|       10.2 Budget Templates.md
+|       10.3 Budget Allocation.md
+|       10.4 Budget Versions.md
+|       10.5 Budget Approval Workflow.md
+|       10.6 Budget vs Actual Analysis.md
+|       10.7 Budget Variance Reports.md
+|       10.8 Forecast Management.md
+|       10.9 Rolling Forecasts.md
+|       
++---11.Tax Management
+|       11.1 GST_VAT Management.md
+|       11.10 TDS Returns.md
+|       11.11 Withholding Tax.md
+|       11.12 Sales Tax.md
+|       11.13 Service Tax.md
+|       11.14 E-way Bills.md
+|       11.15 Tax Reports & Filings.md
+|       11.2 Tax Configuration.md
+|       11.3 Tax Codes & Rates.md
+|       11.4 Input Tax Credit (ITC).md
+|       11.5 Output Tax.md
+|       11.6 Tax Invoices.md
+|       11.7 Tax Returns (GSTR-1, GSTR-3B).md
+|       11.8 Tax Reconciliation.md
+|       11.9 TDS_TCS Management.md
+|       
++---12.Multi-Currency & Foreign Exchange
+|       12.1 Currency Management.md
+|       12.10 Forward Contracts.md
+|       12.2 Exchange Rates.md
+|       12.3 Exchange Rate Types.md
+|       12.4 Currency Revaluation.md
+|       12.5 Foreign Exchange Gains_Losses.md
+|       12.6 Multi-currency Transactions.md
+|       12.7 Currency Conversion.md
+|       12.8 Realized_Unrealized Gains.md
+|       12.9 Hedging Management.md
+|       
++---13.Financial Reporting & Analytics
+|       13.1 Standard Reports.md
+|       13.2 Analytical Reports.md
+|       13.3 Custom Reports.md
+|       
++---14.Period-End & Year-End Closing
+|       14.1 Period Closing Checklist.md
+|       14.10 Financial Year Setup.md
+|       14.11 Closing Reports.md
+|       14.2 Month-End Close.md
+|       14.3 Quarter-End Close.md
+|       14.4 Year-End Close.md
+|       14.5 Closing Entries.md
+|       14.6 Opening Balances.md
+|       14.7 Period Lock.md
+|       14.8 Audit Trail Lock.md
+|       14.9 Carry Forward.md
+|       
++---15.Compliance & Audit
+|       15.1 Audit Trail.md
+|       15.10 Segregation of Duties (SoD).md
+|       15.11 Approval Workflows.md
+|       15.12 Document Management.md
+|       15.13 Digital Signatures.md
+|       15.2 Audit Logs.md
+|       15.3 User Activity Tracking.md
+|       15.4 Change History.md
+|       15.5 Document Versioning.md
+|       15.6 Compliance Checklist.md
+|       15.7 Regulatory Reports.md
+|       15.8 Statutory Compliance.md
+|       15.9 Internal Controls.md
+|       
++---16.Inter-company & Consolidation
+|       16.1 Inter-company Transactions.md
+|       16.10 Consolidated Reports.md
+|       16.2 Inter-company Eliminations.md
+|       16.3 Consolidation Rules.md
+|       16.4 Multi-entity Reporting.md
+|       16.5 Group Consolidation.md
+|       16.6 Subsidiary Management.md
+|       16.7 Minority Interest.md
+|       16.8 Currency Translation.md
+|       16.9 Consolidation Adjustments.md
+|       
++---17.Revenue Recognition
+|       17.1 Revenue Contracts.md
+|       17.2 Performance Obligations.md
+|       17.3 Revenue Schedules.md
+|       17.4 Deferred Revenue.md
+|       17.5 Unbilled Revenue.md
+|       17.6 Revenue Recognition Rules.md
+|       17.7 Contract Assets_Liabilities.md
+|       17.8 Revenue Allocation.md
+|       17.9 Revenue Reports.md
+|       
++---18.Financial Planning & Analysis
+|       18.1 Financial Models.md
+|       18.10 ROI Analysis.md
+|       18.2 Scenario Planning.md
+|       18.3 Sensitivity Analysis.md
+|       18.4 Financial Projections.md
+|       18.5 Cash Flow Forecasting.md
+|       18.6 Revenue Forecasting.md
+|       18.7 Expense Forecasting.md
+|       18.8 Capital Planning.md
+|       18.9 Investment Analysis.md
+|       
++---19.Treasury Management
+|       19.1 Cash Positioning.md
+|       19.10 Risk Management.md
+|       19.2 Cash Forecasting.md
+|       19.3 Liquidity Management.md
+|       19.4 Investment Management.md
+|       19.5 Debt Management.md
+|       19.6 Loan Management.md
+|       19.7 Interest Calculations.md
+|       19.8 Credit Facilities.md
+|       19.9 Treasury Reports.md
+|       
+\---20.Financial Integrations & Configuration
+        20.1 Bank Integration.md
+        20.10 Notification Settings.md
+        20.11 User Roles & Permissions.md
+        20.12 Financial Policies.md
+        20.2 Payment Gateway Integration.md
+        20.3 Tax Portal Integration.md
+        20.4 Third-party Integrations.md
+        20.5 API Management.md
+        20.6 Data Import_Export.md
+        20.7 System Settings.md
+        20.8 Workflow Configuration.md
+        20.9 Approval Hierarchies.md
+        

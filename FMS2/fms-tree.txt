@@ -1,0 +1,84 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 8AFF-8E88
+D:.
+|   00.fms_masterindex.md
+|   fms-old-tree.txt
+|   fms-tree.txt
+|   FMS_BBP_Autoretry_Prevention_Guide.md
+|   FMS_BBP_Tracker.md
+|   FMS_Development_Implementation_Prompt.md
+|   FMS_DEV_Tracker.md
+|   FMS_Template_Prompt.md
+|   FMS_Template_Reference.md
+|   move-reports.bat
+|   Phase2FMS.md
+|   
++---01.Finance Setup & Configuration
+|   +---1.1.Core Financial Setup
+|   |       1.1.1.Chart of Accounts.md
+|   |       1.1.2 Account Groups.md
+|   |       1.1.3 Ledgers.md
+|   |       1.1.4 Cost Centers.md
+|   |       1.1.5 Currencies.md
+|   |       1.1.6.Voucher Types.md
+|   |       1.1.7 Custom Fields.md
+|   |       
+|   +---1.2.Tax Categories
+|   |       1.2.1 Global Tax Management.md
+|   |       1.2.2 Withholding Tax.md
+|   |       1.2.3 Tax Codes & Rates.md
+|   |       1.2.4 Tax Returns.md
+|   |       1.2.5 Tax Compliance.md
+|   |       
+|   \---1.3.Budgets
+|           1.3.1 Budget Templates.md
+|           1.3.2 Budget Approval Workflow.md
+|           1.3.3 Forecast Management.md
+|           
++---02.Finance Operations & Entries
+|       2.1.Unified_Finance_entry_console.md
+|       2.2.Multi-currency.md
+|       2.3.Inter-company Transactions.md
+|       
++---03.Bank Reconciliation
+|       3.1.Cheque Management.md
+|       3.2.Bank Statement Import.md
+|       3.3.Auto Reconciliation.md
+|       
++---04.Fixed_Assets
+|       4.1.Asset Categories.md
+|       4.2 Depreciation Methods.md
+|       4.3 Asset Maintenance.md
+|       
++---05.Inventory Management
+|       5.1 Inventory Transactions.md
+|       
++---06.Finance Closing & Compliance
+|       6.1 Month-End Closing.md
+|       6.2 Year-End Closing.md
+|       6.3 Audit Trail.md
+|       6.4 Data Backup.md
+|       6.5 Data Restore.md
+|       6.6 Configuration.md
+|       6.7 Multi-entity Consolidation.md
+|       
+\---07.Finance Analytics & Insights
+        6.8 Compliance Reports.md
+        7.1 Trial Balance.md
+        7.10 Inventory Reports.md
+        7.11 Company wise Reports.md
+        7.12 Custom Reports.md
+        7.13 Payroll Journal Entries.md
+        7.14 Employee Financial Integration.md
+        7.15 Salary Structure Integration.md
+        7.16 Payroll Reconciliation & Compliance.md
+        7.17..Expense Reports.md
+        7.2 Trading and PL.md
+        7.3 Balance Sheet.md
+        7.4 Cash Flow.md
+        7.5 Fund Flow.md
+        7.6 Ratio Analysis.md
+        7.7 Budget vs Actual.md
+        7.8 Cost Center Reports.md
+        7.9 Aging Reports.md
+        
