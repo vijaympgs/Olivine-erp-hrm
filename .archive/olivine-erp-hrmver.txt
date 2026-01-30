@@ -1,0 +1,35 @@
+ Volume in drive D is New Volume
+ Volume Serial Number is 8AFF-8E88
+
+ Directory of D:\olvine-erp
+
+01/27/2026  01:05 PM    <DIR>          .
+01/26/2026  07:58 PM    <DIR>          ..
+01/27/2026  10:18 AM    <DIR>          -p
+01/27/2026  10:23 AM    <DIR>          .agent
+01/27/2026  10:22 AM    <DIR>          .archive
+01/27/2026  10:22 AM    <DIR>          .backups
+01/26/2026  08:25 PM    <DIR>          .git
+01/26/2026  07:10 PM    <DIR>          .steering
+01/22/2026  02:13 PM    <DIR>          .vite
+01/26/2026  07:10 PM    <DIR>          app-info
+01/27/2026  12:53 PM    <DIR>          backend
+01/26/2026  07:10 PM    <DIR>          BBPs
+01/26/2026  07:10 PM    <DIR>          common
+01/26/2026  07:10 PM    <DIR>          core
+01/27/2026  11:58 AM    <DIR>          frontend
+01/26/2026  07:10 PM    <DIR>          governance
+01/26/2026  07:11 PM    <DIR>          HRM
+01/18/2026  09:37 PM    <DIR>          Meet
+01/18/2026  09:37 PM    <DIR>          mindra.bootstrap
+01/26/2026  08:31 PM    <DIR>          node_modules
+01/26/2026  07:19 PM    <DIR>          platform-arch
+01/26/2026  07:10 PM    <DIR>          playwright-report
+01/26/2026  07:11 PM    <DIR>          scripts
+01/21/2026  04:00 PM    <DIR>          sessions-bootstrap
+01/26/2026  07:10 PM    <DIR>          Steering
+01/26/2026  07:10 PM    <DIR>          test-results
+01/26/2026  07:10 PM    <DIR>          tests
+01/18/2026  09:37 PM    <DIR>          UAT
+               0 File(s)              0 bytes
+              28 Dir(s)  252,855,934,976 bytes free

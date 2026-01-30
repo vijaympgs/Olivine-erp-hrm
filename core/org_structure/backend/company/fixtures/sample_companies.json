@@ -1,0 +1,67 @@
+[
+  {
+    "model": "company.company",
+    "pk": "550e8400-e29b-41d4-a716-446655440001",
+    "fields": {
+      "company_code": "RETAIL_CORP",
+      "company_name": "Retail Corporation Ltd",
+      "legal_entity_type": "PVT_LTD",
+      "address": {
+        "line1": "123 Business Park",
+        "line2": "Tower A, Floor 5",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "postal_code": "400001"
+      },
+      "default_currency": "INR",
+      "timezone": "Asia/Kolkata",
+      "status": "ACTIVE",
+      "created_at": "2024-01-01T10:00:00Z",
+      "updated_at": "2024-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "company.company",
+    "pk": "550e8400-e29b-41d4-a716-446655440002",
+    "fields": {
+      "company_code": "FASHION_HUB",
+      "company_name": "Fashion Hub Franchise",
+      "legal_entity_type": "FRANCHISE",
+      "address": {
+        "line1": "456 Mall Road",
+        "city": "Delhi",
+        "state": "Delhi",
+        "country": "India",
+        "postal_code": "110001"
+      },
+      "default_currency": "INR",
+      "timezone": "Asia/Kolkata",
+      "status": "ACTIVE",
+      "created_at": "2024-01-02T10:00:00Z",
+      "updated_at": "2024-01-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "company.company",
+    "pk": "550e8400-e29b-41d4-a716-446655440003",
+    "fields": {
+      "company_code": "TECH_SOLUTIONS",
+      "company_name": "Tech Solutions LLP",
+      "legal_entity_type": "LLP",
+      "address": {
+        "line1": "789 Tech Park",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "country": "India",
+        "postal_code": "560001"
+      },
+      "default_currency": "INR",
+      "timezone": "Asia/Kolkata",
+      "status": "INACTIVE",
+      "created_at": "2024-01-03T10:00:00Z",
+      "updated_at": "2024-01-03T10:00:00Z"
+    }
+  }
+]
+

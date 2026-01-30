@@ -1,0 +1,250 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    :root {
+        --primary-color: #0f172a;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-primary: #1e293b;
+        --text-secondary: #64748b;
+        --border-color: #e2e8f0;
+    }
+
+    body {
+        background-color: var(--bg-color);
+    }
+
+    .unified-admin-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .module-category {
+        margin-bottom: 1.5rem;
+    }
+
+    .category-title {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1rem;
+    }
+
+    .module-card {
+        background: var(--card-bg);
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        overflow: hidden;
+        transition: all 0.2s ease;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .module-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        border-color: #3B82F6;
+    }
+
+    .module-card-header {
+        padding: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .module-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        color: white;
+        flex-shrink: 0;
+    }
+
+    .module-info h3 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0 0 0.125rem 0;
+    }
+
+    .module-info p {
+        font-size: 0.7rem;
+        color: var(--text-secondary);
+        margin: 0;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .sub-modules {
+        padding: 0.5rem 0.75rem 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        border-top: 1px dashed var(--border-color);
+        margin-top: 0.5rem;
+    }
+
+    .sub-module-link {
+        display: inline-block;
+        padding: 0.35rem 0.65rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #475569;
+        background: #f1f5f9;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+    }
+
+    .sub-module-link:hover {
+        background: #eff6ff;
+        color: #2563eb;
+        border-color: #bfdbfe;
+        transform: scale(1.02);
+    }
+
+    /* Icon representations using CSS */
+    .icon-store::before {
+        content: "🏪";
+    }
+
+    .icon-users::before {
+        content: "👥";
+    }
+
+    .icon-dollar-sign::before {
+        content: "💰";
+    }
+
+    .icon-handshake::before {
+        content: "🤝";
+    }
+
+    .icon-video::before {
+        content: "📹";
+    }
+
+    .icon-shield::before {
+        content: "🛡️";
+    }
+
+    .icon-building::before {
+        content: "🏢";
+    }
+
+    .icon-database::before {
+        content: "📊";
+    }
+
+    .icon-settings::before {
+        content: "⚙️";
+    }
+
+    .icon-package::before {
+        content: "📦";
+    }
+
+    .icon-file-text::before {
+        content: "📝";
+    }
+
+    .icon-truck::before {
+        content: "🚚";
+    }
+
+    .icon-award::before {
+        content: "🏆";
+    }
+
+    .icon-briefcase::before {
+        content: "💼";
+    }
+
+    .icon-bar-chart::before {
+        content: "📊";
+    }
+
+    .icon-credit-card::before {
+        content: "💳";
+    }
+
+    .icon-graduation::before {
+        content: "🎓";
+    }
+
+    .icon-clock::before {
+        content: "⏱️";
+    }
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'platform_index' %}">🦅 Olivine Platform</a>
+    <span style="margin: 0 1rem; color: #999;">|</span>
+    <a href="/admin/" style="font-size: 0.8em; color: #79aec8;">Django Console</a>
+</h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block content_title %}
+{% endblock %}
+
+{% block content %}
+<div class="unified-admin-container">
+    {% for category in modules %}
+    <div class="module-category">
+        <h2 class="category-title">{{ category.category }}</h2>
+        <div class="modules-grid">
+            {% for module in category.items %}
+            <div class="module-card">
+                <a href="{{ module.url }}" class="module-card-header">
+                    <div class="module-icon" style="background-color: {{ module.color }};">
+                        <span class="icon-{{ module.icon }}"></span>
+                    </div>
+                    <div class="module-info">
+                        <h3>{{ module.name }}</h3>
+                        <p>{{ module.description }}</p>
+                    </div>
+                </a>
+                {% if module.sub_modules %}
+                <div class="sub-modules">
+                    {% for sub in module.sub_modules %}
+                    <a href="{{ sub.url }}" class="sub-module-link">{{ sub.name }}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

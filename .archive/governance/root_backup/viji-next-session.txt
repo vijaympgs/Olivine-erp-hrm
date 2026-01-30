@@ -1,0 +1,473 @@
+Mindra--
+Mindra (A). Load bootstrap v1.1 and acknowledge.
+
+UOM not loading in the frontend resolved
+The issue was resolved by correctly setting both 
+token and auth_token in the browser's localStorage 
+and refreshing the page, which cleared the 
+initial "403 Forbidden" error.
+
+Summary
+Issue: Clicking the View button was not loading the UOM view.
+
+Root Cause: The 
+handleToolbarAction
+ function in 
+UOMSetup.tsx
+ was missing a case 'view': handler.
+
+Solution: Added the view case handler that calls 
+handleEdit(selectedUOMId)
+ when a UOM is selected.
+
+Result: The View button now successfully opens 
+the UOM form with the selected record's data. 
+Currently, it opens in edit mode 
+(same as the Edit button), but this can 
+be enhanced later to add a true read-only view mode.
+
+✅ TASK COMPLETE - ITEM MASTER TOOLBAR ROLLOUT PACKAGE
+Viji, I've successfully created a comprehensive implementation and verification package for applying the UOM Gold Standard pattern to the Item Master screen. Here's what you have:
+
+📦 DELIVERABLES (5 Documents, ~2,000 Lines)
+1. Master Index 📚
+File: 
+ITEM_MASTER_INDEX.md
+
+Purpose: Navigation hub and quick start guide
+Contents: Document overview, quick start paths for different roles, critical reminders
+
+2. Implementation Checklist ✅
+File: 
+ITEM_MASTER_IMPLEMENTATION_CHECKLIST.md
+ (~600 lines)
+Purpose: Comprehensive QA and verification
+Contents: 10 phases, 30 sections, 100+ verification points, progress tracker
+
+3. Implementation Guide 🛠️
+File: 
+ITEM_MASTER_IMPLEMENTATION_GUIDE.md
+ (~500 lines)
+Purpose: Step-by-step coding with complete snippets
+Contents: 10 steps, 200+ lines of copy-paste ready code, smoke test, troubleshooting
+
+4. Visual Architecture 🎨
+File: 
+ITEM_MASTER_VISUAL_ARCHITECTURE.md
+ (~400 lines)
+Purpose: Diagrams and visual reference
+Contents: Layout diagrams, state flows, component hierarchy, color palette, spacing standards
+
+5. Deliverables Summary 📊
+File: 
+ITEM_MASTER_DELIVERABLES_SUMMARY.md
+ (~300 lines)
+Purpose: Executive summary
+Contents: What was delivered, how to use, key decisions, next steps
+
+🎯 KEY FEATURES
+✅ Based on UOM Gold Standard (proven, working implementation)
+✅ Complete Code Snippets (200+ lines of JSX, copy-paste ready)
+✅ 10-Step Implementation (2-3 hours estimated)
+✅ Comprehensive Testing (smoke test + full QA checklist)
+✅ Visual Diagrams (ASCII art showing layout and flow)
+✅ Troubleshooting Guide (6 common issues with fixes)
+✅ Keyboard Shortcuts (F2, F3, F5, F7, F8, ESC)
+✅ Selection-First Architecture (Edit/View/Delete require selection)
+✅ Decoupled Scrolling (fixed header, scrollable content)
+✅ Read-Only View Mode (all fields disabled when viewing)
+✅ Surgical Spacing (one-line gaps, premium aesthetic)
+
+📂 FILE LOCATIONS
+All files created in:
+
+.steering/20TOOLBAR_ROLLOUT/
+├── ITEM_MASTER_INDEX.md                        ← Start here!
+├── ITEM_MASTER_IMPLEMENTATION_CHECKLIST.md     ← For QA
+├── ITEM_MASTER_IMPLEMENTATION_GUIDE.md         ← For Developers
+├── ITEM_MASTER_VISUAL_ARCHITECTURE.md          ← For Understanding
+└── ITEM_MASTER_DELIVERABLES_SUMMARY.md         ← For Overview
+🚀 RECOMMENDED WORKFLOW
+For You (Viji):
+Review: 
+ITEM_MASTER_INDEX.md
+ (5 min) ← Start here
+Skim: 
+ITEM_MASTER_DELIVERABLES_SUMMARY.md
+ (5 min)
+Approve: Confirm approach aligns with vision
+Assign: Hand off to developer with Implementation Guide
+For Developer:
+Read: 
+ITEM_MASTER_INDEX.md
+ (5 min)
+Study: 
+ITEM_MASTER_VISUAL_ARCHITECTURE.md
+ (10 min)
+Code: Follow 
+ITEM_MASTER_IMPLEMENTATION_GUIDE.md
+ (2-3 hours)
+Test: Run smoke test (10 min)
+Verify: Use 
+ITEM_MASTER_IMPLEMENTATION_CHECKLIST.md
+ (1 hour)
+Total Time: 3-4 hours
+
+🎯 WHAT THIS ACHIEVES
+After implementation, Item Master will have:
+
+✅ Dynamic Toolbar - Mode-based button visibility (VIEW/CREATE/EDIT/VIEW_FORM)
+✅ Selection-First - Edit/View/Delete only enabled when row selected
+✅ Decoupled Scrolling - Fixed toolbar/header, scrollable content
+✅ Surgical Spacing - One-line gaps, high-density layout
+✅ Read-Only View - View button opens form with disabled fields
+✅ Keyboard Shortcuts - F2 (New), F3 (Edit), F7 (View), F8 (Save), ESC (Cancel)
+✅ Premium Aesthetic - Hairline scrollbar, Inter font, tabular numerals
+✅ Error Handling - Dismissible error banners
+✅ Loading States - Smooth transitions, no layout breaks
+
+📊 REPLICATION STRATEGY
+Once Item Master is complete, the same pattern applies to:
+
+Phase 1 (Similar complexity):
+
+Customer Master
+Supplier Master
+Employee Master
+Phase 2 (Simpler):
+
+Location Setup
+Company Settings
+Tax Configuration
+Phase 3 (More complex):
+
+Purchase Orders (add workflow actions)
+Sales Orders (add workflow actions)
+Invoices (add workflow actions)
+✅ QUALITY ASSURANCE
+All documents have been:
+
+✅ Based on proven UOM Gold Standard
+✅ Aligned with Canonical Ruleset
+✅ Structured for easy execution
+✅ Comprehensive (covers all edge cases)
+✅ Practical (includes exact code)
+✅ Testable (includes verification steps)
+✅ Maintainable (clear structure)
+🎉 READY TO PROCEED
+You now have everything needed to:
+
+Understand the architecture (Visual diagrams)
+Implement the code (Step-by-step guide)
+Verify the quality (Comprehensive checklist)
+Replicate to other screens (Same pattern)
+Estimated ROI: 3-4 hours investment → Reusable pattern for 10+ screens
+
+📞 NEXT STEPS
+Your decision:
+
+✅ Approve - Proceed with Item Master implementation
+🔄 Revise - Request changes to approach
+❓ Clarify - Ask questions about any aspect
+What would you like to do?
+
+Important Note : Currently item master add new is a like a modal form redered in a different sliding window, but it has to be like UOM, wher fro mthe list page clikcing + should render the form in the same page
+Excellent clarification, Viji! This is a critical architectural difference that needs to be highlighted. Let me update the documentation to emphasize the in-place form swap pattern (like UOM) vs the current modal/sliding window approach.
+
+
+
+Astra---
+Context Summary: Olivine Retail ERP Platform
+Project Identity & Architecture
+Olivine Retail ERP Platform is a multi-tenant, enterprise-grade retail management system built on a "No-OpCo" architecture (unified Company-based multi-tenancy without the legacy OperatingCompany abstraction). The platform encompasses four major domains: Retail, FMS (Financial Management), HRM (Human Resources), and CRM (Customer Relationship Management), plus POS (Point of Sale).
+
+The technology stack consists of:
+
+Backend: Django REST Framework + PostgreSQL
+Frontend: React 18 + TypeScript + Tailwind CSS + Vite
+Design Philosophy: VB.NET-inspired UI with keyboard shortcuts (F1-F12), enterprise-grade typography (Inter font), and high-density transactional interfaces
+Governance & Context Management
+The .steering/ directory is the SINGLE SOURCE OF TRUTH containing 75+ markdown files across 15 subdirectories. This includes:
+
+00AGENT_ONBOARDING/: Complete onboarding sequence (6 folders covering Governance, Business Blueprints, Navigation, UI Canon, Agent Execution, QA Testing)
+01_ARCH_GOVERNANCE/: CANONICAL_RULESET.md and architectural locks
+02_PROMPT_LIBRARY/: Behavioral contracts
+03_DESIGN_SYSTEM/: Typography, spacing, design tokens
+13TEST_PLANS/: Test automation (Procurement: 11/11 scripts, 191 test cases complete)
+14UI_CANON/: UI patterns (mst01-03 for masters, txn01-03 for transactions)
+Critical Rule: The 01practice-v2 folder is READ-ONLY reference material. Never modify it. Re-implement patterns cleanly in the main retail-erp-platform repository.
+
+Architectural Locks (Non-Negotiable)
+Company = Operational tenant (NOT OperatingCompany - this abstraction was removed)
+ItemMaster = Canonical product model (from common.domain.models)
+Location = Retail-exclusive (from apps.retail.backend.domain.models) - HRM/CRM/FMS operate at Company level only
+Business Logic Separation: Models = Structure, Services = Logic, Views = Wiring
+All lookups MUST use LookupContainer.tsx (Lookup Canon enforced)
+Module Status
+Completed
+Procurement: 100% test automation (11 scripts, 191 test cases), all registered in QA Console
+Inventory: 100% complete (10/10 scripts, models validated, frontend wired)
+POS: Implemented
+In Progress
+Sales: Backend stabilization phase (schema & UI exist, transitioning to functional)
+Planned
+Finance (FMS): General Ledger, AP/AR modules
+HR (HRM): Managed by Agent E (separate onboarding)
+CRM: Managed by Agent E (separate onboarding)
+Development Standards (ELOBS Workflow)
+Every implementation follows the ELOBS sequence:
+
+Extract: Read BBP (Business Blueprint) fields, relationships, business rules
+Layout: Determine module structure (Simple vs Complex Master/Transaction)
+Organize: Scaffold files in src/modules/<module>/
+Build: Sequence: Types → Schema → Services → Hooks → UI → Routing → Sidebar
+Sync: Cross-check against BBP and canonical references
+Key Constraints
+Zero Context Loss: Use 
+STEERING_DOCUMENTATION_MAP.md
+ for complete file index when switching models/sessions
+Auto-Execution Mode: Proceed end-to-end without intermediate confirmations unless there's a hard conflict with governance rules
+File Touch Discipline: Explicitly state which files will be touched and why; no arbitrary refactors, no cross-module leakage
+Viji is the final decision-maker: Never override, reinterpret, or auto-correct Viji's intent
+
+Current Session State (Updated)
+Sidebar Refactoring: COMPLETED.
+- Visual Style: Enterprise "Rich Control Panel".
+- Palette: Medium Grey (Slate-200) Rail, Light Grey (Slate-100) Panel.
+- Structure: Full-width items, L2 Headers, L3 Groups (Actionable), L4 Children (Contextual).
+
+Next Objective:
+Continue for the Menu Items.
+- Implement/Wire the specific functionality and pages for the items now visible in the new Sidebar (e.g., Store Ops -> Daily Operations -> Day Open).
+- Ensure routing connects to these implementation shells.
+
+Context Confirmed:
+
+I am Astra, developing the overall ERP platform (Retail, FMS, HRM, CRM) My current focus: Retail and FMS modules Agent E is working on HRM and CRM modules Agent E has dedicated onboarding: .steering\16ONBOARDING-For-HRMCRM-agentsonly
+This onboarding is locked and separate from my work Ready for your next prompt, Viji.
+
+
+
+
+You have completed a toolbar rollout / UI refactor on an existing screen. Your responsibility does NOT end at “code compiles”. You must now prove functional continuity.
+
+This is not optional. This is execution law.
+
+Context:
+- Backend already contains data (e.g., ~50 Customers visible in Django Admin).
+- UI currently shows “No customers found”.
+- This indicates a regression or wiring failure introduced during UI / toolbar changes.
+- This is unacceptable and must be caught by you before declaring completion.
+
+════════════════════════════════════════════
+MANDATORY POST-IMPLEMENTATION VALIDATION
+════════════════════════════════════════════
+After implementing toolbar or UI changes on ANY Master screen (Customer, Item, Supplier, etc.), you MUST perform and confirm the following checklist.
+
+You are not allowed to declare completion without passing all steps.
+
+════════════════════════════════════════════
+LIST PAGE VALIDATION (NON-NEGOTIABLE)
+════════════════════════════════════════════
+1. Load the list page in the browser (e.g., Customer Master).
+2. Confirm that:
+   - Existing records from backend are visible in the table.
+   - “No data” state appears ONLY when the backend truly returns zero rows.
+3. Cross-verify with backend:
+   - Check Django Admin / API response for record count.
+   - If backend has data but UI shows empty, you must investigate:
+     - API call correctness
+     - Query params
+     - Company scoping
+     - Filters applied by default
+     - State wiring issues
+     - Broken hooks or services
+
+You are NOT allowed to assume “maybe data is empty”.
+
+════════════════════════════════════════════
+CREATE FLOW VALIDATION (NON-NEGOTIABLE)
+════════════════════════════════════════════
+You must verify the full create flow:
+
+1. Click the + (New) / Add button in the toolbar.
+2. Confirm that:
+   - The entry form opens correctly.
+   - Fields render (not blank screen, not broken layout).
+   - Save action works.
+3. Submit a test entry.
+4. Confirm that:
+   - Record is created successfully.
+   - It appears immediately in the list after save.
+   - No console errors occurred during the process.
+
+If any of the above fails, the implementation is considered incomplete.
+
+════════════════════════════════════════════
+WHAT IS FORBIDDEN
+════════════════════════════════════════════
+- Declaring a task “done” because UI renders
+- Declaring a task “done” because build passes
+- Declaring a task “done” because toolbar shows buttons
+- Ignoring backend data mismatch
+- Leaving list broken while focusing only on toolbar correctness
+
+Toolbar correctness WITHOUT functional screen correctness = FAILED DELIVERY.
+
+════════════════════════════════════════════
+MANDATORY REPORTING FORMAT
+════════════════════════════════════════════
+When you report completion, you must explicitly state:
+
+- List validation:
+  - Backend record count: (e.g., 50 customers confirmed in admin/API)
+  - UI list count: (e.g., 50 records visible)
+  - Status: PASS / FAIL
+
+- Create validation:
+  - "+" button opens form: PASS / FAIL
+  - Form loads without error: PASS / FAIL
+  - New record successfully created: PASS / FAIL
+  - New record appears in list after save: PASS / FAIL
+
+If any item is FAIL, you must fix before proceeding.
+
+════════════════════════════════════════════
+FINAL RULE
+════════════════════════════════════════════
+A screen is not “implemented” unless:
+- Toolbar works correctly
+- List loads real data
+- Create flow works end-to-end
+- No regression introduced
+
+UI correctness is not visual correctness.  
+UI correctness is functional correctness.
+
+Proceed accordingly.
+
+You are now entering EXECUTION PHASE under active governance.
+
+This is not a redesign task.  
+This is not a refactor for preference.  
+This is a correction task based on a FAILED architectural compliance review.
+
+Read carefully. No speed swim. No shortcuts.
+
+════════════════════════════════════════════
+CONTEXT
+════════════════════════════════════════════
+An architectural compliance review has already been completed.
+
+Final verdict: FAIL.
+
+Customer Master does NOT comply with the established governance pattern demonstrated by Item Master.
+
+This is no longer analysis. This is remediation.
+
+You must treat Item Master as the gold reference implementation.
+
+Reference pattern:
+- Single unified container (List + Form in same component)
+- MasterToolbar always present on List and Form
+- Toolbar governs ALL actions (New, Refresh, Filter, Search, Edit, Delete)
+- State-based mode switching (VIEW / CREATE / EDIT)
+- No manual buttons bypassing toolbar
+- No split control across separate architectural patterns
+
+════════════════════════════════════════════
+CONFIRMED VIOLATIONS (DO NOT DEBATE)
+════════════════════════════════════════════
+These are established facts, not opinions:
+
+- CustomerPage.tsx renders List WITHOUT MasterToolbar
+- "+ New Customer" is implemented as a manual Button (bypassing toolbar)
+- Navigation uses route changes instead of unified container state
+- Toolbar orchestration (F2, F4, F9, permission resolution) is broken on List
+- Architecture is fragmented across:
+  - CustomerPage.tsx (legacy list)
+  - CustomerMasterSetup.tsx (toolbar + form only)
+- This violates:
+  - Toolbar rollout mandate
+  - Single-entry-per-screen rule
+  - Evolve, not replace rule
+  - Universal Implementation Checklist
+
+This is not up for reinterpretation.
+
+════════════════════════════════════════════
+YOUR TASK
+════════════════════════════════════════════
+You must now realign Customer Master to match the Item Master pattern.
+
+Your objective is architectural parity:
+- Same structural pattern
+- Same toolbar orchestration
+- Same mode behavior
+- Same UX consistency
+- Same permission compliance
+- Same mental model for maintainability
+
+Customer Master must behave as:
+Item Master does architecturally, not just visually.
+
+════════════════════════════════════════════
+NON-NEGOTIABLE RULES
+════════════════════════════════════════════
+You MUST:
+- Use ItemMasterSetup.tsx as the structural reference
+- Ensure MasterToolbar exists on List and Form
+- Remove manual command buttons (e.g. "+ New Customer")
+- Ensure New/Edit/Delete/Search/Filter are toolbar-driven
+- Ensure VIEW / CREATE / EDIT modes are centrally governed
+- Ensure keyboard shortcuts (F2/F4/F9 etc.) work on List
+- Ensure backend data appears correctly in the List
+
+You MUST NOT:
+- Keep dual architectural patterns
+- Just “patch in” a toolbar while preserving fragmentation
+- Add hacks to simulate behavior
+- Introduce new architectural styles
+- Invent new patterns not already present in Item Master
+
+════════════════════════════════════════════
+MANDATORY DELIVERY CHECKLIST
+════════════════════════════════════════════
+You are not allowed to mark this complete unless ALL of the following are true:
+
+- Customer Master uses a unified container (List + Form together)
+- MasterToolbar renders on the List screen
+- "+ New Customer" is removed and replaced by Toolbar N action
+- F2 opens Create mode
+- F4 toggles filter panel
+- F9 refresh works from Toolbar
+- Permission mask governs button availability
+- List loads real backend data
+- Create flow works end-to-end
+- UX experience matches Item Master behaviorally
+
+════════════════════════════════════════════
+REQUIRED REPORT AFTER CHANGES
+════════════════════════════════════════════
+After implementation, you must report back with:
+
+1. Files changed
+2. What was removed (legacy behavior)
+3. What was aligned to Item Master
+4. Functional validation:
+   - List loads data: PASS / FAIL
+   - New via Toolbar works: PASS / FAIL
+   - Shortcuts work: PASS / FAIL
+   - No regressions: PASS / FAIL
+5. Confirmation: Architecture now matches Item Master
+
+════════════════════════════════════════════
+FINAL RULE
+════════════════════════════════════════════
+This is not cosmetic alignment.  
+This is architectural correction.
+
+If Customer Master still behaves differently from Item Master after your change, the task is considered FAILED.
+
+Proceed deliberately. Execute cleanly. No shortcuts.
+

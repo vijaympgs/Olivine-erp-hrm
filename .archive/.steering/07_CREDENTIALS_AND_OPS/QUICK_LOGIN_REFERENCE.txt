@@ -1,0 +1,72 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                    🔐 QUICK LOGIN REFERENCE                          ║
+║                      DEV/TESTING MODE ONLY                           ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ 🌐 LOGIN URL: http://localhost:5173/login                          │
+└─────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ 🏢 COMPANIES (Select at Login)                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│ • MINDRA - Mindra Retail Pvt Ltd                                   │
+│ • RRI - Refined Retail Inc                                         │
+└─────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ 👥 USER CREDENTIALS (Pattern: <username>123)                       │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│ 👑 ADMINISTRATOR                                                   │
+│    Username: admin                                                 │
+│    Password: admin123                                              │
+│    Access:   Full platform + Location selector                    │
+│                                                                     │
+│ 📊 BACK OFFICE MANAGER                                             │
+│    Username: boadmin                                               │
+│    Password: boadmin123                                            │
+│    Access:   All back-office menus + Location selector            │
+│                                                                     │
+│ 📝 BACK OFFICE USER                                                │
+│    Username: bouser                                                │
+│    Password: bouser123                                             │
+│    Access:   Operational menus + Location selector                │
+│                                                                     │
+│ 🏪 POS MANAGER                                                      │
+│    Username: posadmin                                              │
+│    Password: posadmin123                                           │
+│    Access:   Full POS menus + Location selector                   │
+│                                                                     │
+│ 💳 POS USER                                                         │
+│    Username: posuser                                               │
+│    Password: posuser123                                            │
+│    Access:   POS execution (NO location selector)                 │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ 🧪 QUICK TEST                                                       │
+├─────────────────────────────────────────────────────────────────────┤
+│ 1. Go to: http://localhost:5173/login                              │
+│ 2. Select Company: MINDRA                                          │
+│ 3. Username: admin                                                 │
+│ 4. Password: admin123                                              │
+│ 5. Click "Authenticate Session"                                    │
+│ 6. Select Location: Mumbai Flagship Store                          │
+│ 7. ✅ You're in!                                                    │
+└─────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ ⚠️  SECURITY WARNING                                                │
+├─────────────────────────────────────────────────────────────────────┤
+│ 🔓 DEVELOPMENT MODE ONLY - DO NOT USE IN PRODUCTION!               │
+│                                                                     │
+│ These are test credentials with simple passwords.                  │
+│ Production systems MUST use:                                       │
+│  • Strong, unique passwords                                        │
+│  • 2FA/MFA authentication                                          │
+│  • Password rotation policies                                      │
+└─────────────────────────────────────────────────────────────────────┘
+
+Last Updated: 2025-12-22 22:29 IST

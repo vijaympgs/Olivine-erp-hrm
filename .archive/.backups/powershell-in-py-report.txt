@@ -1,0 +1,2 @@
+C:\00mindra\retail-erp-platform\.venv\Lib\site-packages\pip\_internal\commands\completion.py 
+C:\00mindra\retail-erp-platform\backend\domain\master\customer\urls.py 

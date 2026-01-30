@@ -1,0 +1,490 @@
+/**
+ * Global Layout Styles
+ * 
+ * This file defines CSS variables and global styles that are controlled
+ * by the Layout Configuration system (layoutConfig.ts).
+ * 
+ * All layout-related values should use these CSS variables to ensure
+ * consistency and enable dynamic theming.
+ */
+
+:root {
+    /* ========================================
+     Section A: Sidebar Variables
+     ======================================== */
+    --sidebar-width: 256px;
+    --sidebar-collapsed-width: 80px;
+    --sidebar-bg: #F9FAFB;
+    --sidebar-border: #E5E7EB;
+
+    /* Active Menu Item (FoxPro Style Default) */
+    --active-bg: #22D3EE;
+    /* Cyan */
+    --active-text: #DC2626;
+    /* Red */
+    --active-border: #DC2626;
+    /* Red */
+    --active-border-width: 2px;
+    --active-font-weight: 700;
+
+    /* ========================================
+     Section B: Application Header Variables
+     ======================================== */
+    --header-height: 64px;
+    --header-bg: #FFFFFF;
+    --header-border: #E5E7EB;
+
+    /* ========================================
+     Section C: Primary Workspace Variables
+     ======================================== */
+    --workspace-bg: #FFFFFF;
+    --workspace-padding: 16px;
+
+    /* ========================================
+     Section D: Status Bar Variables
+     ======================================== */
+    --statusbar-height: 48px;
+    --statusbar-bg: #F9FAFB;
+    --statusbar-border: #E5E7EB;
+
+    /* ========================================
+     Section E: Lookup Panel Variables
+     ======================================== */
+    --lookup-width: 650px;
+    --lookup-bg: #FFFFFF;
+    --lookup-border: #E5E7EB;
+    --lookup-z-index: 40;
+    --lookup-transition: 300ms;
+
+    /* ========================================
+     Typography Variables
+     ======================================== */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+
+    /* ========================================
+     Form Variables
+     ======================================== */
+    --form-error-color: #DC2626;
+    --form-input-border: #D1D5DB;
+    --form-input-focus: #3B82F6;
+
+    /* ========================================
+     Spacing Variables
+     ======================================== */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+
+    /* ========================================
+     Animation Variables
+     ======================================== */
+    --transition-fast: 150ms;
+    --transition-normal: 200ms;
+    --transition-slow: 300ms;
+}
+
+/* ========================================
+   Global Layout Structure
+   ======================================== */
+
+/* Section A: Sidebar */
+.nexus-sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    transition: width var(--transition-normal) ease-in-out;
+}
+
+.nexus-sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+}
+
+/* Active Menu Item Styling */
+.nexus-sidebar-item.active,
+.nexus-sidebar-item[aria-current="page"] {
+    background-color: var(--active-bg) !important;
+    color: var(--active-text) !important;
+    border-left: var(--active-border-width) solid var(--active-border) !important;
+    font-weight: var(--active-font-weight) !important;
+}
+
+/* Olivine Console - Active Menu Item Styling (Respects Layout Settings) */
+.active,
+a.active,
+button.active {
+    background-color: var(--active-bg) !important;
+    color: var(--active-text) !important;
+    border-left: var(--active-border-width) solid var(--active-border) !important;
+    font-weight: var(--active-font-weight) !important;
+    border-radius: 0px !important;
+}
+
+
+/* Section B: Application Header */
+.nexus-header {
+    height: var(--header-height);
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--header-border);
+}
+
+/* Section C: Primary Workspace */
+.nexus-workspace {
+    background-color: var(--workspace-bg);
+    padding: var(--workspace-padding);
+
+    /* Calculate position based on other sections */
+    position: fixed;
+    left: var(--sidebar-width);
+    top: var(--header-height);
+    right: 0;
+    bottom: var(--statusbar-height);
+    overflow: auto;
+}
+
+.nexus-sidebar.collapsed~.nexus-workspace {
+    left: var(--sidebar-collapsed-width);
+}
+
+/* Section D: Status Bar */
+.nexus-statusbar {
+    height: var(--statusbar-height);
+    background-color: var(--statusbar-bg);
+    border-top: 1px solid var(--statusbar-border);
+}
+
+/* ========================================
+   Compact Mode
+   ======================================== */
+.compact-mode {
+    --spacing-xs: 2px;
+    --spacing-sm: 4px;
+    --spacing-md: 8px;
+    --spacing-lg: 12px;
+    --spacing-xl: 16px;
+
+    --header-height: 56px;
+    --statusbar-height: 40px;
+    --sidebar-width: 240px;
+}
+
+/* ========================================
+   No Animations Mode
+   ======================================== */
+.no-animations,
+.no-animations * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+}
+
+/* ========================================
+   Dark Theme
+   ======================================== */
+.dark {
+    --sidebar-bg: #1F2937;
+    --sidebar-border: #374151;
+    --header-bg: #111827;
+    --header-border: #374151;
+    --workspace-bg: #111827;
+    --statusbar-bg: #1F2937;
+    --statusbar-border: #374151;
+
+    /* Keep FoxPro colors bright in dark mode */
+    --active-bg: #22D3EE;
+    --active-text: #DC2626;
+    --active-border: #DC2626;
+}
+
+/* ========================================
+   Form Styles Using Variables
+   ======================================== */
+.nexus-form-input {
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family);
+    border-color: var(--form-input-border);
+}
+
+.nexus-form-input:focus {
+    border-color: var(--form-input-focus);
+}
+
+.nexus-form-input.error {
+    border-color: var(--form-error-color);
+}
+
+.nexus-form-error {
+    color: var(--form-error-color);
+    font-size: var(--font-size-xs);
+}
+
+.nexus-form-label {
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+}
+
+/* ========================================
+   Typography Using Variables
+   ======================================== */
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+}
+
+.text-xs {
+    font-size: var(--font-size-xs);
+}
+
+.text-sm {
+    font-size: var(--font-size-sm);
+}
+
+.text-base {
+    font-size: var(--font-size-base);
+}
+
+.text-lg {
+    font-size: var(--font-size-lg);
+}
+
+.text-xl {
+    font-size: var(--font-size-xl);
+}
+
+/* ========================================
+   Responsive Adjustments
+   ======================================== */
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 0px;
+        --sidebar-collapsed-width: 0px;
+    }
+
+    .nexus-workspace {
+        left: 0;
+    }
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+/* Section-specific positioning helpers */
+.section-c-fixed {
+    position: fixed;
+    left: var(--sidebar-width);
+    top: var(--header-height);
+    right: 0;
+    bottom: var(--statusbar-height);
+}
+
+.nexus-sidebar.collapsed~* .section-c-fixed {
+    left: var(--sidebar-collapsed-width);
+}
+
+/* Section C Container - For forms with internal structure */
+.section-c-container {
+    position: fixed;
+    left: var(--sidebar-width);
+    top: var(--header-height);
+    right: 0;
+    bottom: var(--statusbar-height);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--workspace-bg);
+}
+
+/* Section C Scrollable - For forms with scrollable content */
+.section-c-scrollable {
+    position: fixed;
+    left: var(--sidebar-width);
+    top: var(--header-height);
+    right: 0;
+    bottom: var(--statusbar-height);
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--workspace-bg);
+}
+
+/* Section C Full Height - For full-height components */
+.section-c-full {
+    position: fixed;
+    left: var(--sidebar-width);
+    top: var(--header-height);
+    right: 0;
+    bottom: var(--statusbar-height);
+    background-color: var(--workspace-bg);
+}
+
+/* Adjust for collapsed sidebar */
+body:has(.nexus-sidebar.collapsed) .section-c-container,
+body:has(.nexus-sidebar.collapsed) .section-c-scrollable,
+body:has(.nexus-sidebar.collapsed) .section-c-full {
+    left: var(--sidebar-collapsed-width);
+}
+
+
+/* Spacing utilities using variables */
+.p-var-xs {
+    padding: var(--spacing-xs);
+}
+
+.p-var-sm {
+    padding: var(--spacing-sm);
+}
+
+.p-var-md {
+    padding: var(--spacing-md);
+}
+
+.p-var-lg {
+    padding: var(--spacing-lg);
+}
+
+.p-var-xl {
+    padding: var(--spacing-xl);
+}
+
+.m-var-xs {
+    margin: var(--spacing-xs);
+}
+
+.m-var-sm {
+    margin: var(--spacing-sm);
+}
+
+.m-var-md {
+    margin: var(--spacing-md);
+}
+
+.m-var-lg {
+    margin: var(--spacing-lg);
+}
+
+.m-var-xl {
+    margin: var(--spacing-xl);
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+
+    .nexus-sidebar,
+    .nexus-header,
+    .nexus-statusbar {
+        display: none;
+    }
+
+    .nexus-workspace {
+        position: static;
+        left: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+    }
+}
+
+/* ========================================
+   Page Container Utilities
+   ======================================== */
+
+/* Standard page container - centered with max-width */
+.page-container {
+    max-width: 80rem;
+    /* 1280px */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    /* Reduced from 1.5rem to 0.5rem for compact layout */
+    padding-bottom: calc(var(--statusbar-height, 48px) + 1.5rem);
+}
+
+@media (min-width: 640px) {
+    .page-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Full-width page container */
+.page-container-full {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    /* Reduced from 1.5rem to 0.5rem for compact layout */
+    padding-bottom: calc(var(--statusbar-height, 48px) + 1.5rem);
+}
+
+/* Scrollable page container */
+.page-container-scroll {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    /* Reduced from 1.5rem to 0.5rem for compact layout */
+    padding-bottom: calc(var(--statusbar-height, 48px) + 1.5rem);
+    min-height: calc(100vh - var(--header-height, 64px) - var(--statusbar-height, 48px));
+}
+
+/* Page with spacing */
+.page-spacing {
+    padding-top: 0.5rem;
+    /* Reduced from 1.5rem to 0.5rem for compact layout */
+    padding-bottom: calc(var(--statusbar-height, 48px) + 1.5rem);
+}
+
+/* ========================================
+   ERP Specific Component Styles
+   ======================================== */
+
+/* Standardize table headers to match clean "Inter" look */
+.erp-table-header {
+    font-family: var(--font-family);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    /* Semibold */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    /* Tracking wider for caps */
+    color: #6b7280;
+    /* gray-500 for softer look */
+}
+
+/* Page titles should match the clean Modal look */
+.erp-page-title {
+    font-family: var(--font-family);
+    font-weight: 600;
+    /* Semibold like Modal H1 */
+    color: #111827;
+    /* gray-900 to match Modal */
+    letter-spacing: normal;
+    /* Remove tracking-tight */
+    font-size: 1.5rem;
+    /* 2xl size */
+}
+
+.erp-page-subtitle {
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: #6b7280;
+    /* gray-500 */
+}

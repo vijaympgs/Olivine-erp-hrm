@@ -1,0 +1,8 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools-items %}
+    <div class="mb-3 p-3 bg-blue-50 border border-blue-200 rounded">
+        <strong>Table Name:</strong> {{ table_name|default:"hrm_employeerecord" }}
+    </div>
+    {{ block.super }}
+{% endblock %}

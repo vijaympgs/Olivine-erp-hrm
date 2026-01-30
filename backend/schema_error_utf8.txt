@@ -1,0 +1,143 @@
+﻿python : C:\Users\vijay\AppData\Local\Prog
+rams\Python\Python311\Lib\site-packages\dj
+ango\db\models\base.py:368: 
+RuntimeWarning: Model 
+'procurement.procurementconfig' was 
+already registered. Reloading models is 
+not advised as it can lead to 
+inconsistencies, most notably with 
+related models.
+At line:1 char:13
++ cd backend; python manage.py 
+spectacular --validate 2>&1 | Out-File - 
+...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (C:\Users\vijay\...related models.  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+  new_class._meta.apps.register_model(new_
+class._meta.app_label, new_class)
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'C:\00
+mindra\olivine-platform\backend\static' 
+in the STATICFILES_DIRS setting does not 
+exist.
+C:\00mindra\olivine-platform\Core\auth_acc
+ess\backend\user_management\views.py:744: 
+Error [ApplyRoleTemplateView]: unable to 
+guess serializer. This is graceful 
+fallback handling for APIViews. Consider 
+using GenericAPIView as view base class, 
+if view is under your control. Either way 
+you may want to add a serializer_class 
+(or method). Ignoring view for now.
+Traceback (most recent call last):
+  File "C:\00mindra\olivine-platform\backe
+nd\manage.py", line 21, in <module>
+    main()
+  File "C:\00mindra\olivine-platform\backe
+nd\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\core\management\__init__.py", line 
+442, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\core\management\__init__.py", line 
+436, in execute
+    self.fetch_command(subcommand).run_fro
+m_argv(self.argv)
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\core\management\base.py", line 416, 
+in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\core\management\base.py", line 460, 
+in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\drf
+_spectacular\management\commands\spectacul
+ar.py", line 72, in handle
+    schema = 
+generator.get_schema(request=None, 
+public=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\drf
+_spectacular\generators.py", line 281, in 
+get_schema
+    paths=self.parse(request, public),
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\drf
+_spectacular\generators.py", line 252, in 
+parse
+    operation = view.schema.get_operation(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\drf
+_spectacular\openapi.py", line 91, in 
+get_operation
+    parameters = self._get_parameters()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\drf
+_spectacular\openapi.py", line 259, in 
+_get_parameters
+    **dict_helper(self._get_filter_paramet
+ers()),
+                  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\drf
+_spectacular\openapi.py", line 545, in 
+_get_filter_parameters
+    parameters += filter_extension.get_sch
+ema_operation_parameters(self)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\drf
+_spectacular\contrib\django_filters.py", 
+line 58, in 
+get_schema_operation_parameters
+    filterset_class = self.target.get_filt
+erset_class(auto_schema.view, 
+get_manager(model).none())
+                      ^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo_filters\rest_framework\backends.py", 
+line 51, in get_filterset_class
+    class 
+AutoFilterSet(self.filterset_base):
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo_filters\filterset.py", line 62, in 
+__new__
+    new_class.base_filters = 
+new_class.get_filters()
+                             
+^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo_filters\filterset.py", line 349, in 
+get_filters
+    raise TypeError(
+TypeError: 'Meta.fields' must not contain 
+non-model field names: role

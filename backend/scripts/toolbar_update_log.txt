@@ -1,0 +1,183 @@
+﻿================================================================================
+UPDATING ALL RETAIL TOOLBAR CONFIGURATIONS
+(Excluding POS Billing: pos-checkout)
+================================================================================
+
+[UNCHANGED] ITEM_MASTER (already correct)
+
+[UNCHANGED] item-master (already correct)
+
+[UNCHANGED] attributes (already correct)
+
+[UNCHANGED] attribute-values (already correct)
+
+[UNCHANGED] attribute-templates (already correct)
+
+[NOT FOUND] CATEGORIES
+  Expected Type: MASTERS_SIMPLE
+  Expected Config: NESCKVDXRQF
+
+[NOT FOUND] categories
+  Expected Type: MASTERS_SIMPLE
+  Expected Config: NESCKVDXRQF
+
+[NOT FOUND] BRANDS
+  Expected Type: MASTERS_SIMPLE
+  Expected Config: NESCKVDXRQF
+
+[NOT FOUND] brands
+  Expected Type: MASTERS_SIMPLE
+  Expected Config: NESCKVDXRQF
+
+[UNCHANGED] inventory_uom_setup (already correct)
+
+[UNCHANGED] uom (already correct)
+
+[UNCHANGED] code-masters (already correct)
+
+[UNCHANGED] price-lists-master (already correct)
+
+[NOT FOUND] STOCK_MOVEMENTS
+  Expected Type: TRANSACTIONS_SIMPLE
+  Expected Config: NESCKVDXRQF
+
+[NOT FOUND] stock-movements
+  Expected Type: LIST_VIEW
+  Expected Config: NRQFX
+
+[NOT FOUND] STOCK_TRANSFERS
+  Expected Type: TRANSACTIONS_SIMPLE
+  Expected Config: NESCKVDXRQF
+
+[NOT FOUND] stock-transfers
+  Expected Type: LIST_VIEW
+  Expected Config: NRQFX
+
+[UNCHANGED] ADJUSTMENT_ENTRY (already correct)
+
+[UNCHANGED] ADJUSTMENT_HISTORY (already correct)
+
+[UNCHANGED] REASON_CODES (already correct)
+
+[NOT FOUND] reason_codes
+  Expected Type: MASTERS_SIMPLE
+  Expected Config: NESCKVDXRQF
+
+[UNCHANGED] ADJUSTMENT_APPROVAL (already correct)
+
+[UNCHANGED] ADJUSTMENT_REPORTS (already correct)
+
+[UNCHANGED] REPLENISHMENT_WORKSHEET (already correct)
+
+[UNCHANGED] SAFETY_STOCK_ANALYSIS (already correct)
+
+[UNCHANGED] MIN_MAX_PLANNING (already correct)
+
+[UNCHANGED] BATCH_MANAGEMENT (already correct)
+
+[UNCHANGED] SERIAL_TRACKING (already correct)
+
+[UNCHANGED] STOCK_SUMMARY_REPORT (already correct)
+
+[UNCHANGED] STOCK_VALUATION_REPORT (already correct)
+
+[UNCHANGED] ABC_ANALYSIS (already correct)
+
+[UNCHANGED] VELOCITY_ANALYSIS (already correct)
+
+[UNCHANGED] DEAD_STOCK_REPORT (already correct)
+
+[UNCHANGED] INV_PARAMETERS (already correct)
+
+[UNCHANGED] MOVEMENT_TYPES (already correct)
+
+[UNCHANGED] VALUATION_METHODS (already correct)
+
+[UNCHANGED] APPROVAL_RULES (already correct)
+
+[UNCHANGED] SUPPLIER_MASTER (already correct)
+
+[UNCHANGED] suppliers (already correct)
+
+[UNCHANGED] compliance (already correct)
+
+[UNCHANGED] PURCHASE_REQUISITIONS (already correct)
+
+[UNCHANGED] requisitions (already correct)
+
+[UNCHANGED] PURCHASE_ORDERS (already correct)
+
+[UNCHANGED] purchase-orders (already correct)
+
+[UNCHANGED] GOODS_RECEIPTS (already correct)
+
+[UNCHANGED] receipts (already correct)
+
+[UNCHANGED] rfqs (already correct)
+
+[UNCHANGED] asns (already correct)
+
+[UNCHANGED] purchase-returns (already correct)
+
+[UNCHANGED] bills (already correct)
+
+[UNCHANGED] payments (already correct)
+
+[UNCHANGED] procurement-config (already correct)
+
+[UNCHANGED] CUSTOMER_MASTER (already correct)
+
+[NOT FOUND] customers
+  Expected Type: MASTERS_ADVANCED
+  Expected Config: NESCKVDXRQFIO
+
+[UNCHANGED] SALES_QUOTES (already correct)
+
+[UNCHANGED] quotes (already correct)
+
+[UNCHANGED] SALES_ORDERS (already correct)
+
+[UNCHANGED] orders (already correct)
+
+[UNCHANGED] SALES_INVOICES (already correct)
+
+[UNCHANGED] invoices (already correct)
+
+[UNCHANGED] SALES_RETURNS (already correct)
+
+[UNCHANGED] returns (already correct)
+
+[UNCHANGED] SALES_CONFIG (already correct)
+
+[UNCHANGED] sales-config (already correct)
+
+[UNCHANGED] pos-day-open (already correct)
+
+[UNCHANGED] pos-session-open (already correct)
+
+[UNCHANGED] pos-session-close (already correct)
+
+[UNCHANGED] pos-day-close (already correct)
+
+[UNCHANGED] pos-settlement (already correct)
+
+[UNCHANGED] pos-terminal-configuration (already correct)
+
+================================================================================
+UPDATE SUMMARY
+================================================================================
+Total Processed: 70
+Updated: 0
+Unchanged (Already Correct): 60
+Not Found: 10
+Excluded (POS Billing): 0
+================================================================================
+
+================================================================================
+VERIFICATION: POS BILLING SCREEN (SHOULD BE UNCHANGED)
+================================================================================
+
+pos-checkout (POS Billing)
+  Name: Checkout
+  Config: NESCKVDXRQFZTJAHO
+  Status: NOT MODIFIED (as requested)

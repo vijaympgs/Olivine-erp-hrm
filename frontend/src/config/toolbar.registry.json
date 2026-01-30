@@ -1,0 +1,390 @@
+{
+  "version": "1.0.0",
+  "description": "Toolbar configuration registry for all pages",
+  "pages": {
+    "user-management": {
+      "viewId": "USER_MANAGEMENT",
+      "title": "User Management",
+      "mode": "List",
+      "allowedActions": ["create", "edit", "delete", "refresh", "export", "exit"],
+      "actions": {
+        "create": {
+          "label": "New User",
+          "icon": "UserPlus",
+          "shortcut": "Ctrl+N",
+          "description": "Create a new user"
+        },
+        "edit": {
+          "label": "Edit",
+          "icon": "Edit",
+          "shortcut": "Ctrl+E",
+          "description": "Edit selected user"
+        },
+        "delete": {
+          "label": "Delete",
+          "icon": "Trash2",
+          "shortcut": "Delete",
+          "description": "Delete selected user"
+        },
+        "refresh": {
+          "label": "Refresh",
+          "icon": "RefreshCw",
+          "shortcut": "F5",
+          "description": "Refresh user list"
+        },
+        "export": {
+          "label": "Export",
+          "icon": "Download",
+          "shortcut": "Ctrl+E",
+          "description": "Export user data"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit user management"
+        }
+      }
+    },
+    "layout-settings": {
+      "viewId": "LAYOUT_SETTINGS",
+      "title": "Layout Settings",
+      "mode": "Form",
+      "allowedActions": ["save", "reset", "exit"],
+      "actions": {
+        "save": {
+          "label": "Save",
+          "icon": "Save",
+          "shortcut": "F8",
+          "description": "Save layout settings"
+        },
+        "reset": {
+          "label": "Reset",
+          "icon": "RotateCcw",
+          "shortcut": "Ctrl+R",
+          "description": "Reset to defaults"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "LogOut",
+          "shortcut": "Esc",
+          "description": "Exit layout settings"
+        }
+      }
+    },
+    "file-search": {
+      "viewId": "FILE_SEARCH_EXPLORER",
+      "title": "File Search Explorer",
+      "mode": "Explorer",
+      "allowedActions": ["search", "refresh", "exit"],
+      "actions": {
+        "search": {
+          "label": "Search",
+          "icon": "Search",
+          "shortcut": "Ctrl+F",
+          "description": "Search files"
+        },
+        "refresh": {
+          "label": "Refresh",
+          "icon": "RefreshCw",
+          "shortcut": "F5",
+          "description": "Refresh file list"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit file search"
+        }
+      }
+    },
+    "visual-extractor": {
+      "viewId": "VISUAL_EXTRACTOR",
+      "title": "Visual Extractor",
+      "mode": "Tool",
+      "allowedActions": ["copy", "paste", "clear", "exit"],
+      "actions": {
+        "copy": {
+          "label": "Copy",
+          "icon": "Copy",
+          "shortcut": "Ctrl+C",
+          "description": "Copy extracted text"
+        },
+        "paste": {
+          "label": "Paste",
+          "icon": "Clipboard",
+          "shortcut": "Ctrl+V",
+          "description": "Paste from clipboard"
+        },
+        "clear": {
+          "label": "Clear",
+          "icon": "Trash2",
+          "shortcut": "Ctrl+Del",
+          "description": "Clear all content"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit visual extractor"
+        }
+      }
+    },
+    "dataops-studio": {
+      "viewId": "DATAOPS_STUDIO",
+      "title": "DataOps Studio",
+      "mode": "Studio",
+      "allowedActions": ["execute", "refresh", "export", "exit"],
+      "actions": {
+        "execute": {
+          "label": "Execute",
+          "icon": "Play",
+          "shortcut": "F5",
+          "description": "Execute SQL query"
+        },
+        "refresh": {
+          "label": "Refresh",
+          "icon": "RefreshCw",
+          "shortcut": "Ctrl+R",
+          "description": "Refresh schema"
+        },
+        "export": {
+          "label": "Export",
+          "icon": "Download",
+          "shortcut": "Ctrl+E",
+          "description": "Export results"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit dataops studio"
+        }
+      }
+    },
+    "html-preview": {
+      "viewId": "HTML_PREVIEW",
+      "title": "HTML Preview Tool",
+      "mode": "Preview",
+      "allowedActions": ["refresh", "copy", "exit"],
+      "actions": {
+        "refresh": {
+          "label": "Refresh",
+          "icon": "RefreshCw",
+          "shortcut": "F5",
+          "description": "Refresh preview"
+        },
+        "copy": {
+          "label": "Copy",
+          "icon": "Copy",
+          "shortcut": "Ctrl+C",
+          "description": "Copy source code"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit html preview"
+        }
+      }
+    },
+    "hr-dashboard": {
+      "viewId": "HRM_DASHBOARD",
+      "title": "HRM Dashboard",
+      "mode": "Dashboard",
+      "allowedActions": ["refresh", "export", "exit"],
+      "actions": {
+        "refresh": {
+          "label": "Refresh",
+          "icon": "RefreshCw",
+          "shortcut": "F5",
+          "description": "Refresh dashboard"
+        },
+        "export": {
+          "label": "Export",
+          "icon": "Download",
+          "shortcut": "Ctrl+E",
+          "description": "Export dashboard data"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit dashboard"
+        }
+      }
+    },
+    "hr-employees": {
+      "viewId": "HRM_EMPLOYEES",
+      "title": "Employee Management",
+      "mode": "List",
+      "allowedActions": ["create", "edit", "delete", "refresh", "export", "exit"],
+      "actions": {
+        "create": {
+          "label": "New Employee",
+          "icon": "UserPlus",
+          "shortcut": "Ctrl+N",
+          "description": "Create new employee"
+        },
+        "edit": {
+          "label": "Edit",
+          "icon": "Edit",
+          "shortcut": "Ctrl+E",
+          "description": "Edit selected employee"
+        },
+        "delete": {
+          "label": "Delete",
+          "icon": "Trash2",
+          "shortcut": "Delete",
+          "description": "Delete selected employee"
+        },
+        "refresh": {
+          "label": "Refresh",
+          "icon": "RefreshCw",
+          "shortcut": "F5",
+          "description": "Refresh employee list"
+        },
+        "export": {
+          "label": "Export",
+          "icon": "Download",
+          "shortcut": "Ctrl+E",
+          "description": "Export employee data"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit employee management"
+        }
+      }
+    },
+    "hr-records": {
+      "viewId": "HRM_EMPLOYEE_RECORDS",
+      "title": "Employee Records",
+      "mode": "List",
+      "allowedActions": ["create", "edit", "delete", "refresh", "export", "exit"],
+      "actions": {
+        "create": {
+          "label": "New Record",
+          "icon": "FilePlus",
+          "shortcut": "Ctrl+N",
+          "description": "Create new employee record"
+        },
+        "edit": {
+          "label": "Edit",
+          "icon": "Edit",
+          "shortcut": "Ctrl+E",
+          "description": "Edit selected record"
+        },
+        "delete": {
+          "label": "Delete",
+          "icon": "Trash2",
+          "shortcut": "Delete",
+          "description": "Delete selected record"
+        },
+        "refresh": {
+          "label": "Refresh",
+          "icon": "RefreshCw",
+          "shortcut": "F5",
+          "description": "Refresh records"
+        },
+        "export": {
+          "label": "Export",
+          "icon": "Download",
+          "shortcut": "Ctrl+E",
+          "description": "Export records"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit employee records"
+        }
+      }
+    },
+    "hr-org-chart": {
+      "viewId": "HRM_ORG_CHART",
+      "title": "Organizational Chart",
+      "mode": "Chart",
+      "allowedActions": ["refresh", "export", "exit"],
+      "actions": {
+        "refresh": {
+          "label": "Refresh",
+          "icon": "RefreshCw",
+          "shortcut": "F5",
+          "description": "Refresh org chart"
+        },
+        "export": {
+          "label": "Export",
+          "icon": "Download",
+          "shortcut": "Ctrl+E",
+          "description": "Export org chart"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit org chart"
+        }
+      }
+    },
+    "hr-profile": {
+      "viewId": "HRM_PROFILE",
+      "title": "Employee Profile",
+      "mode": "Form",
+      "allowedActions": ["save", "edit", "exit"],
+      "actions": {
+        "save": {
+          "label": "Save",
+          "icon": "Save",
+          "shortcut": "Ctrl+S",
+          "description": "Save profile"
+        },
+        "edit": {
+          "label": "Edit",
+          "icon": "Edit",
+          "shortcut": "Ctrl+E",
+          "description": "Edit profile"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit profile"
+        }
+      }
+    },
+    "hr-self-service": {
+      "viewId": "HRM_SELF_SERVICE",
+      "title": "Employee Self Service",
+      "mode": "Form",
+      "allowedActions": ["create", "save", "refresh", "exit"],
+      "actions": {
+        "create": {
+          "label": "New Request",
+          "icon": "Plus",
+          "shortcut": "Ctrl+N",
+          "description": "Create new request"
+        },
+        "save": {
+          "label": "Save",
+          "icon": "Save",
+          "shortcut": "Ctrl+S",
+          "description": "Save request"
+        },
+        "refresh": {
+          "label": "Refresh",
+          "icon": "RefreshCw",
+          "shortcut": "F5",
+          "description": "Refresh requests"
+        },
+        "exit": {
+          "label": "Exit",
+          "icon": "X",
+          "shortcut": "Esc",
+          "description": "Exit self service"
+        }
+      }
+    }
+  }
+}

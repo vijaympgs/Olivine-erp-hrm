@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Search Explorer - Olivine Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-tertiary: #e9ecef;
+            --border-color: #dee2e6;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --text-muted: #adb5bd;
+            --accent-primary: #0066cc;
+            --accent-hover: #0052a3;
+            --highlight-bg: #fff3cd;
+            --highlight-text: #856404;
+            --success: #28a745;
+            --danger: #dc3545;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 24px;
+        }
+
+        .header-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .search-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .search-input-group {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 16px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--text-secondary);
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            height: calc(100vh - 140px);
+        }
+
+        /* Left Panel - File List */
+        .file-list-panel {
+            width: 400px;
+            background: var(--bg-primary);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-header {
+            padding: 12px 16px;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }
+
+        .file-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .file-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .file-item:hover {
+            background: var(--bg-secondary);
+        }
+
+        .file-item.active {
+            background: var(--bg-tertiary);
+            border-left: 3px solid var(--accent-primary);
+        }
+
+        .file-path {
+            font-size: 13px;
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 4px;
+            word-break: break-all;
+        }
+
+        .file-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .match-count {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        /* Right Panel - Content Preview */
+        .content-panel {
+            flex: 1;
+            background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-header {
+            padding: 12px 16px;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .content-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        .content-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+            background: #fafbfc;
+        }
+
+        .content-line {
+            padding: 2px 8px;
+            margin: 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-word;
+            background: var(--bg-primary);
+            border-left: 3px solid transparent;
+            min-height: 18px;
+        }
+
+        .content-line:empty,
+        .content-line.empty-line {
+            min-height: 8px;
+            line-height: 0.5;
+            padding: 0 8px;
+        }
+
+        .content-line.match {
+            background: #ffe6e6;
+            border-left: 3px solid #dc3545;
+            font-weight: 500;
+        }
+
+        .line-number {
+            display: inline-block;
+            width: 50px;
+            color: var(--text-muted);
+            user-select: none;
+            margin-right: 12px;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .content-line.match .line-number {
+            color: #dc3545;
+            font-weight: 700;
+        }
+
+        .highlight {
+            background: #ff4444;
+            color: white;
+            font-weight: 700;
+            padding: 1px 3px;
+            border-radius: 2px;
+        }
+
+        .match-separator {
+            height: 1px;
+            background: var(--border-color);
+            margin: 0;
+        }
+
+        /* Empty States */
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--text-muted);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .empty-state-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-text {
+            font-size: 13px;
+        }
+
+        /* Loading */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--border-color);
+            border-top-color: var(--accent-primary);
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            padding: 8px 16px;
+            background: var(--bg-tertiary);
+            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Markdown Rendering Styles */
+        .markdown-content {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .markdown-content h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 16px 0 12px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+            color: #d97706;
+        }
+
+        .markdown-content h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 14px 0 10px 0;
+            color: #ea580c;
+        }
+
+        .markdown-content h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 12px 0 8px 0;
+            color: #f59e0b;
+        }
+
+        .markdown-content h4,
+        .markdown-content h5,
+        .markdown-content h6 {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 10px 0 6px 0;
+            color: var(--text-secondary);
+        }
+
+        .markdown-content p {
+            margin: 8px 0;
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
+            margin: 8px 0;
+            padding-left: 24px;
+        }
+
+        .markdown-content li {
+            margin: 4px 0;
+        }
+
+        .markdown-content code {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 12px;
+            color: #dc2626;
+        }
+
+        .markdown-content pre {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 12px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 12px 0;
+        }
+
+        .markdown-content pre code {
+            background: transparent;
+            padding: 0;
+            color: #e5e7eb;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid #0066cc;
+            padding-left: 16px;
+            margin: 12px 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .markdown-content table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 12px 0;
+        }
+
+        .markdown-content th,
+        .markdown-content td {
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        .markdown-content th {
+            background: var(--bg-tertiary);
+            font-weight: 600;
+        }
+
+        .markdown-content a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        .markdown-content a:hover {
+            text-decoration: underline;
+        }
+
+        .markdown-content strong {
+            font-weight: 700;
+            color: #1e40af;
+        }
+
+        .markdown-content em {
+            font-style: italic;
+        }
+
+        .markdown-content hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 16px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .file-list-panel {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-title">File Search Explorer - Olivine Platform</div>
+        <div class="search-controls">
+            <div class="search-input-group">
+                <input type="text" class="search-input" id="searchInput"
+                    placeholder="Enter search term (e.g., 'merge', 'Company', 'toolbar')..." autocomplete="off">
+            </div>
+            <div class="filter-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="filterMd" checked>
+                    <span>.md files</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="filterPy" checked>
+                    <span>.py files</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="filterJs" checked>
+                    <span>.js/.ts files</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="filterTsx" checked>
+                    <span>.tsx/.jsx files</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="filterJson">
+                    <span>.json files</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="filterBat">
+                    <span>.bat/.sh files</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="caseSensitive">
+                    <span>Case sensitive</span>
+                </label>
+            </div>
+            <button class="btn btn-primary" id="searchBtn">Search</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- Left Panel: File List -->
+        <div class="file-list-panel">
+            <div class="panel-header">
+                <span id="fileListHeader">Search Results</span>
+            </div>
+            <div class="file-list" id="fileList">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📁</div>
+                    <div class="empty-state-title">No Search Performed</div>
+                    <div class="empty-state-text">Enter a search term and click "Search" to find files</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Content Preview -->
+        <div class="content-panel">
+            <div class="content-header">
+                <div class="content-title" id="contentTitle">File Preview</div>
+                <div class="content-actions">
+                    <button class="btn btn-small" id="copyPathBtn" disabled>Copy Path</button>
+                    <button class="btn btn-small" id="openFileBtn" disabled>Open in Editor</button>
+                </div>
+            </div>
+            <div class="content-body" id="contentBody">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📄</div>
+                    <div class="empty-state-title">No File Selected</div>
+                    <div class="empty-state-text">Select a file from the list to preview its contents</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <span id="statsLeft">Ready</span>
+        <span id="statsRight">Olivine Platform v1.0</span>
+    </div>
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        // Configuration
+        const BASE_PATH = 'd:\\olvine-erp';
+
+        // Configure marked for better rendering
+        if (typeof marked !== 'undefined') {
+            marked.setOptions({
+                breaks: true,
+                gfm: true,
+                headerIds: false,
+                mangle: false
+            });
+        }
+
+        // State
+        let searchResults = [];
+        let selectedFile = null;
+
+        // DOM Elements
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const filterMd = document.getElementById('filterMd');
+        const filterPy = document.getElementById('filterPy');
+        const filterJs = document.getElementById('filterJs');
+        const filterTsx = document.getElementById('filterTsx');
+        const filterJson = document.getElementById('filterJson');
+        const filterBat = document.getElementById('filterBat');
+        const caseSensitive = document.getElementById('caseSensitive');
+        const fileList = document.getElementById('fileList');
+        const fileListHeader = document.getElementById('fileListHeader');
+        const contentBody = document.getElementById('contentBody');
+        const contentTitle = document.getElementById('contentTitle');
+        const copyPathBtn = document.getElementById('copyPathBtn');
+        const openFileBtn = document.getElementById('openFileBtn');
+        const statsLeft = document.getElementById('statsLeft');
+        const statsRight = document.getElementById('statsRight');
+
+        // Event Listeners
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') performSearch();
+        });
+
+        searchBtn.addEventListener('click', performSearch);
+        copyPathBtn.addEventListener('click', copyFilePath);
+        openFileBtn.addEventListener('click', openInEditor);
+
+        // Search Function
+        async function performSearch() {
+            const query = searchInput.value.trim();
+
+            if (!query) {
+                alert('Please enter a search term');
+                return;
+            }
+
+            // Get file extensions to search
+            const extensions = [];
+            if (filterMd.checked) extensions.push('.md');
+            if (filterPy.checked) extensions.push('.py');
+            if (filterJs.checked) extensions.push('.js', '.ts');
+            if (filterTsx.checked) extensions.push('.tsx', '.jsx');
+            if (filterJson.checked) extensions.push('.json');
+            if (filterBat.checked) extensions.push('.bat', '.sh');
+
+            if (extensions.length === 0) {
+                alert('Please select at least one file type');
+                return;
+            }
+
+            // Show loading
+            fileList.innerHTML = '<div class="loading"><div class="spinner"></div>Searching...</div>';
+            statsLeft.textContent = 'Searching...';
+            searchBtn.disabled = true;
+
+            try {
+                // Build API URL
+                const params = new URLSearchParams({
+                    q: query,
+                    case: caseSensitive.checked ? 'true' : 'false'
+                });
+
+                // Add extensions
+                extensions.forEach(ext => params.append('ext', ext));
+
+                const apiUrl = `http://localhost:8888/api/search?${params.toString()}`;
+
+                // Call API
+                const response = await fetch(apiUrl);
+
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Store results
+                searchResults = data.results || [];
+
+                // Display results
+                displayResults(query, data.total_matches);
+
+            } catch (error) {
+                console.error('Search error:', error);
+                fileList.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">⚠️</div>
+                        <div class="empty-state-title">Search Error</div>
+                        <div class="empty-state-text">
+                            ${error.message}<br><br>
+                            Make sure the backend server is running:<br>
+                            <code>python file-search-api.py</code>
+                        </div>
+                    </div>
+                `;
+                statsLeft.textContent = 'Search failed';
+            } finally {
+                searchBtn.disabled = false;
+            }
+        }
+
+        // Display Results
+        function displayResults(query, totalMatches) {
+            if (searchResults.length === 0) {
+                fileList.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔍</div>
+                        <div class="empty-state-title">No Results Found</div>
+                        <div class="empty-state-text">No files found matching "${query}"</div>
+                    </div>
+                `;
+                fileListHeader.textContent = 'No Results';
+                statsLeft.textContent = 'No results found';
+                return;
+            }
+
+            fileListHeader.textContent = `${searchResults.length} Files Found`;
+            statsLeft.textContent = `Found ${searchResults.length} files with ${totalMatches} matches`;
+
+            fileList.innerHTML = searchResults.map((result, index) => `
+                <div class="file-item" data-index="${index}">
+                    <div class="file-path">${result.path}</div>
+                    <div class="file-meta">
+                        <span class="match-count">${result.matches} matches</span>
+                        <span>${result.size}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add click handlers
+            document.querySelectorAll('.file-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const index = parseInt(item.dataset.index);
+                    selectFile(index);
+                });
+            });
+        }
+
+        // Select File
+        async function selectFile(index) {
+            selectedFile = searchResults[index];
+
+            // Update active state
+            document.querySelectorAll('.file-item').forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+
+            // Show loading
+            contentBody.innerHTML = '<div class="loading"><div class="spinner"></div>Loading file content...</div>';
+            contentTitle.textContent = selectedFile.path.split('/').pop();
+
+            try {
+                // Build API URL
+                const params = new URLSearchParams({
+                    path: selectedFile.path,
+                    q: searchInput.value.trim(),
+                    case: caseSensitive.checked ? 'true' : 'false'
+                });
+
+                const apiUrl = `http://localhost:8888/api/file?${params.toString()}`;
+
+                // Call API
+                const response = await fetch(apiUrl);
+
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Display content
+                displayFileContent(data);
+
+                // Enable buttons
+                copyPathBtn.disabled = false;
+                openFileBtn.disabled = false;
+
+            } catch (error) {
+                console.error('File load error:', error);
+                contentBody.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">⚠️</div>
+                        <div class="empty-state-title">Error Loading File</div>
+                        <div class="empty-state-text">${error.message}</div>
+                    </div>
+                `;
+            }
+        }
+
+        // Display File Content
+        function displayFileContent(data) {
+            const query = searchInput.value.trim();
+            const isCaseSensitive = caseSensitive.checked;
+            const isMarkdown = data.path.toLowerCase().endsWith('.md');
+
+            if (isMarkdown && typeof marked !== 'undefined') {
+                // Render as Markdown
+                const fullContent = data.lines.map(line => line.content).join('\n');
+                let htmlContent = marked.parse(fullContent);
+
+                // Highlight search terms in rendered HTML
+                if (query) {
+                    const regex = new RegExp(
+                        `(${escapeRegex(query)})`,
+                        isCaseSensitive ? 'g' : 'gi'
+                    );
+                    htmlContent = htmlContent.replace(regex, '<span class="highlight">$1</span>');
+                }
+
+                contentBody.innerHTML = `<div class="markdown-content">${htmlContent}</div>`;
+
+            } else {
+                // Render as plain code with line numbers
+
+                contentBody.innerHTML = data.lines.map(line => {
+                    let content = escapeHtml(line.content);
+
+                    // Check if line is empty or whitespace only
+                    const isEmpty = !line.content || line.content.trim() === '';
+
+                    // Highlight matches (skip for empty lines)
+                    if (query && !isEmpty) {
+                        const regex = new RegExp(
+                            `(${escapeRegex(query)})`,
+                            isCaseSensitive ? 'g' : 'gi'
+                        );
+                        content = content.replace(regex, '<span class="highlight">$1</span>');
+                    }
+
+                    // Build class list
+                    const classes = ['content-line'];
+                    if (line.isMatch) classes.push('match');
+                    if (isEmpty) classes.push('empty-line');
+
+                    const lineClass = classes.join(' ');
+
+                    return `
+                    <div class="${lineClass}">
+                        <span class="line-number">${line.number}</span>${content || '&nbsp;'}
+                    </div>
+                `;
+                }).join('');
+
+            }
+
+            // Update stats
+            const fileType = isMarkdown ? 'Markdown' : 'Code';
+            statsRight.textContent = `${fileType} file loaded: ${data.total_lines} lines, ${data.matches} matches`;
+        }
+
+        // Copy File Path
+        function copyFilePath() {
+            if (!selectedFile) return;
+
+            const fullPath = `${BASE_PATH}\\${selectedFile.path}`;
+            navigator.clipboard.writeText(fullPath).then(() => {
+                statsLeft.textContent = 'Path copied to clipboard';
+                setTimeout(() => {
+                    statsLeft.textContent = `Found ${searchResults.length} files`;
+                }, 2000);
+            });
+        }
+
+        // Open in Editor
+        async function openInEditor() {
+            if (!selectedFile) return;
+
+            const fullPath = `${BASE_PATH}\\${selectedFile.path}`;
+
+            try {
+                // Show loading
+                statsLeft.textContent = 'Opening file...';
+                openFileBtn.disabled = true;
+
+                // Call API to open file with Windows "Open With" dialog
+                const params = new URLSearchParams({
+                    path: selectedFile.path,
+                    dialog: 'true'  // Show "Open With" dialog
+                });
+
+                const apiUrl = `http://localhost:8888/api/open?${params.toString()}`;
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.success) {
+                    statsLeft.textContent = 'File opened in Windows "Open With" dialog';
+                    setTimeout(() => {
+                        statsLeft.textContent = `Found ${searchResults.length} files`;
+                    }, 3000);
+                } else {
+                    // Fallback: Show path and copy to clipboard
+                    navigator.clipboard.writeText(fullPath).then(() => {
+                        const message = [
+                            'Could not open file automatically.',
+                            '',
+                            'FILE PATH (copied to clipboard):',
+                            fullPath,
+                            '',
+                            'TO OPEN IN VS CODE:',
+                            '1. Open VS Code',
+                            '2. Press Ctrl+P',
+                            '3. Paste the path and press Enter',
+                            '',
+                            'OR run this command in terminal:',
+                            `code "${fullPath}"`
+                        ].join('\n');
+
+                        alert(message);
+                        statsLeft.textContent = 'File path copied to clipboard';
+                    });
+                }
+
+            } catch (error) {
+                console.error('Error opening file:', error);
+
+                // Fallback: Copy path and show instructions
+                navigator.clipboard.writeText(fullPath).then(() => {
+                    const message = [
+                        'ERROR: Could not connect to backend server.',
+                        '',
+                        'Make sure the backend is running:',
+                        'python file-search-api.py',
+                        '',
+                        'FILE PATH (copied to clipboard):',
+                        fullPath,
+                        '',
+                        'You can manually open this file in your editor.'
+                    ].join('\n');
+
+                    alert(message);
+                    statsLeft.textContent = 'Backend error - path copied to clipboard';
+                }).catch(() => {
+                    alert(`Error: ${error.message}\n\nFile path:\n${fullPath}`);
+                });
+            } finally {
+                openFileBtn.disabled = false;
+            }
+        }
+
+        // Utility Functions
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function escapeRegex(text) {
+            return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // Initialize
+        searchInput.focus();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": [
+      "vite/client"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@retail/*": [
+        "../Retail/frontend/*"
+      ],
+      "@hrm/*": [
+        "../HRM/frontend/*"
+      ],
+      "@fms/*": [
+        "../FMS/frontend/*"
+      ],
+      "@crm/*": [
+        "../CRM/frontend/*"
+      ],
+      "@meet/*": [
+        "../Meet/frontend/*"
+      ],
+      "@core/*": [
+        "../core/frontend/*"
+      ],
+      "@ui/*": [
+        "src/components/ui/*"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@auth/*": [
+        "src/auth/*"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "../HRM",
+    "../FMS",
+    "../CRM",
+    "../Retail",
+    "../core",
+    "../common",
+    "../Meet",
+    "vite.config.mts"
+  ]
+}

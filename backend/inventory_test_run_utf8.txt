@@ -1,0 +1,1731 @@
+﻿python : C:\Users\vijay\AppD
+ata\Local\Programs\Python\Py
+thon311\Lib\site-packages\dj
+ango\db\models\base.py:368: 
+RuntimeWarning: Model 'procu
+rement.procurementconfig' 
+was already registered. 
+Reloading models is not 
+advised as it can lead to 
+inconsistencies, most 
+notably with related models.
+At line:1 char:13
++ cd backend; python 
+manage.py test Retail.backen
+d.inventory.tests --no ...
++             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: (C:\Us  
+  ers\vijay\...related mo   
+ dels.:String) [], Remot    
+eException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+  new_class._meta.apps.regis
+ter_model(new_class._meta.ap
+p_label, new_class)
+Creating test database for 
+alias 'default' ('file:memor
+ydb_default?mode=memory&cach
+e=shared')...
+
+Found 44 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: company_master, corsheaders, django_filters, drf_spectacular, item, messages, reporting, rest_framework, staticfiles, supplier
+  Apply all migrations: admin, auth, authtoken, business_entities, company, contenttypes, crm, domain, finance, hrm, inventory, licensing, pos, procurement, qa_console, retail_domain, sales, sessions, toolbar_control, user_management
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying authtoken.0001_initial... OK
+  Applying authtoken.0002_auto_20160226_1747... OK
+  Applying authtoken.0003_tokenproxy... OK
+  Applying business_entities.0001_initial... OK
+  Applying company.0001_initial... OK
+  Applying business_entities.0002_initial... OK
+  Applying user_management.0001_initial... OK
+  Applying retail_domain.0001_initial... OK
+  Applying user_management.0002_alter_userlocationmapping_location... OK
+  Applying company.0002_alter_itemvariant_item... OK
+  Applying sales.0001_initial... OK
+  Applying domain.0001_initial... OK
+  Applying sales.0002_alter_salesinvoice_customer_and_more... OK
+  Applying procurement.0001_initial... OK
+  Applying procurement.0002_alter_purchaserequisitionline_item_variant... OK
+  Applying procurement.0003_requestforquotation_location... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_inventoryparameter_valuationmethod_approvalrule... OK
+  Applying inventory.0003_remove_stockadjustment_qty_delta_and_more... OK
+  Applying inventory.0004_inventoryapprovallog... OK
+  Applying inventory.0005_cyclecountschedule_movementmastertype_serialnumber_and_more... OK
+  Applying procurement.0004_goodsreceiptline_batch_and_more... OK
+  Applying procurement.0005_alter_advanceshipmentnotice_supplier_and_more... OK
+  Applying pos.0001_initial... OK
+  Applying pos.0002_postransactionline_batch... OK
+  Applying pos.0003_alter_dayopen_location_and_more... OK
+  Applying inventory.0006_alter_batch_variant_and_more... OK
+  Applying company.0003_remove_location_company_and_more... OK
+  Applying company.0004_delete_location... OK
+  Applying company.0005_delete_location... OK
+  Applying crm.0001_initial... OK
+  Applying finance.0001_initial... OK
+  Applying hrm.0001_initial... OK
+  Applying hrm.0002_employeeposition_organizationalunit_position... OK
+  Applying hrm.0003_remove_organizationalunit_uk_org_unit_code_and_more... OK
+  Applying hrm.0004_employeeprofile_employeedocument_employeeskill_and_more... OK
+  Applying hrm.0005_applicationanswer_applicationcandidate_and_more... OK
+  Applying hrm.0006_erpmenuitem_erptoolbarcontrol_role_rolepermission_and_more... OK
+  Applying hrm.0007_add_enhanced_menu_item_fields... OK
+  Applying hrm.0008_alter_erpmenuitem_menu_type... OK
+  Applying hrm.0009_audittrailconfiguration_audittrail... OK
+  Applying hrm.0010_courselearningpath_profileendorsement_and_more... OK
+  Applying hrm.0011_employeerecord_hierarchy_level_and_more... OK
+  Applying hrm.0012_remove_employeerecord_manager_name... OK
+  Applying hrm.0013_language_alter_rolepermission_menu_item_and_more... OK
+  Applying inventory.0007_alter_intercompanytransferline_item_and_more... OK
+  Applying licensing.0001_initial... OK
+  Applying qa_console.0001_initial... OK
+  Applying qa_console.0002_testreadiness_bbp_path... OK
+  Applying sessions.0001_initial... OK
+  Applying user_management.0003_rolepermission_created_by_and_more... OK
+  Applying user_management.0004_erptoolbarcontrol_and_more... OK
+  Applying user_management.0005_alter_userpermission_options... OK
+  Applying toolbar_control.0001_initial... OK
+  Applying toolbar_control.0002_alter_toolbaritemproxy_options... OK
+  Applying toolbar_control.0003_alter_toolbaritemproxy_options... OK
+  Applying user_management.0006_alter_erpmenuitem_module_name_and_more... OK
+System check identified 
+some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The 
+directory 'C:\00mindra\olivi
+ne-platform\backend\static' 
+in the STATICFILES_DIRS 
+setting does not exist.
+
+System check identified 1 
+issue (0 silenced).
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+test_set_01_update_inventory
+_parameters (Retail.backend.
+inventory.tests.test_5_10_in
+ventory_setup.InventorySetup
+TestCase.test_set_01_update_
+inventory_parameters)
+SET-TS-01: Create/Update 
+Inventory Parameters ... 
+ERROR
+test_set_02_custom_movement_
+type (Retail.backend.invento
+ry.tests.test_5_10_inventory
+_setup.InventorySetupTestCas
+e.test_set_02_custom_movemen
+t_type)
+SET-TS-02: Create Custom 
+Movement Type ... ok
+test_set_03_adjustment_reaso
+ns (Retail.backend.inventory
+.tests.test_5_10_inventory_s
+etup.InventorySetupTestCase.
+test_set_03_adjustment_reaso
+ns)
+SET-TS-03: Manage Reason 
+Codes ... ok
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_1_inve
+ntory_dashboard.InventoryDas
+hboardTestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_2_stoc
+k_management.StockManagement
+TestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_3_stoc
+k_movements.StockMovementTes
+tCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_4_stoc
+k_adjustments.StockAdjustmen
+tTestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_5_phys
+ical_inventory.StockTakeTest
+Case) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_6_inve
+ntory_valuation.ValuationTes
+tCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_7_repl
+enishment.ReplenishmentTestC
+ase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+test_trk_01_create_batch_lif
+ecycle (Retail.backend.inven
+tory.tests.test_5_8_item_tra
+cking.ItemTrackingTestCase.t
+est_trk_01_create_batch_life
+cycle)
+TRK-TS-01: Create Batch 
+with Expiry and verify 
+lifecycle ... ERROR
+test_trk_02_serial_number_li
+fecycle (Retail.backend.inve
+ntory.tests.test_5_8_item_tr
+acking.ItemTrackingTestCase.
+test_trk_02_serial_number_li
+fecycle)
+TRK-TS-02: Serial Number 
+generation and status 
+changes ... ERROR
+test_trk_03_serial_linked_to
+_batch (Retail.backend.inven
+tory.tests.test_5_8_item_tra
+cking.ItemTrackingTestCase.t
+est_trk_03_serial_linked_to_
+batch)
+TRK-TS-03: Link Serial 
+Number to a parent Batch 
+... ERROR
+test_trk_04_expiry_managemen
+t (Retail.backend.inventory.
+tests.test_5_8_item_tracking
+.ItemTrackingTestCase.test_t
+rk_04_expiry_management)
+TRK-TS-04: Expiry logic 
+detection ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_9_inve
+ntory_reports.InventoryRepor
+tsTestCase) ... ERROR
+
+============================
+============================
+==============
+ERROR: test_set_01_update_in
+ventory_parameters (Retail.b
+ackend.inventory.tests.test_
+5_10_inventory_setup.Invento
+rySetupTestCase.test_set_01_
+update_inventory_parameters)
+SET-TS-01: Create/Update 
+Inventory Parameters
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_10_invent
+ory_setup.py", line 32, in t
+est_set_01_update_inventory_
+parameters
+    self.assertFalse(refresh
+ed.auto_post_adjustments)
+                     ^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 
+'InventoryParameter' object 
+has no attribute 
+'auto_post_adjustments'
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_1_inventory_dashboard.Inven
+toryDashboardTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 948, in get_or_create
+    return 
+self.get(**kwargs), False
+           
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 635, in get
+    raise 
+self.model.DoesNotExist(
+Common.domain.models.UnitOfM
+easure.DoesNotExist: 
+UnitOfMeasure matching 
+query does not exist.
+
+During handling of the 
+above exception, another 
+exception occurred:
+
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: comm
+on_unit_of_measure.company_i
+d
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_1_invento
+ry_dashboard.py", line 50, 
+in setUpTestData
+    uom, _ = UnitOfMeasure.o
+bjects.get_or_create(uom_cod
+e='PCS', 
+defaults={'uom_name': 
+'Pieces', 'is_active': 
+True})
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 955, in get_or_create
+    return 
+self.create(**params), True
+           
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: common_unit_of_measu
+re.company_id
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_2_stock_management.StockMan
+agementTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_2_stock_m
+anagement.py", line 34, in 
+setUpTestData
+    raise 
+ValueError("Missing 
+Required Master Data 
+(Company, Location, or 
+Variant)")
+ValueError: Missing 
+Required Master Data 
+(Company, Location, or 
+Variant)
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_3_stock_movements.StockMove
+mentTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_3_stock_m
+ovements.py", line 28, in 
+setUpTestData
+    cls.loc_dest = 
+locations[1] if 
+len(locations) > 1 else 
+locations[0]
+                            
+                            
+   ~~~~~~~~~^^^
+IndexError: list index out 
+of range
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_4_stock_adjustments.StockAd
+justmentTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_4_stock_a
+djustments.py", line 30, in 
+setUpTestData
+    item, _ = ItemMaster.obj
+ects.get_or_create(item_code
+='TEST-ITEM-01', 
+defaults={'item_name': 
+'Test Item', 'uom': uom, 
+'is_active': True})
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Missing 
+Required Master Data
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_5_physical_inventory.StockT
+akeTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_5_physica
+l_inventory.py", line 27, 
+in setUpTestData
+    from 
+Common.domain.models import 
+ItemMaster, UnitOfMeasure
+                         
+^^^^^^^^^^^^
+AttributeError: type object 
+'StockTakeTestCase' has no 
+attribute 'Location'
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_6_inventory_valuation.Valua
+tionTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_6_invento
+ry_valuation.py", line 22, 
+in setUpTestData
+    raise 
+ValueError("Missing 
+Required Master Data")
+ValueError: Missing 
+Required Master Data
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_7_replenishment.Replenishme
+ntTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 948, in get_or_create
+    return 
+self.get(**kwargs), False
+           
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 635, in get
+    raise 
+self.model.DoesNotExist(
+Retail.backend.inventory.mod
+els.StockLevel.DoesNotExist:
+ StockLevel matching query 
+does not exist.
+
+During handling of the 
+above exception, another 
+exception occurred:
+
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: 
+stock_level.location_id
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_7_repleni
+shment.py", line 31, in 
+setUpTestData
+    cls.stock_level, _ = Sto
+ckLevel.objects.get_or_creat
+e(
+                         ^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 955, in get_or_create
+    return 
+self.create(**params), True
+           
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\models.py", line 151, 
+in save
+    super().save(*args, 
+**kwargs)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: 
+stock_level.location_id
+
+============================
+============================
+==============
+ERROR: test_trk_01_create_ba
+tch_lifecycle (Retail.backen
+d.inventory.tests.test_5_8_i
+tem_tracking.ItemTrackingTes
+tCase.test_trk_01_create_bat
+ch_lifecycle)
+TRK-TS-01: Create Batch 
+with Expiry and verify 
+lifecycle
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: 
+inv_batch.variant_id
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_8_item_tr
+acking.py", line 34, in test
+_trk_01_create_batch_lifecyc
+le
+    batch = 
+Batch.objects.create(
+            
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: inv_batch.variant_id
+
+============================
+============================
+==============
+ERROR: test_trk_02_serial_nu
+mber_lifecycle (Retail.backe
+nd.inventory.tests.test_5_8_
+item_tracking.ItemTrackingTe
+stCase.test_trk_02_serial_nu
+mber_lifecycle)
+TRK-TS-02: Serial Number 
+generation and status 
+changes
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: 
+inv_serial_number.variant_id
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_8_item_tr
+acking.py", line 58, in test
+_trk_02_serial_number_lifecy
+cle
+    serial = 
+SerialNumber.objects.create(
+             
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: 
+inv_serial_number.variant_id
+
+============================
+============================
+==============
+ERROR: test_trk_03_serial_li
+nked_to_batch (Retail.backen
+d.inventory.tests.test_5_8_i
+tem_tracking.ItemTrackingTes
+tCase.test_trk_03_serial_lin
+ked_to_batch)
+TRK-TS-03: Link Serial 
+Number to a parent Batch
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: 
+inv_batch.variant_id
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_8_item_tr
+acking.py", line 79, in test
+_trk_03_serial_linked_to_bat
+ch
+    batch = 
+Batch.objects.create(
+            
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: inv_batch.variant_id
+
+============================
+============================
+==============
+ERROR: test_trk_04_expiry_ma
+nagement (Retail.backend.inv
+entory.tests.test_5_8_item_t
+racking.ItemTrackingTestCase
+.test_trk_04_expiry_manageme
+nt)
+TRK-TS-04: Expiry logic 
+detection
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  Applying user_management.0007_add_toolbar_permissions... OK
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: 
+inv_batch.variant_id
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_8_item_tr
+acking.py", line 100, in tes
+t_trk_04_expiry_management
+    batch = 
+Batch.objects.create(
+            
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: inv_batch.variant_id
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_9_inventory_reports.Invento
+ryReportsTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_9_invento
+ry_reports.py", line 22, in 
+setUpTestData
+    cls.location_2 = 
+Location.objects.create(
+                     
+^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: Location() got 
+unexpected keyword 
+arguments: 'code', 'type'
+
+----------------------------
+----------------------------
+--------------
+Ran 7 tests in 3.493s
+
+FAILED (errors=13)
+Destroying test database 
+for alias 'default' ('file:m
+emorydb_default?mode=memory&
+cache=shared')...
+

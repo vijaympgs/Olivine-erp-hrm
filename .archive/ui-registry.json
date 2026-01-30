@@ -1,0 +1,136 @@
+{
+    "LayoutSettings": {
+        "screen": "Layout Settings",
+        "module": "Platform",
+        "sidebar": "System Administration → Layout Settings",
+        "aliases": [
+            "layout config",
+            "ui settings",
+            "appearance",
+            "astra layout"
+        ],
+        "paths": {
+            "frontend": [
+                "frontend/src/pages/admin/LayoutSettingsPage.tsx",
+                "frontend/src/config/layoutConfig.ts"
+            ],
+            "backend": []
+        }
+    },
+    "POSBusinessRules": {
+        "screen": "POS Business Rules",
+        "module": "Platform",
+        "sidebar": "System Administration → POS Business Rules",
+        "aliases": [
+            "pos rules",
+            "business rules",
+            "pos config",
+            "rules screen"
+        ],
+        "paths": {
+            "frontend": [],
+            "backend": [
+                "Retail/backend/pos/business_rules_models.py",
+                "Retail/backend/pos/business_rules_admin.py"
+            ]
+        }
+    },
+    "FileSearchExplorer": {
+        "screen": "File Search Explorer",
+        "module": "Platform",
+        "sidebar": "System Tools → File Search Explorer",
+        "aliases": [
+            "code search",
+            "explorer",
+            "file find"
+        ],
+        "paths": {
+            "frontend": [
+                "frontend/src/pages/admin/FileSearchExplorerPage.tsx"
+            ],
+            "backend": []
+        }
+    },
+    "BackupRecovery": {
+        "screen": "Backup & Recovery",
+        "module": "Platform",
+        "sidebar": "System Tools → Backup & Recovery",
+        "aliases": [
+            "backup",
+            "restore",
+            "db backup"
+        ],
+        "paths": {
+            "frontend": [
+                "frontend/src/pages/admin/BackupPage.tsx"
+            ],
+            "backend": []
+        }
+    },
+    "TestConsole": {
+        "screen": "Test Console",
+        "module": "Retail",
+        "sidebar": "Retail → Test Console",
+        "aliases": [
+            "permission prototyping",
+            "test explorer",
+            "tc"
+        ],
+        "paths": {
+            "frontend": [
+                "frontend/src/pages/TestConsolePage.tsx"
+            ],
+            "backend": []
+        }
+    },
+    "ItemMaster": {
+        "screen": "Item Master",
+        "module": "Retail",
+        "sidebar": "Retail → Merchandising → Product Catalog → Item Master",
+        "aliases": [
+            "items",
+            "products",
+            "master list"
+        ],
+        "paths": {
+            "frontend": [
+                "frontend/src/pages/inventory/ItemMasterPage.tsx"
+            ],
+            "backend": []
+        }
+    },
+    "SupplierMaster": {
+        "screen": "Supplier Master",
+        "module": "Retail",
+        "sidebar": "Retail → Procurement → Vendor Management → Supplier Master",
+        "aliases": [
+            "suppliers",
+            "vendors",
+            "vendor master"
+        ],
+        "paths": {
+            "frontend": [
+                "frontend/src/pages/partners/SupplierMasterPage.tsx"
+            ],
+            "backend": []
+        }
+    },
+    "VisualExtractor": {
+        "screen": "Visual Extractor",
+        "module": "Platform",
+        "sidebar": "System Tools → Visual Extractor",
+        "aliases": [
+            "image to text",
+            "ocr tool",
+            "visual ocr",
+            "extract text",
+            "image extractor"
+        ],
+        "paths": {
+            "frontend": [
+                "frontend/src/pages/system_tools/visual_extractor/VisualExtractorPage.tsx"
+            ],
+            "backend": []
+        }
+    }
+}

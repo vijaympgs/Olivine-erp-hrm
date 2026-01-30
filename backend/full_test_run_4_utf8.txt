@@ -1,0 +1,4341 @@
+﻿python : C:\Users\vijay\AppD
+ata\Local\Programs\Python\Py
+thon311\Lib\site-packages\dj
+ango\db\models\base.py:368: 
+RuntimeWarning: Model 'procu
+rement.procurementconfig' 
+was already registered. 
+Reloading models is not 
+advised as it can lead to 
+inconsistencies, most 
+notably with related models.
+At line:1 char:13
++ cd backend; python 
+manage.py test Retail 
+--no-input -v 2 > 
+full_test_ ...
++             ~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: (C:\Us  
+  ers\vijay\...related mo   
+ dels.:String) [], Remot    
+eException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+  new_class._meta.apps.regis
+ter_model(new_class._meta.ap
+p_label, new_class)
+Creating test database for 
+alias 'default' ('file:memor
+ydb_default?mode=memory&cach
+e=shared')...
+
+Found 208 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: company_master, corsheaders, django_filters, drf_spectacular, item, messages, reporting, rest_framework, staticfiles, supplier
+  Apply all migrations: admin, auth, authtoken, business_entities, company, contenttypes, crm, domain, finance, hrm, inventory, licensing, pos, procurement, qa_console, retail_domain, sales, sessions, toolbar_control, user_management
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying authtoken.0001_initial... OK
+  Applying authtoken.0002_auto_20160226_1747... OK
+  Applying authtoken.0003_tokenproxy... OK
+  Applying business_entities.0001_initial... OK
+  Applying company.0001_initial... OK
+  Applying business_entities.0002_initial... OK
+  Applying user_management.0001_initial... OK
+  Applying retail_domain.0001_initial... OK
+  Applying user_management.0002_alter_userlocationmapping_location... OK
+  Applying company.0002_alter_itemvariant_item... OK
+  Applying sales.0001_initial... OK
+  Applying domain.0001_initial... OK
+  Applying sales.0002_alter_salesinvoice_customer_and_more... OK
+  Applying procurement.0001_initial... OK
+  Applying procurement.0002_alter_purchaserequisitionline_item_variant... OK
+  Applying procurement.0003_requestforquotation_location... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_inventoryparameter_valuationmethod_approvalrule... OK
+  Applying inventory.0003_remove_stockadjustment_qty_delta_and_more... OK
+  Applying inventory.0004_inventoryapprovallog... OK
+  Applying inventory.0005_cyclecountschedule_movementmastertype_serialnumber_and_more... OK
+  Applying procurement.0004_goodsreceiptline_batch_and_more... OK
+  Applying procurement.0005_alter_advanceshipmentnotice_supplier_and_more... OK
+  Applying pos.0001_initial... OK
+  Applying pos.0002_postransactionline_batch... OK
+  Applying pos.0003_alter_dayopen_location_and_more... OK
+  Applying inventory.0006_alter_batch_variant_and_more... OK
+  Applying company.0003_remove_location_company_and_more... OK
+  Applying company.0004_delete_location... OK
+  Applying company.0005_delete_location... OK
+  Applying crm.0001_initial... OK
+  Applying finance.0001_initial... OK
+  Applying hrm.0001_initial... OK
+  Applying hrm.0002_employeeposition_organizationalunit_position... OK
+  Applying hrm.0003_remove_organizationalunit_uk_org_unit_code_and_more... OK
+  Applying hrm.0004_employeeprofile_employeedocument_employeeskill_and_more... OK
+  Applying hrm.0005_applicationanswer_applicationcandidate_and_more... OK
+  Applying hrm.0006_erpmenuitem_erptoolbarcontrol_role_rolepermission_and_more... OK
+  Applying hrm.0007_add_enhanced_menu_item_fields... OK
+  Applying hrm.0008_alter_erpmenuitem_menu_type... OK
+  Applying hrm.0009_audittrailconfiguration_audittrail... OK
+  Applying hrm.0010_courselearningpath_profileendorsement_and_more... OK
+  Applying hrm.0011_employeerecord_hierarchy_level_and_more... OK
+  Applying hrm.0012_remove_employeerecord_manager_name... OK
+  Applying hrm.0013_language_alter_rolepermission_menu_item_and_more... OK
+  Applying inventory.0007_alter_intercompanytransferline_item_and_more... OK
+  Applying licensing.0001_initial... OK
+  Applying qa_console.0001_initial... OK
+  Applying qa_console.0002_testreadiness_bbp_path... OK
+  Applying sessions.0001_initial... OK
+  Applying user_management.0003_rolepermission_created_by_and_more... OK
+  Applying user_management.0004_erptoolbarcontrol_and_more... OK
+  Applying user_management.0005_alter_userpermission_options... OK
+  Applying toolbar_control.0001_initial... OK
+  Applying toolbar_control.0002_alter_toolbaritemproxy_options... OK
+  Applying toolbar_control.0003_alter_toolbaritemproxy_options... OK
+  Applying user_management.0006_alter_erpmenuitem_module_name_and_more... OK
+System check identified 
+some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The 
+directory 'C:\00mindra\olivi
+ne-platform\backend\static' 
+in the STATICFILES_DIRS 
+setting does not exist.
+
+System check identified 1 
+issue (0 silenced).
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+test_set_01_update_inventory
+_parameters (Retail.backend.
+inventory.tests.test_5_10_in
+ventory_setup.InventorySetup
+TestCase.test_set_01_update_
+inventory_parameters)
+SET-TS-01: Create/Update 
+Inventory Parameters ... 
+ERROR
+test_set_02_custom_movement_
+type (Retail.backend.invento
+ry.tests.test_5_10_inventory
+_setup.InventorySetupTestCas
+e.test_set_02_custom_movemen
+t_type)
+SET-TS-02: Create Custom 
+Movement Type ... ok
+test_set_03_adjustment_reaso
+ns (Retail.backend.inventory
+.tests.test_5_10_inventory_s
+etup.InventorySetupTestCase.
+test_set_03_adjustment_reaso
+ns)
+SET-TS-03: Manage Reason 
+Codes ... ok
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_1_inve
+ntory_dashboard.InventoryDas
+hboardTestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_2_stoc
+k_management.StockManagement
+TestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_3_stoc
+k_movements.StockMovementTes
+tCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_4_stoc
+k_adjustments.StockAdjustmen
+tTestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_5_phys
+ical_inventory.StockTakeTest
+Case) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_6_inve
+ntory_valuation.ValuationTes
+tCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_7_repl
+enishment.ReplenishmentTestC
+ase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+test_trk_01_create_batch_lif
+ecycle (Retail.backend.inven
+tory.tests.test_5_8_item_tra
+cking.ItemTrackingTestCase.t
+est_trk_01_create_batch_life
+cycle)
+TRK-TS-01: Create Batch 
+with Expiry and verify 
+lifecycle ... ERROR
+test_trk_02_serial_number_li
+fecycle (Retail.backend.inve
+ntory.tests.test_5_8_item_tr
+acking.ItemTrackingTestCase.
+test_trk_02_serial_number_li
+fecycle)
+TRK-TS-02: Serial Number 
+generation and status 
+changes ... ERROR
+test_trk_03_serial_linked_to
+_batch (Retail.backend.inven
+tory.tests.test_5_8_item_tra
+cking.ItemTrackingTestCase.t
+est_trk_03_serial_linked_to_
+batch)
+TRK-TS-03: Link Serial 
+Number to a parent Batch 
+... ERROR
+test_trk_04_expiry_managemen
+t (Retail.backend.inventory.
+tests.test_5_8_item_tracking
+.ItemTrackingTestCase.test_t
+rk_04_expiry_management)
+TRK-TS-04: Expiry logic 
+detection ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.i
+nventory.tests.test_5_9_inve
+ntory_reports.InventoryRepor
+tsTestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.p
+rocurement.asn.tests.test_4_
+5_advance_shipment_notice.Ad
+vanceShipmentNoticeTestCase)
+ ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.p
+rocurement.compliance.tests.
+test_compliance_management.C
+omplianceManagementTestCase)
+ ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.p
+rocurement.grn.tests.test_4_
+6_goods_receipts.GoodsReceip
+tsTestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.p
+rocurement.invoice.tests.tes
+t_4_7_invoice_matching.Invoi
+ceMatchingTestCase) ... 
+ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.p
+rocurement.payments.tests.te
+st_payments_processing.Payme
+ntsProcessingTestCase) ... 
+ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.p
+rocurement.po.tests.test_4_3
+_purchase_order.PurchaseOrde
+rsTestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.p
+rocurement.pr.tests.test_4_1
+_purchase_requisition.PRBase
+TestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.p
+rocurement.returns.tests.tes
+t_4_8_purchase_returns.Purch
+aseReturnsTestCase) ... 
+ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+setUpClass (Retail.backend.p
+rocurement.rfq.tests.test_4_
+2_request_for_quotation.RFQB
+aseTestCase) ... ERROR
+WARNING:root:No active 
+license found - allowing 
+company creation 
+(fail-open).
+test_cfg_ts_01_create_procur
+ement_configuration (Retail.
+backend.procurement.tests.te
+st_configuration_management.
+ConfigurationManagementTestC
+ase.test_cfg_ts_01_create_pr
+ocurement_configuration) 
+... ERROR
+test_cfg_ts_02_approval_rule
+_configuration (Retail.backe
+nd.procurement.tests.test_co
+nfiguration_management.Confi
+gurationManagementTestCase.t
+est_cfg_ts_02_approval_rule_
+configuration) ... ERROR
+test_cfg_ts_03_multi_level_a
+pproval_rules (Retail.backen
+d.procurement.tests.test_con
+figuration_management.Config
+urationManagementTestCase.te
+st_cfg_ts_03_multi_level_app
+roval_rules) ... ERROR
+test_cfg_ts_04_tolerance_set
+tings_for_price_variance (Re
+tail.backend.procurement.tes
+ts.test_configuration_manage
+ment.ConfigurationManagement
+TestCase.test_cfg_ts_04_tole
+rance_settings_for_price_var
+iance) ... ERROR
+test_cfg_ts_05_tolerance_set
+tings_for_quantity_variance 
+(Retail.backend.procurement.
+tests.test_configuration_man
+agement.ConfigurationManagem
+entTestCase.test_cfg_ts_05_t
+olerance_settings_for_quanti
+ty_variance) ... ERROR
+test_cfg_ts_06_number_sequen
+ce_for_po (Retail.backend.pr
+ocurement.tests.test_configu
+ration_management.Configurat
+ionManagementTestCase.test_c
+fg_ts_06_number_sequence_for
+_po) ... ERROR
+test_cfg_ts_07_number_sequen
+ce_for_invoice (Retail.backe
+nd.procurement.tests.test_co
+nfiguration_management.Confi
+gurationManagementTestCase.t
+est_cfg_ts_07_number_sequenc
+e_for_invoice) ... ERROR
+test_cfg_ts_08_email_templat
+e_configuration (Retail.back
+end.procurement.tests.test_c
+onfiguration_management.Conf
+igurationManagementTestCase.
+test_cfg_ts_08_email_templat
+e_configuration) ... ERROR
+test_cfg_ts_09_system_defaul
+t_settings (Retail.backend.p
+rocurement.tests.test_config
+uration_management.Configura
+tionManagementTestCase.test_
+cfg_ts_09_system_default_set
+tings) ... ERROR
+test_cfg_ts_10_configuration
+_hierarchy (Retail.backend.p
+rocurement.tests.test_config
+uration_management.Configura
+tionManagementTestCase.test_
+cfg_ts_10_configuration_hier
+archy) ... ERROR
+test_cfg_ts_11_approval_work
+flow_enable_disable (Retail.
+backend.procurement.tests.te
+st_configuration_management.
+ConfigurationManagementTestC
+ase.test_cfg_ts_11_approval_
+workflow_enable_disable) 
+... ERROR
+test_cfg_ts_12_budget_contro
+l_configuration (Retail.back
+end.procurement.tests.test_c
+onfiguration_management.Conf
+igurationManagementTestCase.
+test_cfg_ts_12_budget_contro
+l_configuration) ... ERROR
+test_cfg_ts_13_vendor_rating
+_configuration (Retail.backe
+nd.procurement.tests.test_co
+nfiguration_management.Confi
+gurationManagementTestCase.t
+est_cfg_ts_13_vendor_rating_
+configuration) ... ERROR
+test_cfg_ts_14_rfq_configura
+tion (Retail.backend.procure
+ment.tests.test_configuratio
+n_management.ConfigurationMa
+nagementTestCase.test_cfg_ts
+_14_rfq_configuration) ... 
+ERROR
+test_cfg_ts_15_grn_configura
+tion (Retail.backend.procure
+ment.tests.test_configuratio
+n_management.ConfigurationMa
+nagementTestCase.test_cfg_ts
+_15_grn_configuration) ... 
+ERROR
+test_cfg_ts_16_invoice_match
+ing_configuration (Retail.ba
+ckend.procurement.tests.test
+_configuration_management.Co
+nfigurationManagementTestCas
+e.test_cfg_ts_16_invoice_mat
+ching_configuration) ... 
+ERROR
+test_cfg_ts_17_configuration
+_versioning (Retail.backend.
+procurement.tests.test_confi
+guration_management.Configur
+ationManagementTestCase.test
+_cfg_ts_17_configuration_ver
+sioning) ... ERROR
+test_cfg_ts_18_configuration
+_audit_trail (Retail.backend
+.procurement.tests.test_conf
+iguration_management.Configu
+rationManagementTestCase.tes
+t_cfg_ts_18_configuration_au
+dit_trail) ... ERROR
+test_cfg_ts_19_configuration
+_validation (Retail.backend.
+procurement.tests.test_confi
+guration_management.Configur
+ationManagementTestCase.test
+_cfg_ts_19_configuration_val
+idation) ... ERROR
+test_cfg_ts_20_configuration
+_export_import (Retail.backe
+nd.procurement.tests.test_co
+nfiguration_management.Confi
+gurationManagementTestCase.t
+est_cfg_ts_20_configuration_
+export_import) ... ERROR
+test_quote_workflow (Retail.
+backend.sales.tests.test_6_1
+_sales_quotation.SalesQuotat
+ionTests.test_quote_workflow
+)
+Test full quote workflow: 
+Create -> Submit -> Approve 
+-> Convert ... ERROR
+test_order_workflow (Retail.
+backend.sales.tests.test_6_2
+_sales_order.SalesOrderTests
+.test_order_workflow)
+Test Order: Draft -> 
+Approved -> Confirmed -> 
+Shipped ... ERROR
+test_invoice_workflow (Retai
+l.backend.sales.tests.test_6
+_3_sales_invoice.SalesInvoic
+eTests.test_invoice_workflow
+)
+Test Invoice: Draft -> 
+Validated -> Approved -> 
+Paid ... ERROR
+test_config_crud (Retail.bac
+kend.sales.tests.test_6_5_sa
+les_configuration.SalesConfi
+gTests.test_config_crud)
+Test Config retrieval and 
+update ... ok
+
+============================
+============================
+==============
+ERROR: test_set_01_update_in
+ventory_parameters (Retail.b
+ackend.inventory.tests.test_
+5_10_inventory_setup.Invento
+rySetupTestCase.test_set_01_
+update_inventory_parameters)
+SET-TS-01: Create/Update 
+Inventory Parameters
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 948, in get_or_create
+    return 
+self.get(**kwargs), False
+           
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 635, in get
+    raise 
+self.model.DoesNotExist(
+Retail.backend.inventory.mod
+els.InventoryParameter.DoesN
+otExist: InventoryParameter 
+matching query does not 
+exist.
+
+During handling of the 
+above exception, another 
+exception occurred:
+
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: inve
+ntory_parameter.created_by_i
+d
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_10_invent
+ory_setup.py", line 23, in t
+est_set_01_update_inventory_
+parameters
+    param, created = Invento
+ryParameter.objects.get_or_c
+reate(company=self.company)
+                     ^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 955, in get_or_create
+    return 
+self.create(**params), True
+           
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: inventory_parameter.
+created_by_id
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_1_inventory_dashboard.Inven
+toryDashboardTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_1_invento
+ry_dashboard.py", line 49, 
+in setUpTestData
+    raise ValueError("Need 
+at least 1 Location")
+ValueError: Need at least 1 
+Location
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_2_stock_management.StockMan
+agementTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_2_stock_m
+anagement.py", line 34, in 
+setUpTestData
+    raise 
+ValueError("Missing 
+Required Master Data 
+(Company, Location, or 
+Variant)")
+ValueError: Missing 
+Required Master Data 
+(Company, Location, or 
+Variant)
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_3_stock_movements.StockMove
+mentTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_3_stock_m
+ovements.py", line 28, in 
+setUpTestData
+    cls.loc_dest = 
+locations[1] if 
+len(locations) > 1 else 
+locations[0]
+                            
+                            
+   ~~~~~~~~~^^^
+IndexError: list index out 
+of range
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_4_stock_adjustments.StockAd
+justmentTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_4_stock_a
+djustments.py", line 30, in 
+setUpTestData
+    raise 
+ValueError("Missing 
+Required Master Data")
+ValueError: Missing 
+Required Master Data
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_5_physical_inventory.StockT
+akeTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_5_physica
+l_inventory.py", line 27, 
+in setUpTestData
+    if not cls.company or 
+not cls.Location or not 
+cls.variant:
+                            
+  ^^^^^^^^^^^^
+AttributeError: type object 
+'StockTakeTestCase' has no 
+attribute 'Location'
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_6_inventory_valuation.Valua
+tionTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_6_invento
+ry_valuation.py", line 22, 
+in setUpTestData
+    raise 
+ValueError("Missing 
+Required Master Data")
+ValueError: Missing 
+Required Master Data
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_7_replenishment.Replenishme
+ntTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 948, in get_or_create
+    return 
+self.get(**kwargs), False
+           
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 635, in get
+    raise 
+self.model.DoesNotExist(
+Retail.backend.inventory.mod
+els.StockLevel.DoesNotExist:
+ StockLevel matching query 
+does not exist.
+
+During handling of the 
+above exception, another 
+exception occurred:
+
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: 
+stock_level.location_id
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_7_repleni
+shment.py", line 31, in 
+setUpTestData
+    cls.stock_level, _ = Sto
+ckLevel.objects.get_or_creat
+e(
+                         ^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 955, in get_or_create
+    return 
+self.create(**params), True
+           
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\models.py", line 151, 
+in save
+    super().save(*args, 
+**kwargs)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: 
+stock_level.location_id
+
+============================
+============================
+==============
+ERROR: test_trk_01_create_ba
+tch_lifecycle (Retail.backen
+d.inventory.tests.test_5_8_i
+tem_tracking.ItemTrackingTes
+tCase.test_trk_01_create_bat
+ch_lifecycle)
+TRK-TS-01: Create Batch 
+with Expiry and verify 
+lifecycle
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: 
+inv_batch.variant_id
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_8_item_tr
+acking.py", line 34, in test
+_trk_01_create_batch_lifecyc
+le
+    batch = 
+Batch.objects.create(
+            
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: inv_batch.variant_id
+
+============================
+============================
+==============
+ERROR: test_trk_02_serial_nu
+mber_lifecycle (Retail.backe
+nd.inventory.tests.test_5_8_
+item_tracking.ItemTrackingTe
+stCase.test_trk_02_serial_nu
+mber_lifecycle)
+TRK-TS-02: Serial Number 
+generation and status 
+changes
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: 
+inv_serial_number.variant_id
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_8_item_tr
+acking.py", line 58, in test
+_trk_02_serial_number_lifecy
+cle
+    serial = 
+SerialNumber.objects.create(
+             
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: 
+inv_serial_number.variant_id
+
+============================
+============================
+==============
+ERROR: test_trk_03_serial_li
+nked_to_batch (Retail.backen
+d.inventory.tests.test_5_8_i
+tem_tracking.ItemTrackingTes
+tCase.test_trk_03_serial_lin
+ked_to_batch)
+TRK-TS-03: Link Serial 
+Number to a parent Batch
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: 
+inv_batch.variant_id
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_8_item_tr
+acking.py", line 79, in test
+_trk_03_serial_linked_to_bat
+ch
+    batch = 
+Batch.objects.create(
+            
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: inv_batch.variant_id
+
+============================
+============================
+==============
+ERROR: test_trk_04_expiry_ma
+nagement (Retail.backend.inv
+entory.tests.test_5_8_item_t
+racking.ItemTrackingTestCase
+.test_trk_04_expiry_manageme
+nt)
+TRK-TS-04: Expiry logic 
+detection
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: 
+inv_batch.variant_id
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_8_item_tr
+acking.py", line 100, in tes
+t_trk_04_expiry_management
+    batch = 
+Batch.objects.create(
+            
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: inv_batch.variant_id
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.inventory.tests.test_5
+_9_inventory_reports.Invento
+ryReportsTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\inve
+ntory\tests\test_5_9_invento
+ry_reports.py", line 22, in 
+setUpTestData
+    cls.location_2 = 
+Location.objects.create(
+                     
+^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: Location() got 
+unexpected keyword 
+arguments: 'code', 'type'
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.procurement.asn.tests.
+test_4_5_advance_shipment_no
+tice.AdvanceShipmentNoticeTe
+stCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\asn\tests\test_4_5_a
+dvance_shipment_notice.py", 
+line 60, in setUpTestData
+    assert cls.location, 
+"Missing active Location 
+master"
+           ^^^^^^^^^^^^
+AssertionError: Missing 
+active Location master
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.procurement.compliance
+.tests.test_compliance_manag
+ement.ComplianceManagementTe
+stCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\compliance\tests\tes
+t_compliance_management.py",
+ line 38, in setUpTestData
+    assert cls.supplier, 
+"Missing active Supplier 
+master"
+           ^^^^^^^^^^^^
+AssertionError: Missing 
+active Supplier master
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.procurement.grn.tests.
+test_4_6_goods_receipts.Good
+sReceiptsTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\grn\tests\test_4_6_g
+oods_receipts.py", line 66, 
+in setUpTestData
+    assert cls.location, 
+"Missing active Location 
+master"
+           ^^^^^^^^^^^^
+AssertionError: Missing 
+active Location master
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.procurement.invoice.te
+sts.test_4_7_invoice_matchin
+g.InvoiceMatchingTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\invoice\tests\test_4
+_7_invoice_matching.py", 
+line 55, in setUpTestData
+    assert cls.location, 
+"Missing active Location 
+master"
+           ^^^^^^^^^^^^
+AssertionError: Missing 
+active Location master
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.procurement.payments.t
+ests.test_payments_processin
+g.PaymentsProcessingTestCase
+)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\payments\tests\test_
+payments_processing.py", 
+line 39, in setUpTestData
+    assert cls.supplier, 
+"Missing active Supplier 
+master"
+           ^^^^^^^^^^^^
+AssertionError: Missing 
+active Supplier master
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.procurement.po.tests.t
+est_4_3_purchase_order.Purch
+aseOrdersTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\po\tests\test_4_3_pu
+rchase_order.py", line 59, 
+in setUpTestData
+    assert cls.location, 
+"Missing active Location 
+master"
+           ^^^^^^^^^^^^
+AssertionError: Missing 
+active Location master
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.procurement.pr.tests.t
+est_4_1_purchase_requisition
+.PRBaseTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\pr\tests\test_4_1_pu
+rchase_requisition.py", 
+line 51, in setUpTestData
+    assert cls.location, 
+"Missing active Location 
+master"
+           ^^^^^^^^^^^^
+AssertionError: Missing 
+active Location master
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.procurement.returns.te
+sts.test_4_8_purchase_return
+s.PurchaseReturnsTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\returns\tests\test_4
+_8_purchase_returns.py", 
+line 50, in setUpTestData
+    assert cls.location, 
+"Missing active Location 
+master"
+           ^^^^^^^^^^^^
+AssertionError: Missing 
+active Location master
+
+============================
+============================
+==============
+ERROR: setUpClass (Retail.ba
+ckend.procurement.rfq.tests.
+test_4_2_request_for_quotati
+on.RFQBaseTestCase)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\rfq\tests\test_4_2_r
+equest_for_quotation.py", 
+line 51, in setUpTestData
+    cls.supplier2 = Supplier
+.objects.exclude(id=cls.supp
+lier.id).filter(status='ACTI
+VE').first()
+                            
+                    
+^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' 
+object has no attribute 'id'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_01_create
+_procurement_configuration (
+Retail.backend.procurement.t
+ests.test_configuration_mana
+gement.ConfigurationManageme
+ntTestCase.test_cfg_ts_01_cr
+eate_procurement_configurati
+on)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+37, in test_cfg_ts_01_create
+_procurement_configuration
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'auto_approve_po_below', 
+'require_three_quotes', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_02_approv
+al_rule_configuration (Retai
+l.backend.procurement.tests.
+test_configuration_managemen
+t.ConfigurationManagementTes
+tCase.test_cfg_ts_02_approva
+l_rule_configuration)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+45, in test_cfg_ts_02_approv
+al_rule_configuration
+    rule = 
+ApprovalRule.objects.create(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: ApprovalRule() 
+got unexpected keyword 
+arguments: 'document_type', 
+'min_amount', 'max_amount'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_03_multi_
+level_approval_rules (Retail
+.backend.procurement.tests.t
+est_configuration_management
+.ConfigurationManagementTest
+Case.test_cfg_ts_03_multi_le
+vel_approval_rules)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+54, in test_cfg_ts_03_multi_
+level_approval_rules
+    rule1 = 
+ApprovalRule.objects.create(
+            
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: ApprovalRule() 
+got unexpected keyword 
+arguments: 'document_type', 
+'min_amount', 'max_amount', 
+'approval_level'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_04_tolera
+nce_settings_for_price_varia
+nce (Retail.backend.procurem
+ent.tests.test_configuration
+_management.ConfigurationMan
+agementTestCase.test_cfg_ts_
+04_tolerance_settings_for_pr
+ice_variance)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.OperationalError: 
+no such table: 
+procurement_tolerancesetting
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+69, in test_cfg_ts_04_tolera
+nce_settings_for_price_varia
+nce
+    tolerance = ToleranceSet
+ting.objects.create(
+                ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.OperationalE
+rror: no such table: 
+procurement_tolerancesetting
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_05_tolera
+nce_settings_for_quantity_va
+riance (Retail.backend.procu
+rement.tests.test_configurat
+ion_management.Configuration
+ManagementTestCase.test_cfg_
+ts_05_tolerance_settings_for
+_quantity_variance)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.OperationalError: 
+no such table: 
+procurement_tolerancesetting
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+77, in test_cfg_ts_05_tolera
+nce_settings_for_quantity_va
+riance
+    tolerance = ToleranceSet
+ting.objects.create(
+                ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.OperationalE
+rror: no such table: 
+procurement_tolerancesetting
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_06_number
+_sequence_for_po (Retail.bac
+kend.procurement.tests.test_
+configuration_management.Con
+figurationManagementTestCase
+.test_cfg_ts_06_number_seque
+nce_for_po)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.OperationalError: 
+no such table: 
+procurement_numbersequence
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+85, in test_cfg_ts_06_number
+_sequence_for_po
+    sequence = NumberSequenc
+e.objects.create(
+               ^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.OperationalE
+rror: no such table: 
+procurement_numbersequence
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_07_number
+_sequence_for_invoice (Retai
+l.backend.procurement.tests.
+test_configuration_managemen
+t.ConfigurationManagementTes
+tCase.test_cfg_ts_07_number_
+sequence_for_invoice)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.OperationalError: 
+no such table: 
+procurement_numbersequence
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+94, in test_cfg_ts_07_number
+_sequence_for_invoice
+    sequence = NumberSequenc
+e.objects.create(
+               ^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.OperationalE
+rror: no such table: 
+procurement_numbersequence
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_08_email_
+template_configuration (Reta
+il.backend.procurement.tests
+.test_configuration_manageme
+nt.ConfigurationManagementTe
+stCase.test_cfg_ts_08_email_
+template_configuration)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.OperationalError: 
+no such table: 
+procurement_emailtemplate
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+104, in test_cfg_ts_08_email
+_template_configuration
+    template = EmailTemplate
+.objects.create(
+               ^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.OperationalE
+rror: no such table: 
+procurement_emailtemplate
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_09_system
+_default_settings (Retail.ba
+ckend.procurement.tests.test
+_configuration_management.Co
+nfigurationManagementTestCas
+e.test_cfg_ts_09_system_defa
+ult_settings)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+113, in test_cfg_ts_09_syste
+m_default_settings
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'default_payment_terms', 
+'default_delivery_days', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_10_config
+uration_hierarchy (Retail.ba
+ckend.procurement.tests.test
+_configuration_management.Co
+nfigurationManagementTestCas
+e.test_cfg_ts_10_configurati
+on_hierarchy)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+121, in test_cfg_ts_10_confi
+guration_hierarchy
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'auto_approve_po_below', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_11_approv
+al_workflow_enable_disable (
+Retail.backend.procurement.t
+ests.test_configuration_mana
+gement.ConfigurationManageme
+ntTestCase.test_cfg_ts_11_ap
+proval_workflow_enable_disab
+le)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+129, in test_cfg_ts_11_appro
+val_workflow_enable_disable
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'enable_approval_workflow', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_12_budget
+_control_configuration (Reta
+il.backend.procurement.tests
+.test_configuration_manageme
+nt.ConfigurationManagementTe
+stCase.test_cfg_ts_12_budget
+_control_configuration)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+138, in test_cfg_ts_12_budge
+t_control_configuration
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'enable_budget_control', 
+'budget_check_level', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_13_vendor
+_rating_configuration (Retai
+l.backend.procurement.tests.
+test_configuration_managemen
+t.ConfigurationManagementTes
+tCase.test_cfg_ts_13_vendor_
+rating_configuration)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+146, in test_cfg_ts_13_vendo
+r_rating_configuration
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'enable_vendor_rating', 
+'rating_criteria', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_14_rfq_co
+nfiguration (Retail.backend.
+procurement.tests.test_confi
+guration_management.Configur
+ationManagementTestCase.test
+_cfg_ts_14_rfq_configuration
+)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+154, in test_cfg_ts_14_rfq_c
+onfiguration
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'min_rfq_vendors', 
+'rfq_response_days', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_15_grn_co
+nfiguration (Retail.backend.
+procurement.tests.test_confi
+guration_management.Configur
+ationManagementTestCase.test
+_cfg_ts_15_grn_configuration
+)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+162, in test_cfg_ts_15_grn_c
+onfiguration
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 'enable_quality_i
+nspection', 
+'allow_over_receipt', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_16_invoic
+e_matching_configuration (Re
+tail.backend.procurement.tes
+ts.test_configuration_manage
+ment.ConfigurationManagement
+TestCase.test_cfg_ts_16_invo
+ice_matching_configuration)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+170, in test_cfg_ts_16_invoi
+ce_matching_configuration
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 'matching_type', 
+'auto_approve_matched_invoic
+es', 'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_17_config
+uration_versioning (Retail.b
+ackend.procurement.tests.tes
+t_configuration_management.C
+onfigurationManagementTestCa
+se.test_cfg_ts_17_configurat
+ion_versioning)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+178, in test_cfg_ts_17_confi
+guration_versioning
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'auto_approve_po_below', 
+'version', 'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_18_config
+uration_audit_trail (Retail.
+backend.procurement.tests.te
+st_configuration_management.
+ConfigurationManagementTestC
+ase.test_cfg_ts_18_configura
+tion_audit_trail)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+189, in test_cfg_ts_18_confi
+guration_audit_trail
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'auto_approve_po_below', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_19_config
+uration_validation (Retail.b
+ackend.procurement.tests.tes
+t_configuration_management.C
+onfigurationManagementTestCa
+se.test_cfg_ts_19_configurat
+ion_validation)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+200, in test_cfg_ts_19_confi
+guration_validation
+    ProcurementConfig.object
+s.create(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'auto_approve_po_below', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_cfg_ts_20_config
+uration_export_import (Retai
+l.backend.procurement.tests.
+test_configuration_managemen
+t.ConfigurationManagementTes
+tCase.test_cfg_ts_20_configu
+ration_export_import)
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\proc
+urement\tests\test_configura
+tion_management.py", line 
+207, in test_cfg_ts_20_confi
+guration_export_import
+    config = ProcurementConf
+ig.objects.create(
+             ^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: 
+ProcurementConfig() got 
+unexpected keyword 
+arguments: 
+'auto_approve_po_below', 
+'require_three_quotes', 
+'created_by'
+
+============================
+============================
+==============
+ERROR: test_quote_workflow (
+Retail.backend.sales.tests.t
+est_6_1_sales_quotation.Sale
+sQuotationTests.test_quote_w
+orkflow)
+Test full quote workflow: 
+Create -> Submit -> Approve 
+-> Convert
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\sale
+s\tests\test_6_1_sales_quota
+tion.py", line 43, in setUp
+    self.location = 
+Location.objects.create(
+                    
+^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: Location() got 
+unexpected keyword 
+arguments: 'code', 'address'
+
+============================
+============================
+==============
+ERROR: test_order_workflow (
+Retail.backend.sales.tests.t
+est_6_2_sales_order.SalesOrd
+erTests.test_order_workflow)
+Test Order: Draft -> 
+Approved -> Confirmed -> 
+Shipped
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\sale
+s\tests\test_6_2_sales_order
+.py", line 42, in setUp
+    self.location = 
+Location.objects.create(
+                    
+^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 663, in create
+    obj = 
+self.model(**kwargs)
+          
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 569, in __init__
+    raise TypeError(
+TypeError: Location() got 
+unexpected keyword 
+arguments: 'code', 'address'
+
+============================
+============================
+==============
+ERROR: 
+test_invoice_workflow (Retai
+l.backend.sales.tests.test_6
+_3_sales_invoice.SalesInvoic
+eTests.test_invoice_workflow
+)
+Test Invoice: Draft -> 
+Validated -> Approved -> 
+Paid
+----------------------------
+----------------------------
+--------------
+Traceback (most recent call 
+last):
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT 
+NULL constraint failed: sale
+s_invoice.last_sent_to_email
+
+The above exception was the 
+direct cause of the 
+following exception:
+
+Traceback (most recent call 
+last):
+  File "C:\00mindra\olivine-
+platform\Retail\backend\sale
+s\tests\test_6_3_sales_invoi
+ce.py", line 50, in 
+test_invoice_workflow
+    invoice = 
+SalesInvoice.objects.create(
+              
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 665, in create
+    
+obj.save(force_insert=True, 
+using=self.db)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 902, in save
+    self.save_base(
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1008, in save_base
+    updated = 
+self._save_table(
+              
+^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1169, in _save_table
+    results = 
+self._do_insert(
+              
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\base.py", 
+line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\manager.py", 
+line 87, in manager_method
+    return getattr(self.get_
+queryset(), name)(*args, 
+**kwargs)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\query.py", 
+line 1873, in _insert
+    return query.get_compile
+r(using=using).execute_sql(r
+eturning_fields)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\models\sql\compiler.p
+y", line 1882, in 
+execute_sql
+    cursor.execute(sql, 
+params)
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 79, in execute
+  Applying user_management.0007_add_toolbar_permissions... OK
+    return 
+self._execute_with_wrappers(
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 92, in 
+_execute_with_wrappers
+    return executor(sql, 
+params, many, context)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 100, in _execute
+    with self.db.wrap_databa
+se_errors:
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, 
+in __exit__
+    raise dj_exc_value.with_
+traceback(traceback) from 
+exc_value
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\utils.py", 
+line 105, in _execute
+    return 
+self.cursor.execute(sql, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppDa
+ta\Local\Programs\Python\Pyt
+hon311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base
+.py", line 360, in execute
+    return 
+super().execute(query, 
+params)
+           ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+django.db.utils.IntegrityErr
+or: NOT NULL constraint 
+failed: sales_invoice.last_s
+ent_to_email
+
+----------------------------
+----------------------------
+--------------
+Ran 31 tests in 12.664s
+
+FAILED (errors=45)
+Destroying test database 
+for alias 'default' ('file:m
+emorydb_default?mode=memory&
+cache=shared')...
+

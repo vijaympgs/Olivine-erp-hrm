@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolbar Config Builder - Olivine ERP</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .config-card {
+            transition: all 0.3s;
+        }
+
+        .config-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .selected {
+            border: 2px solid #3b82f6;
+            background: #eff6ff;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 p-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">🎯 Toolbar Configuration Builder</h1>
+            <p class="text-gray-600">Click a screen type to see its toolbar configuration</p>
+        </div>
+
+        <!-- Screen Type Selector -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="config-card bg-white rounded-lg shadow-sm p-6 cursor-pointer border-2 border-transparent"
+                onclick="selectConfig('NESCKVDXRQF', 'Masters (Simple)', 'UOM, Brands, Categories')">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <i data-lucide="database" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Masters (Simple)</h3>
+                        <p class="text-xs text-gray-500">Basic CRUD</p>
+                    </div>
+                </div>
+                <code class="text-xs bg-gray-100 px-2 py-1 rounded">NESCKVDXRQF</code>
+            </div>
+
+            <div class="config-card bg-white rounded-lg shadow-sm p-6 cursor-pointer border-2 border-transparent"
+                onclick="selectConfig('NESCKVDXRQFIO', 'Masters (Advanced)', 'Item Master, Customers, Suppliers')">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                        <i data-lucide="package" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Masters (Advanced)</h3>
+                        <p class="text-xs text-gray-500">With Import/Export</p>
+                    </div>
+                </div>
+                <code class="text-xs bg-gray-100 px-2 py-1 rounded">NESCKVDXRQFIO</code>
+            </div>
+
+            <div class="config-card bg-white rounded-lg shadow-sm p-6 cursor-pointer border-2 border-transparent"
+                onclick="selectConfig('NESCKZTJAVPMRDX1234QF', 'Transactions', 'Purchase Orders, Sales Orders')">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <i data-lucide="file-text" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Transactions</h3>
+                        <p class="text-xs text-gray-500">Full Workflow</p>
+                    </div>
+                </div>
+                <code class="text-xs bg-gray-100 px-2 py-1 rounded">NESCKZTJAVPMRDX1234QF</code>
+            </div>
+
+            <div class="config-card bg-white rounded-lg shadow-sm p-6 cursor-pointer border-2 border-transparent"
+                onclick="selectConfig('VRXPYQFG', 'Reports', 'Stock Valuation, Sales Analysis')">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
+                        <i data-lucide="bar-chart" class="w-6 h-6 text-amber-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Reports</h3>
+                        <p class="text-xs text-gray-500">Read-only</p>
+                    </div>
+                </div>
+                <code class="text-xs bg-gray-100 px-2 py-1 rounded">VRXPYQFG</code>
+            </div>
+
+            <div class="config-card bg-white rounded-lg shadow-sm p-6 cursor-pointer border-2 border-transparent"
+                onclick="selectConfig('ESCKXR', 'Configuration', 'Company Settings, System Parameters')">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                        <i data-lucide="settings" class="w-6 h-6 text-gray-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Configuration</h3>
+                        <p class="text-xs text-gray-500">Edit-only</p>
+                    </div>
+                </div>
+                <code class="text-xs bg-gray-100 px-2 py-1 rounded">ESCKXR</code>
+            </div>
+
+            <div class="config-card bg-white rounded-lg shadow-sm p-6 cursor-pointer border-2 border-transparent"
+                onclick="selectConfig('NESCKVDXRQF', 'Transaction (Simple)', 'Stock Adjustments, Stock Transfers')">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                        <i data-lucide="arrow-right-left" class="w-6 h-6 text-indigo-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Transaction (Simple)</h3>
+                        <p class="text-xs text-gray-500">No Approval</p>
+                    </div>
+                </div>
+                <code class="text-xs bg-gray-100 px-2 py-1 rounded">NESCKVDXRQF</code>
+            </div>
+        </div>
+
+        <!-- Selected Config Display -->
+        <div id="configDisplay" class="bg-white rounded-lg shadow-sm p-6 mb-6 hidden">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900" id="configTitle">Selected Configuration</h2>
+                    <p class="text-sm text-gray-600" id="configExamples">Examples</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-xs text-gray-500 mb-1">Configuration String</p>
+                    <code class="text-2xl font-mono font-bold text-blue-600" id="configString">---</code>
+                </div>
+            </div>
+
+            <div class="border-t pt-4">
+                <h3 class="text-sm font-semibold text-gray-700 mb-3">Toolbar Preview (VIEW Mode)</h3>
+                <div id="toolbarPreview" class="flex flex-wrap gap-2 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <!-- Buttons will be inserted here -->
+                </div>
+            </div>
+
+            <div class="border-t mt-4 pt-4">
+                <h3 class="text-sm font-semibold text-gray-700 mb-3">Character Breakdown</h3>
+                <div id="characterBreakdown" class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <!-- Character cards will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Character Reference -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">📖 Complete Character Reference</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="fullReference">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ACTION_MAP = {
+            'N': { label: 'New', shortcut: 'F2', icon: 'plus', color: 'blue' },
+            'E': { label: 'Edit', shortcut: 'F3', icon: 'edit', color: 'blue' },
+            'S': { label: 'Save', shortcut: 'F8', icon: 'save', color: 'green' },
+            'C': { label: 'Cancel', shortcut: 'Esc', icon: 'x', color: 'gray' },
+            'K': { label: 'Clear', shortcut: 'F5', icon: 'rotate-ccw', color: 'amber' },
+            'V': { label: 'View', shortcut: 'F7', icon: 'eye', color: 'indigo' },
+            'D': { label: 'Delete', shortcut: 'F4', icon: 'trash-2', color: 'red' },
+            'X': { label: 'Exit', shortcut: 'Esc', icon: 'log-out', color: 'gray' },
+            'R': { label: 'Refresh', shortcut: 'F9', icon: 'refresh-cw', color: 'cyan' },
+            'Q': { label: 'Search', shortcut: 'Ctrl+F', icon: 'search', color: 'gray' },
+            'F': { label: 'Filter', shortcut: 'Alt+F', icon: 'filter', color: 'gray' },
+            'I': { label: 'Import', shortcut: 'Ctrl+I', icon: 'upload', color: 'violet' },
+            'O': { label: 'Export', shortcut: 'Ctrl+E', icon: 'download', color: 'indigo' },
+            'Y': { label: 'Export', shortcut: 'Ctrl+E', icon: 'download', color: 'indigo' },
+            'Z': { label: 'Authorize', shortcut: 'F10', icon: 'check-circle', color: 'green' },
+            'T': { label: 'Submit', shortcut: 'Alt+S', icon: 'send', color: 'blue' },
+            'J': { label: 'Reject', shortcut: 'Alt+R', icon: 'ban', color: 'red' },
+            'A': { label: 'Amend', shortcut: 'Alt+A', icon: 'file-edit', color: 'orange' },
+            'H': { label: 'Hold', shortcut: 'Alt+H', icon: 'pause-circle', color: 'yellow' },
+            'W': { label: 'Void', shortcut: 'Alt+V', icon: 'octagon', color: 'red' },
+            'P': { label: 'Print', shortcut: 'Ctrl+P', icon: 'printer', color: 'purple' },
+            'M': { label: 'Email', shortcut: 'Ctrl+M', icon: 'mail', color: 'sky' },
+            'L': { label: 'Clone', shortcut: 'Ctrl+Shift+C', icon: 'copy', color: 'blue' },
+            '1': { label: 'First', shortcut: 'Home', icon: 'chevron-first', color: 'gray' },
+            '2': { label: 'Prev', shortcut: 'PgUp', icon: 'chevron-left', color: 'gray' },
+            '3': { label: 'Next', shortcut: 'PgDn', icon: 'chevron-right', color: 'gray' },
+            '4': { label: 'Last', shortcut: 'End', icon: 'chevron-last', color: 'gray' },
+            'B': { label: 'Notes', shortcut: 'Alt+N', icon: 'sticky-note', color: 'yellow' },
+            'G': { label: 'Attach', shortcut: 'Alt+U', icon: 'paperclip', color: 'gray' },
+            '?': { label: 'Help', shortcut: 'F1', icon: 'help-circle', color: 'blue' }
+        };
+
+        function selectConfig(configString, title, examples) {
+            // Remove previous selection
+            document.querySelectorAll('.config-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+
+            // Add selection to clicked card
+            event.currentTarget.classList.add('selected');
+
+            // Update display
+            document.getElementById('configDisplay').classList.remove('hidden');
+            document.getElementById('configTitle').textContent = title;
+            document.getElementById('configExamples').textContent = `Examples: ${examples}`;
+            document.getElementById('configString').textContent = configString;
+
+            // Generate toolbar preview
+            const toolbarPreview = document.getElementById('toolbarPreview');
+            toolbarPreview.innerHTML = '';
+
+            configString.split('').forEach(char => {
+                const action = ACTION_MAP[char];
+                if (action) {
+                    const btn = document.createElement('button');
+                    btn.className = `flex items-center gap-2 px-3 py-2 rounded-lg bg-white border-2 border-${action.color}-200 hover:border-${action.color}-400 transition-all`;
+                    btn.innerHTML = `
+                        <i data-lucide="${action.icon}" class="w-4 h-4 text-${action.color}-600"></i>
+                        <span class="text-xs font-medium text-gray-700">${action.label}</span>
+                        <span class="text-xs text-gray-400">${action.shortcut}</span>
+                    `;
+                    toolbarPreview.appendChild(btn);
+                }
+            });
+
+            // Generate character breakdown
+            const breakdown = document.getElementById('characterBreakdown');
+            breakdown.innerHTML = '';
+
+            configString.split('').forEach(char => {
+                const action = ACTION_MAP[char];
+                if (action) {
+                    const card = document.createElement('div');
+                    card.className = 'bg-gray-50 rounded-lg p-3 border border-gray-200';
+                    card.innerHTML = `
+                        <div class="flex items-center gap-2 mb-1">
+                            <code class="text-lg font-bold text-blue-600">${char}</code>
+                            <i data-lucide="${action.icon}" class="w-4 h-4 text-gray-600"></i>
+                        </div>
+                        <p class="text-xs font-medium text-gray-900">${action.label}</p>
+                        <p class="text-xs text-gray-500">${action.shortcut}</p>
+                    `;
+                    breakdown.appendChild(card);
+                }
+            });
+
+            lucide.createIcons();
+        }
+
+        // Populate full reference
+        const fullRef = document.getElementById('fullReference');
+        Object.entries(ACTION_MAP).forEach(([code, action]) => {
+            const card = document.createElement('div');
+            card.className = 'flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200';
+            card.innerHTML = `
+                <code class="text-xl font-bold text-blue-600 w-8">${code}</code>
+                <i data-lucide="${action.icon}" class="w-5 h-5 text-gray-600"></i>
+                <div class="flex-1">
+                    <p class="text-sm font-medium text-gray-900">${action.label}</p>
+                    <p class="text-xs text-gray-500">${action.shortcut}</p>
+                </div>
+            `;
+            fullRef.appendChild(card);
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

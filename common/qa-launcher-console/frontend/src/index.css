@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Custom Scrollbar for Console - Hairline Style */
+.console-scroll::-webkit-scrollbar {
+  width: 4px;
+  /* Hairline width */
+  height: 4px;
+}
+
+.console-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.console-scroll::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+.console-scroll::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}

@@ -1,0 +1,896 @@
+{
+    "metadata": {
+        "version": "1.0",
+        "created": "2026-01-25",
+        "platform": "Olivine ERP",
+        "app": "Retail",
+        "description": "Seed data for Test Console Readiness Matrix"
+    },
+    "dependency_chains": {
+        "master_hierarchy": {
+            "description": "Master data setup order - Level 0 must complete before Level 1, etc.",
+            "levels": {
+                "0": [
+                    "company-setup",
+                    "location-setup",
+                    "tax-profile-setup",
+                    "currency-setup"
+                ],
+                "1": [
+                    "uom-setup",
+                    "category-setup",
+                    "brand-setup",
+                    "attribute-setup"
+                ],
+                "2": [
+                    "attribute-value-setup",
+                    "attribute-template"
+                ],
+                "3": [
+                    "item-master",
+                    "supplier-master",
+                    "customer-master"
+                ],
+                "4": [
+                    "price-list-setup"
+                ]
+            }
+        },
+        "procurement_chain": {
+            "description": "Procure-to-Pay transaction flow",
+            "sequence": [
+                "purchase-requisition",
+                "purchase-order",
+                "goods-receipt",
+                "invoice-matching",
+                "vendor-payment"
+            ],
+            "required_masters": [
+                "supplier-master",
+                "item-master",
+                "location-setup"
+            ]
+        },
+        "sales_chain": {
+            "description": "Quote-to-Cash transaction flow",
+            "sequence": [
+                "sales-quote",
+                "sales-order",
+                "sales-invoice",
+                "sales-return"
+            ],
+            "required_masters": [
+                "customer-master",
+                "item-master"
+            ]
+        },
+        "pos_chain": {
+            "description": "POS daily operations flow",
+            "sequence": [
+                "pos-business-rules",
+                "pos-terminal",
+                "pos-day-open",
+                "pos-session-open",
+                "pos-checkout",
+                "pos-session-close",
+                "pos-day-close",
+                "pos-settlement"
+            ],
+            "required_masters": [
+                "item-master"
+            ]
+        }
+    },
+    "entries": [
+        {
+            "menu_id": "company-setup",
+            "menu_label": "Company Setup",
+            "app_id": "retail",
+            "module_id": "system-admin",
+            "sub_module_id": null,
+            "path": "/admin/company",
+            "capability_type": "CONFIG",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/1.MastersandPOS/00masterbbp_bbp.md",
+            "ts_status": "Ready",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [],
+            "is_prerequisite_for": [
+                "location-setup",
+                "uom-setup",
+                "category-setup",
+                "attribute-setup",
+                "supplier-master",
+                "customer-master"
+            ],
+            "sequence_order": 1,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "location-setup",
+            "menu_label": "Location Setup",
+            "app_id": "retail",
+            "module_id": "system-admin",
+            "sub_module_id": null,
+            "path": "/setup/locations",
+            "capability_type": "CONFIG",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "Ready",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [
+                "company-setup"
+            ],
+            "is_prerequisite_for": [
+                "item-master",
+                "supplier-master",
+                "customer-master",
+                "pos-terminal",
+                "goods-receipt"
+            ],
+            "sequence_order": 2,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "tax-profile-setup",
+            "menu_label": "Tax Profiles",
+            "app_id": "retail",
+            "module_id": "system-admin",
+            "sub_module_id": null,
+            "path": "/setup/tax-profiles",
+            "capability_type": "CONFIG",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Missing",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "company-setup"
+            ],
+            "is_prerequisite_for": [
+                "purchase-order",
+                "sales-invoice",
+                "pos-checkout"
+            ],
+            "sequence_order": 3,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "uom-setup",
+            "menu_label": "UOM Setup",
+            "app_id": "retail",
+            "module_id": "merchandising",
+            "sub_module_id": "setup",
+            "path": "/inventory/uoms",
+            "capability_type": "MASTER",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "Ready",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [
+                "company-setup"
+            ],
+            "is_prerequisite_for": [
+                "item-master"
+            ],
+            "sequence_order": 10,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "category-setup",
+            "menu_label": "Category Hierarchy",
+            "app_id": "retail",
+            "module_id": "merchandising",
+            "sub_module_id": "setup",
+            "path": "/inventory/categories",
+            "capability_type": "MASTER",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "Ready",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [
+                "company-setup"
+            ],
+            "is_prerequisite_for": [
+                "item-master"
+            ],
+            "sequence_order": 11,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "brand-setup",
+            "menu_label": "Brand Setup",
+            "app_id": "retail",
+            "module_id": "merchandising",
+            "sub_module_id": "setup",
+            "path": "/setup/simple-masters",
+            "capability_type": "MASTER",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "NONE",
+            "depends_on": [
+                "company-setup"
+            ],
+            "is_prerequisite_for": [
+                "item-master"
+            ],
+            "sequence_order": 12,
+            "is_critical_path": false
+        },
+        {
+            "menu_id": "attribute-setup",
+            "menu_label": "Attribute Definitions",
+            "app_id": "retail",
+            "module_id": "merchandising",
+            "sub_module_id": "product-catalog",
+            "path": "/inventory/attributes",
+            "capability_type": "MASTER",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "Ready",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [
+                "company-setup"
+            ],
+            "is_prerequisite_for": [
+                "attribute-value-setup",
+                "attribute-template"
+            ],
+            "sequence_order": 20,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "attribute-value-setup",
+            "menu_label": "Attribute Values",
+            "app_id": "retail",
+            "module_id": "merchandising",
+            "sub_module_id": "product-catalog",
+            "path": "/inventory/attribute-values",
+            "capability_type": "MASTER",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "Ready",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [
+                "attribute-setup"
+            ],
+            "is_prerequisite_for": [
+                "attribute-template"
+            ],
+            "sequence_order": 21,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "attribute-template",
+            "menu_label": "Attribute Templates",
+            "app_id": "retail",
+            "module_id": "merchandising",
+            "sub_module_id": "product-catalog",
+            "path": "/inventory/attribute-templates",
+            "capability_type": "MASTER",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "InProgress",
+            "automation_tier": "PARTIAL",
+            "depends_on": [
+                "attribute-setup",
+                "attribute-value-setup"
+            ],
+            "is_prerequisite_for": [
+                "item-master"
+            ],
+            "sequence_order": 22,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "item-master",
+            "menu_label": "Item Master",
+            "app_id": "retail",
+            "module_id": "merchandising",
+            "sub_module_id": "product-catalog",
+            "path": "/inventory/item-master",
+            "capability_type": "MASTER",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/1.MastersandPOS/Item_Master_BBP.md",
+            "ts_status": "Ready",
+            "script_path": "e2e/retail/masters/item-master.spec.ts",
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [
+                "uom-setup",
+                "category-setup",
+                "attribute-template"
+            ],
+            "is_prerequisite_for": [
+                "price-list-setup",
+                "purchase-order",
+                "sales-order",
+                "pos-checkout",
+                "stock-on-hand"
+            ],
+            "sequence_order": 30,
+            "is_critical_path": true,
+            "notes": "Gold Standard reference implementation"
+        },
+        {
+            "menu_id": "supplier-master",
+            "menu_label": "Supplier Master",
+            "app_id": "retail",
+            "module_id": "procurement",
+            "sub_module_id": "vendor-management",
+            "path": "/partners/suppliers",
+            "capability_type": "MASTER",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "Ready",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [
+                "company-setup",
+                "location-setup"
+            ],
+            "is_prerequisite_for": [
+                "purchase-requisition",
+                "purchase-order",
+                "supplier-ic-fields"
+            ],
+            "sequence_order": 31,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "customer-master",
+            "menu_label": "Customer Master",
+            "app_id": "retail",
+            "module_id": "customers",
+            "sub_module_id": "customer-management",
+            "path": "/partners/customers",
+            "capability_type": "MASTER",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "Ready",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [
+                "company-setup",
+                "location-setup"
+            ],
+            "is_prerequisite_for": [
+                "sales-quote",
+                "sales-order",
+                "pos-checkout",
+                "customer-ic-fields"
+            ],
+            "sequence_order": 32,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "price-list-setup",
+            "menu_label": "Price Lists",
+            "app_id": "retail",
+            "module_id": "merchandising",
+            "sub_module_id": "pricing",
+            "path": "/inventory/price-lists",
+            "capability_type": "MASTER",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "InProgress",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "item-master"
+            ],
+            "is_prerequisite_for": [
+                "purchase-order",
+                "sales-order",
+                "pos-checkout"
+            ],
+            "sequence_order": 40,
+            "is_critical_path": false
+        },
+        {
+            "menu_id": "pos-business-rules",
+            "menu_label": "POS Business Rules",
+            "app_id": "retail",
+            "module_id": "store-ops",
+            "sub_module_id": "settings",
+            "path": "/pos/business-rules",
+            "capability_type": "CONFIG",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/19_POS_ROADMAP/roadmap_pos.md",
+            "ts_status": "Ready",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [
+                "company-setup"
+            ],
+            "is_prerequisite_for": [
+                "pos-terminal",
+                "pos-checkout"
+            ],
+            "sequence_order": 50,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "pos-terminal",
+            "menu_label": "Terminal Configuration",
+            "app_id": "retail",
+            "module_id": "store-ops",
+            "sub_module_id": "settings",
+            "path": "/pos/terminal",
+            "capability_type": "CONFIG",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "location-setup",
+                "pos-business-rules"
+            ],
+            "is_prerequisite_for": [
+                "pos-day-open"
+            ],
+            "sequence_order": 51,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "pos-day-open",
+            "menu_label": "Day Open",
+            "app_id": "retail",
+            "module_id": "store-ops",
+            "sub_module_id": "daily-ops",
+            "path": "/operations/pos/day-open",
+            "capability_type": "OPERATION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "pos-terminal"
+            ],
+            "is_prerequisite_for": [
+                "pos-session-open"
+            ],
+            "sequence_order": 52,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "pos-session-open",
+            "menu_label": "Session Open",
+            "app_id": "retail",
+            "module_id": "store-ops",
+            "sub_module_id": "daily-ops",
+            "path": "/operations/pos/session-open",
+            "capability_type": "OPERATION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Missing",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "pos-day-open"
+            ],
+            "is_prerequisite_for": [
+                "pos-checkout",
+                "pos-session-close"
+            ],
+            "sequence_order": 53,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "pos-checkout",
+            "menu_label": "POS Checkout",
+            "app_id": "retail",
+            "module_id": "store-ops",
+            "sub_module_id": "billing",
+            "path": "/pos/ui",
+            "capability_type": "TRANSACTION",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/1.MastersandPOS/pos_bbp.md",
+            "ts_status": "Ready",
+            "script_path": "e2e/retail/pos/checkout.spec.ts",
+            "dit_status": "Pass",
+            "uat_status": "Pass",
+            "automation_tier": "FULL",
+            "depends_on": [
+                "pos-session-open",
+                "item-master"
+            ],
+            "is_prerequisite_for": [
+                "pos-session-close"
+            ],
+            "sequence_order": 54,
+            "is_critical_path": true,
+            "notes": "Core POS transaction - supports all 8 verticals"
+        },
+        {
+            "menu_id": "pos-session-close",
+            "menu_label": "Session Close",
+            "app_id": "retail",
+            "module_id": "store-ops",
+            "sub_module_id": "daily-ops",
+            "path": "/operations/pos/session-close",
+            "capability_type": "OPERATION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Missing",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "pos-session-open"
+            ],
+            "is_prerequisite_for": [
+                "pos-day-close"
+            ],
+            "sequence_order": 55,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "pos-day-close",
+            "menu_label": "Day Close",
+            "app_id": "retail",
+            "module_id": "store-ops",
+            "sub_module_id": "daily-ops",
+            "path": "/operations/pos/day-close",
+            "capability_type": "OPERATION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "pos-session-close"
+            ],
+            "is_prerequisite_for": [
+                "pos-settlement"
+            ],
+            "sequence_order": 56,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "pos-settlement",
+            "menu_label": "Settlement",
+            "app_id": "retail",
+            "module_id": "store-ops",
+            "sub_module_id": "daily-ops",
+            "path": "/operations/pos/settlement",
+            "capability_type": "OPERATION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "NONE",
+            "depends_on": [
+                "pos-day-close"
+            ],
+            "is_prerequisite_for": [],
+            "sequence_order": 57,
+            "is_critical_path": false
+        },
+        {
+            "menu_id": "purchase-requisition",
+            "menu_label": "Purchase Requisition",
+            "app_id": "retail",
+            "module_id": "procurement",
+            "sub_module_id": "purchasing",
+            "path": "/procurement/requisitions",
+            "capability_type": "TRANSACTION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/4.Procurement/4.1_pr_bbp.md",
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "item-master",
+                "supplier-master"
+            ],
+            "is_prerequisite_for": [
+                "purchase-order"
+            ],
+            "sequence_order": 60,
+            "is_critical_path": true,
+            "notes": "Optional if PR_REQUIRED_BEFORE_PO = false"
+        },
+        {
+            "menu_id": "purchase-order",
+            "menu_label": "Purchase Order",
+            "app_id": "retail",
+            "module_id": "procurement",
+            "sub_module_id": "purchasing",
+            "path": "/procurement/orders",
+            "capability_type": "TRANSACTION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/4.Procurement/02retail_bbp_v_0_3_4.3-4.10-PO-to-PROC-CONFIG.md",
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "supplier-master",
+                "item-master"
+            ],
+            "is_prerequisite_for": [
+                "goods-receipt"
+            ],
+            "sequence_order": 61,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "goods-receipt",
+            "menu_label": "Goods Receipt",
+            "app_id": "retail",
+            "module_id": "procurement",
+            "sub_module_id": "receiving",
+            "path": "/procurement/receipts",
+            "capability_type": "TRANSACTION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/5.Inventory/5.3_Stock_Movements/5.3.2_Goods_Receipt_bbp.md",
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "purchase-order",
+                "location-setup"
+            ],
+            "is_prerequisite_for": [
+                "invoice-matching",
+                "stock-on-hand"
+            ],
+            "sequence_order": 62,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "invoice-matching",
+            "menu_label": "Invoice Matching",
+            "app_id": "retail",
+            "module_id": "procurement",
+            "sub_module_id": "finance",
+            "path": "/procurement/bills",
+            "capability_type": "TRANSACTION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "NONE",
+            "depends_on": [
+                "goods-receipt",
+                "purchase-order"
+            ],
+            "is_prerequisite_for": [
+                "vendor-payment"
+            ],
+            "sequence_order": 63,
+            "is_critical_path": true
+        },
+        {
+            "menu_id": "vendor-payment",
+            "menu_label": "Vendor Payment",
+            "app_id": "retail",
+            "module_id": "procurement",
+            "sub_module_id": "finance",
+            "path": "/procurement/payments",
+            "capability_type": "TRANSACTION",
+            "implementation_status": "PARTIAL",
+            "bbp_status": "Missing",
+            "bbp_path": null,
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "NONE",
+            "depends_on": [
+                "invoice-matching"
+            ],
+            "is_prerequisite_for": [],
+            "sequence_order": 64,
+            "is_critical_path": false
+        },
+        {
+            "menu_id": "stock-on-hand",
+            "menu_label": "Stock Levels",
+            "app_id": "retail",
+            "module_id": "inventory",
+            "sub_module_id": "stock-management",
+            "path": "/inventory/levels",
+            "capability_type": "REPORT",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/5.Inventory/5.2_Stock_Management/5.2.1_Stock_on_Hand_bbp.md",
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "item-master",
+                "location-setup"
+            ],
+            "is_prerequisite_for": [
+                "movement-report",
+                "stock-valuation"
+            ],
+            "sequence_order": 100,
+            "is_critical_path": false
+        },
+        {
+            "menu_id": "stock-transfer",
+            "menu_label": "Internal Transfer",
+            "app_id": "retail",
+            "module_id": "inventory",
+            "sub_module_id": "stock-movements",
+            "path": "/inventory/transfers",
+            "capability_type": "TRANSACTION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/5.Inventory/5.3_Stock_Movements/5.3.4_Internal_Transfers_bbp.md",
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "item-master",
+                "location-setup"
+            ],
+            "is_prerequisite_for": [
+                "intercompany-transfer"
+            ],
+            "sequence_order": 101,
+            "is_critical_path": false
+        },
+        {
+            "menu_id": "intercompany-transfer",
+            "menu_label": "Intercompany Transfer",
+            "app_id": "retail",
+            "module_id": "inventory",
+            "sub_module_id": "stock-movements",
+            "path": "/inventory/intercompany",
+            "capability_type": "TRANSACTION",
+            "implementation_status": "VERIFIED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/4.Procurement/4.11Intercomany-trade-ICT.md",
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pass",
+            "uat_status": "InProgress",
+            "automation_tier": "PARTIAL",
+            "depends_on": [
+                "stock-transfer",
+                "supplier-ic-fields",
+                "customer-ic-fields"
+            ],
+            "is_prerequisite_for": [],
+            "sequence_order": 102,
+            "is_critical_path": false,
+            "notes": "ICT implementation 100% complete"
+        },
+        {
+            "menu_id": "stock-adjustment",
+            "menu_label": "Stock Adjustment",
+            "app_id": "retail",
+            "module_id": "inventory",
+            "sub_module_id": "stock-adjustments",
+            "path": "/inventory/adjustments/new",
+            "capability_type": "TRANSACTION",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/5.Inventory/5.4_Stock_Adjustments/5.4.1_Adjustment_Entry_bbp.md",
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "CANDIDATE",
+            "depends_on": [
+                "item-master",
+                "location-setup"
+            ],
+            "is_prerequisite_for": [],
+            "sequence_order": 110,
+            "is_critical_path": false
+        },
+        {
+            "menu_id": "movement-report",
+            "menu_label": "Movement Report",
+            "app_id": "retail",
+            "module_id": "inventory",
+            "sub_module_id": "reports",
+            "path": "/inventory/movement-reports",
+            "capability_type": "REPORT",
+            "implementation_status": "IMPLEMENTED",
+            "bbp_status": "Available",
+            "bbp_path": ".steering/00AGENT_ONBOARDING/02_Business_Blueprints/5.Inventory/5.3_Stock_Movements/5.3.6_Movement_Reports_bbp.md",
+            "ts_status": "None",
+            "script_path": null,
+            "dit_status": "Pending",
+            "uat_status": "Not Started",
+            "automation_tier": "NONE",
+            "depends_on": [
+                "stock-on-hand"
+            ],
+            "is_prerequisite_for": [],
+            "sequence_order": 200,
+            "is_critical_path": false
+        }
+    ]
+}

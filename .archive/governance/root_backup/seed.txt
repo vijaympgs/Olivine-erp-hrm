@@ -1,0 +1,96 @@
+ Volume in drive C is Windows-SSD
+ Volume Serial Number is 22D4-EBD4
+
+ Directory of C:\00mindra\olivine-erp-platform\apps\crm\backend\customer\management\commands
+
+23-12-2025  20:09             3,370 seed_customers.py
+               1 File(s)          3,370 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\apps\fms\backend\finance\management\commands
+
+29-12-2025  20:02             3,570 seed_finance.py
+               1 File(s)          3,570 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\backend
+
+09-01-2026  09:43            11,400 seed_menu_items.py
+               1 File(s)         11,400 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\backend\scripts
+
+06-12-2025  10:47                 0 seed_demo_data.py
+09-01-2026  10:44             4,342 seed_toolbar_controls.py
+               2 File(s)          4,342 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\core\auth-access\backend\user_management\management\commands
+
+29-12-2025  20:02            29,122 seed_all_menu_items.py
+29-12-2025  20:02             6,125 seed_default_permissions.py
+29-12-2025  20:02             3,733 seed_default_roles.py
+29-12-2025  20:02             6,582 seed_default_users.py
+29-12-2025  20:02            17,209 seed_menu_permissions.py
+29-12-2025  20:02             7,736 seed_retail_menu_items.py
+               6 File(s)         70,507 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\core\auth_access\backend\user_management\management\commands
+
+29-12-2025  20:02            29,122 seed_all_menu_items.py
+29-12-2025  20:02             6,125 seed_default_permissions.py
+29-12-2025  20:02             3,733 seed_default_roles.py
+29-12-2025  20:02             6,582 seed_default_users.py
+29-12-2025  20:02            17,209 seed_menu_permissions.py
+29-12-2025  20:02             7,736 seed_retail_menu_items.py
+               6 File(s)         70,507 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\core\org-structure\backend\company\management\commands
+
+29-12-2025  20:02            24,655 seed_data.py
+29-12-2025  20:02             7,354 seed_masters.py
+               2 File(s)         32,009 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\core\org_structure\backend\company\management\commands
+
+29-12-2025  20:02            24,655 seed_data.py
+29-12-2025  20:02             7,354 seed_masters.py
+               2 File(s)         32,009 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\frontend\core\auth-access\backend\user_management\management\commands
+
+29-12-2025  20:02            29,122 seed_all_menu_items.py
+29-12-2025  20:02             6,125 seed_default_permissions.py
+29-12-2025  20:02             3,733 seed_default_roles.py
+29-12-2025  20:02             6,582 seed_default_users.py
+29-12-2025  20:02            17,209 seed_menu_permissions.py
+29-12-2025  20:02             7,736 seed_retail_menu_items.py
+               6 File(s)         70,507 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\frontend\core\auth_access\backend\user_management\management\commands
+
+29-12-2025  20:02            29,122 seed_all_menu_items.py
+29-12-2025  20:02             6,125 seed_default_permissions.py
+29-12-2025  20:02             3,733 seed_default_roles.py
+29-12-2025  20:02             6,582 seed_default_users.py
+29-12-2025  20:02            17,209 seed_menu_permissions.py
+29-12-2025  20:02             7,736 seed_retail_menu_items.py
+               6 File(s)         70,507 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\frontend\core\org-structure\backend\company\management\commands
+
+29-12-2025  20:02            24,655 seed_data.py
+29-12-2025  20:02             7,354 seed_masters.py
+               2 File(s)         32,009 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\frontend\core\org_structure\backend\company\management\commands
+
+29-12-2025  20:02            24,655 seed_data.py
+29-12-2025  20:02             7,354 seed_masters.py
+               2 File(s)         32,009 bytes
+
+ Directory of C:\00mindra\olivine-erp-platform\seed
+
+24-12-2025  19:00            15,370 seed_enterprise_masters.py
+               1 File(s)         15,370 bytes
+
+     Total Files Listed:
+              38 File(s)        448,116 bytes
+               0 Dir(s)  323,962,613,760 bytes free

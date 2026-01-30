@@ -1,0 +1,190 @@
+﻿python : C:\Users\vijay\AppData\Local\Prog
+rams\Python\Python311\Lib\site-packages\dj
+ango\db\models\base.py:368: 
+RuntimeWarning: Model 
+'procurement.procurementconfig' was 
+already registered. Reloading models is 
+not advised as it can lead to 
+inconsistencies, most notably with 
+related models.
+At line:1 char:1
++ python backend/manage.py migrate hrm 
+2>&1 | Out-File migrate_hrm_erro ...
++ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (C:\Users\vijay\...related models.  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+  new_class._meta.apps.register_model(new_
+class._meta.app_label, new_class)
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'C:\00
+mindra\olivine-platform\backend\static' 
+in the STATICFILES_DIRS setting does not 
+exist.
+Unified Full Admin models registered.
+Operations to perform:
+  Apply all migrations: hrm
+Running migrations:
+Traceback (most recent call last):
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\utils.py", line 105, in 
+_execute
+    return self.cursor.execute(sql, 
+params)
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base.py", line 
+360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: 
+hr_organizational_units
+
+The above exception was the direct cause 
+of the following exception:
+
+Traceback (most recent call last):
+  File "C:\00mindra\olivine-platform\backe
+nd\manage.py", line 21, in <module>
+    main()
+  File "C:\00mindra\olivine-platform\backe
+nd\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\core\management\__init__.py", line 
+442, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\core\management\__init__.py", line 
+436, in execute
+    self.fetch_command(subcommand).run_fro
+m_argv(self.argv)
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\core\management\base.py", line 416, 
+in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\core\management\base.py", line 460, 
+in execute
+    output = self.handle(*args, **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\core\management\base.py", line 107, 
+in wrapper
+    res = handle_func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\core\management\commands\migrate.py", 
+line 353, in handle
+    post_migrate_state = executor.migrate(
+                         ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\migrations\executor.py", line 135, 
+in migrate
+    state = self._migrate_all_forwards(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\migrations\executor.py", line 167, 
+in _migrate_all_forwards
+    state = self.apply_migration(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\migrations\executor.py", line 255, 
+in apply_migration
+    state = migration.apply(state, 
+schema_editor)
+            
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\migrations\migration.py", line 
+132, in apply
+    operation.database_forwards(
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\migrations\operations\models.py", 
+line 1270, in database_forwards
+    
+schema_editor.remove_constraint(model, 
+constraint)
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\schema.py", line 
+500, in remove_constraint
+    self._remake_table(model)
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\schema.py", line 
+253, in _remake_table
+    self.execute(
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\base\schema.py", line 
+204, in execute
+    cursor.execute(sql, params)
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\utils.py", line 122, in 
+execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\utils.py", line 79, in 
+execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\utils.py", line 92, in 
+_execute_with_wrappers
+    return executor(sql, params, many, 
+context)
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\utils.py", line 100, in 
+_execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\utils.py", line 91, in __exit__
+    raise 
+dj_exc_value.with_traceback(traceback) 
+from exc_value
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\utils.py", line 105, in 
+_execute
+    return self.cursor.execute(sql, 
+params)
+           
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vijay\AppData\Local\Progr
+ams\Python\Python311\Lib\site-packages\dja
+ngo\db\backends\sqlite3\base.py", line 
+360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such 
+table: hr_organizational_units
+  Applying hrm.0005_applicationanswer_applicationcandidate_and_more...

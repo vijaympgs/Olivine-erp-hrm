@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olivine Module Selector & Permission Designer</title>
+    <style>
+        :root {
+            --primary: #047857;
+            /* Emerald-700 */
+            --primary-hover: #065f46;
+            --bg-page: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        /* --- Section Styling --- */
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-header {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        /* --- Line 1: Modules (Single Select) --- */
+        .module-selector {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .module-card {
+            flex: 1;
+            min-width: 150px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .module-card:hover {
+            border-color: var(--primary);
+            background-color: #ecfdf5;
+        }
+
+        .module-card.selected {
+            border-color: var(--primary);
+            background-color: #d1fae5;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .module-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* --- Line 2: Groups (Multi Select) --- */
+        .group-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .group-checkbox {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .group-checkbox:hover {
+            background-color: #f1f5f9;
+        }
+
+        .group-checkbox input[type="checkbox"] {
+            margin-right: 12px;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* --- Line 3: Permissions (Detailed) --- */
+        .permission-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .permission-table th,
+        .permission-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .permission-table th {
+            font-weight: 600;
+            color: var(--text-muted);
+            background-color: #f8fafc;
+        }
+
+        .permission-row:hover {
+            background-color: #f8fafc;
+        }
+
+        .perm-check {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary);
+        }
+
+        .group-header-row td {
+            background-color: #e2e8f0;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Helpers */
+        .hidden {
+            display: none;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 32px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Role & Permission Designer</h1>
+        <p class="subtitle">Configure access levels by Module, Functional Group, and detailed Sub-menu actions.</p>
+
+        <!-- LINE 1: MODULE SELECTION -->
+        <div class="section">
+            <div class="section-header">1. Select Line of Business (Module)</div>
+            <div class="module-selector" id="moduleContainer">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <!-- LINE 2: GROUP SELECTION -->
+        <div class="section">
+            <div class="section-header">2. Select Functional Areas</div>
+            <div id="groupContainer" class="group-grid">
+                <div class="empty-state">Select a module above to view functional areas.</div>
+            </div>
+        </div>
+
+        <!-- LINE 3: SUB-MENU PERMISSIONS -->
+        <div class="section">
+            <div class="section-header">3. Detailed Permissions (Sub-Menus)</div>
+            <div id="permissionContainer">
+                <div class="empty-state">Select functional areas above to configure detailed permissions.</div>
+                <table class="permission-table hidden" id="permTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%">Resource / Sub-Menu</th>
+                            <th style="width: 15%">Read</th>
+                            <th style="width: 15%">Create</th>
+                            <th style="width: 15%">Update</th>
+                            <th style="width: 15%">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="permTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // ==========================================
+        // DATA DEFINITION (Based on Olivine Menu Config)
+        // ==========================================
+        const appData = {
+            "RETAIL": {
+                label: "Retail Operations",
+                icon: "🏪",
+                groups: [
+                    {
+                        id: "store_ops",
+                        label: "Store Operations",
+                        items: ["Checkout (POS)", "Day Open", "Shift Start", "Shift End", "Day Close", "Reconciliation", "Terminal Config"]
+                    },
+                    {
+                        id: "sales",
+                        label: "Sales",
+                        items: ["Quotes", "Fulfillment Orders", "Invoices", "Returns", "Sales Config"]
+                    },
+                    {
+                        id: "merch",
+                        label: "Merchandising",
+                        items: ["Item Master (Catalog)", "Categories", "Brands", "Variants", "Price Lists", "UOM"]
+                    },
+                    {
+                        id: "inventory",
+                        label: "Inventory",
+                        items: ["Stock Levels", "Stock Movements", "Transfers", "Stock Take", "Adjustments", "Low Stock Alerts"]
+                    },
+                    {
+                        id: "procurement",
+                        label: "Procurement",
+                        items: ["Suppliers", "Requisitions (PR)", "RFQs", "Purchase Orders (PO)", "GRNs", "Vendor Bills"]
+                    },
+                    {
+                        id: "customers",
+                        label: "Customers",
+                        items: ["Customer Directory", "Customer Groups", "Loyalty Programs"]
+                    }
+                ]
+            },
+            "FMS": {
+                label: "Financial Management",
+                icon: "💰",
+                groups: [
+                    { id: "dashboard", label: "Finance Dashboard", items: ["Overview", "Cash Flow", "Butget vs Actual"] },
+                    { id: "gl", label: "General Ledger", items: ["Chart of Accounts", "Journal Entries", "Trial Balance"] },
+                    { id: "ar", label: "Accounts Receivable", items: ["Customer Invoices", "Receipts", "Credit Notes", "Aging Report"] },
+                    { id: "ap", label: "Accounts Payable", items: ["Vendor Bills", "Payments", "Debit Notes", "Aging Report"] },
+                    { id: "tax", label: "Tax Management", items: ["Tax Config", "GST Filing", "TDS/TCS"] },
+                    { id: "banking", label: "Cash & Bank", items: ["Bank Accounts", "Reconciliation", "Deposits"] }
+                ]
+            },
+            "HRM": {
+                label: "Human Resources",
+                icon: "👥",
+                groups: [
+                    { id: "employees", label: "Employee Management", items: ["Directory", "Onboarding", "Documents"] },
+                    { id: "payroll", label: "Payroll", items: ["Run Payroll", "Salary Structures", "Payslips"] },
+                    { id: "attendance", label: "Time & Attendance", items: ["Attendance Logs", "Leave Requests", "Shifts"] },
+                    { id: "recruitment", label: "Talent Acquisition", items: ["Job Postings", "Candidates", "Interviews"] }
+                ]
+            },
+            "CRM": {
+                label: "CRM",
+                icon: "🤝",
+                groups: [
+                    { id: "leads", label: "Lead Management", items: ["Lead List", "Kanban View", "Lead Capture"] },
+                    { id: "pipeline", label: "Sales Pipeline", items: ["Opportunities", "Forecasts", "Stages"] },
+                    { id: "campaigns", label: "Marketing", items: ["Campaigns", "Email Templates", "Target Lists"] },
+                    { id: "support", label: "Support", items: ["Tickets", "SLA Status", "Resolution"] }
+                ]
+            }
+        };
+
+        // ==========================================
+        // STATE MANAGEMENT
+        // ==========================================
+        let selectedModule = null;
+        let selectedGroups = new Set();
+
+        const moduleContainer = document.getElementById('moduleContainer');
+        const groupContainer = document.getElementById('groupContainer');
+        const permTable = document.getElementById('permTable');
+        const permTableBody = document.getElementById('permTableBody');
+        const permissionContainer = document.getElementById('permissionContainer');
+
+        // ==========================================
+        // RENDER FUNCTIONS
+        // ==========================================
+
+        function renderModules() {
+            moduleContainer.innerHTML = '';
+            for (const [key, data] of Object.entries(appData)) {
+                const card = document.createElement('div');
+                card.className = `module-card ${selectedModule === key ? 'selected' : ''}`;
+                card.onclick = () => selectModule(key);
+                card.innerHTML = `
+                    <span class="module-icon">${data.icon}</span>
+                    <div>${data.label}</div>
+                `;
+                moduleContainer.appendChild(card);
+            }
+        }
+
+        function renderGroups() {
+            groupContainer.innerHTML = '';
+            selectedGroups.clear(); // Reset group selection on module change? Generally yes.
+            renderPermissions(); // Clear permissions
+
+            if (!selectedModule) {
+                groupContainer.innerHTML = '<div class="empty-state">Select a module above to view functional areas.</div>';
+                return;
+            }
+
+            const groups = appData[selectedModule].groups;
+            groups.forEach(group => {
+                const label = document.createElement('label');
+                label.className = 'group-checkbox';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = group.id;
+                checkbox.onchange = (e) => toggleGroup(group.id, e.target.checked);
+
+                label.appendChild(checkbox);
+                label.appendChild(document.createTextNode(group.label));
+                groupContainer.appendChild(label);
+            });
+        }
+
+        function renderPermissions() {
+            permTableBody.innerHTML = '';
+            if (selectedGroups.size === 0) {
+                permTable.classList.add('hidden');
+                const emptyMsg = document.createElement('div');
+                emptyMsg.className = 'empty-state';
+                emptyMsg.textContent = selectedModule ? 'Select functional areas above to see sub-menus.' : 'Select functional areas above.';
+                // Clean container except table
+                // Actually relying on hiding table
+                return;
+            }
+
+            permTable.classList.remove('hidden');
+            const moduleData = appData[selectedModule];
+
+            // Iterate through selected groups in order of definition
+            moduleData.groups.forEach(group => {
+                if (selectedGroups.has(group.id)) {
+                    // Render Group Header
+                    const headerRow = document.createElement('tr');
+                    headerRow.className = 'group-header-row';
+                    headerRow.innerHTML = `
+                        <td colspan="5">${group.label}</td>
+                    `;
+                    permTableBody.appendChild(headerRow);
+
+                    // Render Items
+                    group.items.forEach(item => {
+                        const row = document.createElement('tr');
+                        row.className = 'permission-row';
+
+                        // Basic crud checkboxes logic
+                        const crudCols = ['read', 'create', 'update', 'delete'].map(action =>
+                            `<td><input type="checkbox" class="perm-check" title="${action} ${item}"></td>`
+                        ).join('');
+
+                        row.innerHTML = `
+                            <td>${item}</td>
+                            ${crudCols}
+                        `;
+                        permTableBody.appendChild(row);
+                    });
+                }
+            });
+        }
+
+        // ==========================================
+        // LOGIC HANDLERS
+        // ==========================================
+
+        function selectModule(key) {
+            if (selectedModule === key) return;
+            selectedModule = key;
+            renderModules(); // Re-render to update highlighted state
+            renderGroups();
+        }
+
+        function toggleGroup(groupId, isChecked) {
+            if (isChecked) {
+                selectedGroups.add(groupId);
+            } else {
+                selectedGroups.delete(groupId);
+            }
+            renderPermissions();
+        }
+
+        // Initialize
+        renderModules();
+
+    </script>
+</body>
+
+</html>

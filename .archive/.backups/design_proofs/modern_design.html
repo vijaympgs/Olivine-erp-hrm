@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Dashboard</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #6C5DD3;
+            --primary-dark: #5a4cb5;
+            --secondary: #A0D7E7;
+            --green: #7FD7A4;
+            --bg-body: #FBFBFE;
+            --bg-white: #FFFFFF;
+            --text-dark: #1F1F1F;
+            --text-grey: #808191;
+            --border: #F0F0F0;
+            --card-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05);
+            --sidebar-width: 250px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scrollbar-width: none;
+        }
+
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            overflow: hidden;
+            font-size: 11px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--bg-white);
+            height: 100%;
+            padding: 1.5rem 0.8rem;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border);
+            flex-shrink: 0;
+            overflow-y: auto;
+            justify-content: flex-start;
+            gap: 2rem;
+
+            /* Hide Scrollbar */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .sidebar-top {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 0 0.5rem;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .nav-item {
+            margin-bottom: 0.2rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.6rem 0.8rem;
+            border-radius: 12px;
+            color: var(--text-grey);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .nav-link .left-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .nav-link.active {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(108, 93, 211, 0.25);
+        }
+
+        .nav-link.active i,
+        .nav-link.active span {
+            color: white;
+        }
+
+        /* Depreciatory Categories */
+        .subtitle {
+            font-size: 0.7rem;
+            color: #B2B3BD;
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 0 0.5rem;
+        }
+
+        .sub-header {
+            font-size: 0.75rem;
+            color: #6C5DD3;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .sub-nav-link {
+            background-color: #F8F9FB;
+            padding: 0.6rem 0.8rem;
+            margin-bottom: 0.4rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-grey);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .sub-nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* Sidebar Job List */
+        .sidebar-bottom {
+            margin-top: auto;
+        }
+
+        .sidebar-job-item {
+            display: flex;
+            align-items: center;
+            padding: 0.4rem 0.5rem;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .sidebar-job-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 2px solid #F0F0F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D7D7D7;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .sidebar-job-text {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .sidebar-job-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1F1F1F;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .sidebar-job-sub {
+            font-size: 0.65rem;
+            color: #AAA;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 1.5rem 1rem;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Top Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
+        }
+
+        .top-search-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #F6F5FD;
+            /* Changed to least possible light purple */
+            padding: 0 1rem;
+            border-radius: 30px;
+            height: 40px;
+            min-width: 280px;
+        }
+
+        .top-search-bar input {
+            background: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .heart-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid #EAEAEA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: #1F1F1F;
+        }
+
+        .sign-in-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 0 1.5rem;
+            height: 40px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(108, 93, 211, 0.3);
+        }
+
+        /* Recruitment Section: Rows */
+        .recruitment-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .rec-row-1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rec-row-2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .page-heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .user-pill {
+            background: white;
+            border: 1px solid #EAEAEA;
+            border-radius: 30px;
+            padding: 4px 6px 4px 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            min-width: 140px;
+            height: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: #1F1F1F;
+        }
+
+        .user-pill span {
+            flex: 1;
+            margin-left: 4px;
+        }
+
+        .avatar-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #9fa0ab;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        /* Large Search */
+        .big-search {
+            background-color: var(--bg-white);
+            padding: 0 1.2rem;
+            height: 46px;
+            border-radius: 16px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #EAEAEA;
+            font-size: 0.9rem;
+            color: #B2B3BD;
+        }
+
+        .big-search input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+
+        /* Stats */
+        .stats-area {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-shrink: 0;
+            height: 80px;
+        }
+
+        .stats-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.8rem;
+        }
+
+        .stat-item {
+            background-color: var(--bg-white);
+            padding: 0.8rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+        }
+
+        .stat-head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .stat-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .stat-number {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: auto;
+        }
+
+        .stat-role {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .stat-sub {
+            font-size: 0.65rem;
+            color: #AAA;
+        }
+
+        .recruitment-text {
+            width: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: var(--text-grey);
+        }
+
+        .recruitment-text h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #1F1F1F;
+        }
+
+        .recruitment-text h4::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #EAEAEA;
+            margin-top: 4px;
+        }
+
+        /* Filters */
+        .filters-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
+        }
+
+        .left-filters {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .filter-header {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-right: 1.2rem;
+            color: #1F1F1F;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            border: none;
+            font-weight: 600;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+
+        .btn-purple {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-green {
+            background: #88B295;
+            color: white;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--text-dark);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .right-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .create-job-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.8rem;
+            border-radius: 30px;
+            border: none;
+            font-weight: 600;
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+
+        .mary-pill-purple {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            display: inline-block;
+        }
+
+        /* Listing Grid */
+        .listing-header {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            flex-shrink: 0;
+            color: #1F1F1F;
+        }
+
+        .jobs-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            /* Single row */
+            gap: 1rem;
+            min-height: 0;
+        }
+
+        .job-card {
+            padding: 0;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            background: white;
+        }
+
+        .card-top {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-bottom {
+            padding: 1.2rem;
+            background: white;
+            padding-top: 0.5rem;
+        }
+
+        .card-white .card-top {
+            background: white;
+            color: var(--text-dark);
+        }
+
+        .card-purple .card-top {
+            background: var(--primary);
+            color: white;
+        }
+
+        .card-green .card-top {
+            background: #88B295;
+            color: white;
+        }
+
+        .j-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+
+        .j-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 500;
+            opacity: 0.7;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        .j-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .heart-icon-circle {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .card-white .heart-icon-circle {
+            background: #E0E0E0;
+            color: white;
+        }
+
+        .card-purple .heart-icon-circle,
+        .card-green .heart-icon-circle {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .j-duration {
+            display: inline-block;
+            padding: 3px 14px;
+            border-radius: 20px;
+            border: 1px solid #EEE;
+            font-size: 0.7rem;
+            margin-bottom: 10px;
+            color: var(--text-grey);
+            width: fit-content;
+        }
+
+        .card-purple .j-duration,
+        .card-green .j-duration {
+            border-color: rgba(255, 255, 255, 0.5);
+            color: white;
+        }
+
+        .j-desc {
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: var(--text-grey);
+            margin-bottom: 0;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .card-purple .j-desc,
+        .card-green .j-desc {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Tags in Bottom Section (Always White BG) */
+        .j-tags {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .j-tag {
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .tag-fill {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tag-out {
+            border: 1px solid #EEE;
+            color: var(--text-grey);
+        }
+
+        .j-exp {
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #808191;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div class="menu-header">
+                <i class="ph ph-list"></i>
+                <span>Menu</span>
+            </div>
+
+            <div class="section-title">Management Interface</div>
+
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <div class="left-content">
+                            <i class="ph ph-magnifying-glass"></i>
+                            <span>Recruitment</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <div class="left-content">
+                            <i class="ph ph-users"></i>
+                            <span>Employee</span>
+                        </div>
+                        <i class="ph ph-caret-right"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <div class="left-content">
+                            <i class="ph ph-users-three"></i>
+                            <span>Payroll</span>
+                        </div>
+                        <i class="ph ph-caret-right"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <div class="left-content">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span>Schedule</span>
+                        </div>
+                        <i class="ph ph-caret-right"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="subtitle">Depreciatory</div>
+            <div class="sub-header">Department categories</div>
+
+            <ul class="nav-list" style="margin-bottom:0;">
+                <li class="nav-item"><a href="#" class="sub-nav-link">
+                        <div class="left-content"><i class="ph ph-briefcase"></i><span>Business and Marketing</span>
+                        </div><i class="ph ph-caret-right"></i>
+                    </a></li>
+                <li class="nav-item"><a href="#" class="sub-nav-link">
+                        <div class="left-content"><i class="ph ph-bezier-curve"></i><span>Design</span></div><i
+                            class="ph ph-caret-right"></i>
+                    </a></li>
+                <li class="nav-item"><a href="#" class="sub-nav-link">
+                        <div class="left-content"><i class="ph ph-kanban"></i><span>Project Manager</span></div><i
+                            class="ph ph-caret-right"></i>
+                    </a></li>
+                <li class="nav-item"><a href="#" class="sub-nav-link">
+                        <div class="left-content"><i class="ph ph-users-four"></i><span>Human Resources</span></div><i
+                            class="ph ph-caret-right"></i>
+                    </a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="section-title">Settings</div>
+            <div class="section-title">Active Jobs</div>
+
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+                <div class="sidebar-job-item">
+                    <div class="sidebar-job-avatar"><i class="ph ph-user"></i></div>
+                    <div class="sidebar-job-text">
+                        <span class="sidebar-job-title">Title Name Here</span>
+                        <span class="sidebar-job-sub">Position Here</span>
+                    </div>
+                    <i class="ph ph-caret-right" style="margin-left: auto; color: #ccc;"></i>
+                </div>
+                <div class="sidebar-job-item">
+                    <div class="sidebar-job-avatar"><i class="ph ph-user"></i></div>
+                    <div class="sidebar-job-text">
+                        <span class="sidebar-job-title">Title Name Here</span>
+                        <span class="sidebar-job-sub">Position Here</span>
+                    </div>
+                    <i class="ph ph-caret-right" style="margin-left: auto; color: #ccc;"></i>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header>
+            <div class="top-search-bar">
+                <i class="ph ph-plus" style="color: #ccc; font-size: 0.9rem;"></i>
+                <input type="text" placeholder="Searching" style="margin-left: 8px;">
+            </div>
+
+            <div class="top-actions">
+                <button class="heart-btn"><i class="ph ph-heart"></i></button>
+                <button class="sign-in-btn">Sign In</button>
+            </div>
+        </header>
+
+        <div class="recruitment-section">
+            <!-- Row 1 -->
+            <div class="rec-row-1">
+                <h1 class="page-heading">Recruitment</h1>
+                <div class="user-pill">
+                    <div class="avatar-circle"><i class="ph ph-user"></i></div>
+                    <span>Mary Smith</span>
+                    <i class="ph ph-caret-down" style="font-size: 0.8rem; margin-right: 8px;"></i>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="rec-row-2">
+                <div class="big-search">
+                    <i class="ph ph-magnifying-glass" style="font-size: 1.1rem;"></i>
+                    <input type="text" placeholder="Lorem ipsum dolor sit amet, consectetuer">
+                </div>
+                <div class="user-pill">
+                    <div class="avatar-circle"><i class="ph ph-user"></i></div>
+                    <span>Title Here</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-area">
+            <div class="stats-grid">
+                <!-- 1 -->
+                <div class="stat-item">
+                    <div class="stat-head">
+                        <div class="stat-icon"><i class="ph ph-pen-nib"></i></div>
+                        <div>
+                            <div class="stat-role">UI/UX Designer</div>
+                            <div class="stat-sub">Employee</div>
+                        </div>
+                    </div>
+                    <div class="stat-number">24,875</div>
+                </div>
+                <!-- 2 -->
+                <div class="stat-item">
+                    <div class="stat-head">
+                        <div class="stat-icon"><i class="ph ph-paint-brush-broad"></i></div>
+                        <div>
+                            <div class="stat-role">Graphic Designer</div>
+                            <div class="stat-sub">Employee</div>
+                        </div>
+                    </div>
+                    <div class="stat-number">7,8204</div>
+                </div>
+                <!-- 3 -->
+                <div class="stat-item">
+                    <div class="stat-head">
+                        <div class="stat-icon"><i class="ph ph-magnifying-glass-plus"></i></div>
+                        <div>
+                            <div class="stat-role">SEO Specialist</div>
+                            <div class="stat-sub">Employee</div>
+                        </div>
+                    </div>
+                    <div class="stat-number">10,204</div>
+                </div>
+                <!-- 4 -->
+                <div class="stat-item">
+                    <div class="stat-head">
+                        <div class="stat-icon"><i class="ph ph-briefcase"></i></div>
+                        <div>
+                            <div class="stat-role">Project Assistant</div>
+                            <div class="stat-sub">Employee</div>
+                        </div>
+                    </div>
+                    <div class="stat-number">9,706</div>
+                </div>
+                <!-- 5 -->
+                <div class="stat-item">
+                    <div class="stat-head">
+                        <div class="stat-icon"><i class="ph ph-cube"></i></div>
+                        <div>
+                            <div class="stat-role">3D Animation</div>
+                            <div class="stat-sub">Employee</div>
+                        </div>
+                    </div>
+                    <div class="stat-number">11,703</div>
+                </div>
+            </div>
+
+            <div class="recruitment-text">
+                <h4>Recruitment</h4>
+                <p style="line-height:1.4;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                    nibh</p>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-section">
+            <div class="left-filters">
+                <div class="filter-header">Active Jobs</div>
+                <button class="filter-btn btn-purple">Designer</button>
+                <button class="filter-btn btn-green">Marketer</button>
+                <button class="filter-btn btn-white">Developer</button>
+            </div>
+
+            <div class="right-actions">
+                <button class="create-job-btn">Create New Job +</button>
+                <div class="mary-pill-purple">Mary Smith</div>
+            </div>
+        </div>
+
+        <div class="listing-header">Job Listings</div>
+
+        <!-- Jobs Grid -->
+        <div class="jobs-grid">
+            <!-- 1 White -->
+            <div class="job-card card-white">
+                <div class="card-top">
+                    <div class="j-top">
+                        <div style="display:flex; flex-direction:column; gap:2px;">
+                            <span class="j-eyebrow">Employment Type</span>
+                            <div class="j-title">Job title</div>
+                        </div>
+                        <div class="heart-icon-circle"><i class="ph ph-heart" style="font-weight:bold;"></i></div>
+                    </div>
+                    <div class="j-duration">Active duration</div>
+                    <div class="j-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                        euismod tincidunt ut laoreet</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="j-tags">
+                        <div class="j-tag tag-fill"><i class="ph-fill ph-circle"
+                                style="font-size:0.5rem; margin-right:6px;"></i>Onsite</div>
+                        <div class="j-tag tag-out">Full Time</div>
+                        <div class="j-tag tag-out">Remote</div>
+                    </div>
+                    <div class="j-exp">Experience</div>
+                    <div class="j-tags" style="margin-bottom:0;">
+                        <div class="j-tag tag-out">Title Here</div>
+                        <div class="j-tag tag-out">Title Here</div>
+                        <div class="j-tag tag-out">Title Here</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 Purple -->
+            <div class="job-card card-purple">
+                <div class="card-top">
+                    <div class="j-top">
+                        <div style="display:flex; flex-direction:column; gap:2px;">
+                            <span class="j-eyebrow">Employment Type</span>
+                            <div class="j-title">Job title</div>
+                        </div>
+                        <div class="heart-icon-circle"><i class="ph ph-heart" style="font-weight:bold;"></i></div>
+                    </div>
+                    <div class="j-duration">Active duration</div>
+                    <div class="j-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                        euismod tincidunt ut laoreet</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="j-tags">
+                        <div class="j-tag tag-fill"><i class="ph-fill ph-circle"
+                                style="font-size:0.5rem; margin-right:6px;"></i>Onsite</div>
+                        <div class="j-tag tag-out">Full Time</div>
+                        <div class="j-tag tag-out">Remote</div>
+                    </div>
+                    <div class="j-exp">Experience</div>
+                    <div class="j-tags" style="margin-bottom:0;">
+                        <div class="j-tag tag-out">Title Here</div>
+                        <div class="j-tag tag-out">Title Here</div>
+                        <div class="j-tag tag-out">Title Here</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Green -->
+            <div class="job-card card-green">
+                <div class="card-top">
+                    <div class="j-top">
+                        <div style="display:flex; flex-direction:column; gap:2px;">
+                            <span class="j-eyebrow">Employment Type</span>
+                            <div class="j-title">Job title</div>
+                        </div>
+                        <div class="heart-icon-circle"><i class="ph ph-heart" style="font-weight:bold;"></i></div>
+                    </div>
+                    <div class="j-duration">Active duration</div>
+                    <div class="j-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                        euismod tincidunt ut laoreet</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="j-tags">
+                        <div class="j-tag tag-fill"><i class="ph-fill ph-circle"
+                                style="font-size:0.5rem; margin-right:6px;"></i>Onsite</div>
+                        <div class="j-tag tag-out">Full Time</div>
+                        <div class="j-tag tag-out">Remote</div>
+                    </div>
+                    <div class="j-exp">Experience</div>
+                    <div class="j-tags" style="margin-bottom:0;">
+                        <div class="j-tag tag-out">Title Here</div>
+                        <div class="j-tag tag-out">Title Here</div>
+                        <div class="j-tag tag-out">Title Here</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

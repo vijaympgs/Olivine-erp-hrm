@@ -1,0 +1,175 @@
+# ============================================================================
+# OLIVINE PLATFORM - UI REGISTRY
+# Canonical Screen Registration Document
+# Version: 2.0.0
+# Updated: 2026-01-25
+# Status: AUTHORITATIVE
+# ============================================================================
+
+# REGISTRY PURPOSE:
+# This document is the canonical UI registry for Olivine Platform.
+# All UI lookup, navigation, test mapping, and refactoring MUST consult this
+# registry first. Filesystem scanning is permitted ONLY when registry lacks entry.
+
+# ============================================================================
+# MODULE: PLATFORM - SYSTEM ADMINISTRATION
+# ============================================================================
+
+LayoutSettings:
+  screen: "Layout Settings"
+  module: "Platform"
+  sidebar: "Platform → System Administration → Layout Settings"
+  route: "/admin/layout-settings"
+  aliases: ["layout config", "ui settings", "appearance", "astra layout"]
+  paths:
+    frontend:
+      - "frontend/src/pages/admin/LayoutSettingsPage.tsx"
+      - "frontend/src/config/layoutConfig.ts"
+    backend: []
+  test_status: not_mapped
+
+POSBusinessRules:
+  screen: "POS Business Rules"
+  module: "Platform"
+  sidebar: "Platform → System Administration → POS Business Rules"
+  route: "/pos/business-rules"
+  aliases: ["pos rules", "business rules", "pos config", "rules screen"]
+  paths:
+    frontend: []
+    backend:
+      - "Retail/backend/pos/business_rules_models.py"
+      - "Retail/backend/pos/business_rules_admin.py"
+  test_status: not_mapped
+
+# ============================================================================
+# MODULE: PLATFORM - SYSTEM TOOLS (CANONICAL SUITE)
+# ============================================================================
+
+FileSearchExplorer:
+  screen: "File Search Explorer"
+  module: "Platform"
+  sidebar: "Platform → System Tools → File Search Explorer"
+  route: "/admin/file-search"
+  aliases: ["code search", "explorer", "file find"]
+  paths:
+    frontend:
+      - "frontend/src/pages/admin/FileSearchExplorerPage.tsx"
+    backend: []
+  test_status: not_mapped
+
+BackupRecovery:
+  screen: "Backup & Recovery"
+  module: "Platform"
+  sidebar: "Platform → System Tools → Backup & Recovery"
+  route: "/admin/backup"
+  aliases: ["backup", "restore", "db backup"]
+  paths:
+    frontend:
+      - "frontend/src/pages/admin/BackupPage.tsx"
+    backend: []
+  test_status: not_mapped
+
+VisualExtractor:
+  screen: "Visual Extractor"
+  module: "Platform"
+  sidebar: "Platform → System Tools → Visual Extractor"
+  route: "/system-tools/visual-extractor"
+  aliases: ["image to text", "ocr tool", "visual ocr", "extract text", "image extractor"]
+  paths:
+    frontend:
+      - "frontend/src/pages/system_tools/visual_extractor/VisualExtractorPage.tsx"
+    backend: []
+  test_status: not_mapped
+  notes: "Area C only - Header/Sidebar/Status untouched"
+
+DataOpsStudio:
+  screen: "DataOps Studio"
+  module: "Platform"
+  sidebar: "Platform → System Tools → DataOps Studio"
+  route: "/system-tools/dataops-studio"
+  aliases: ["database client", "db explorer", "sql console", "data ops"]
+  paths:
+    frontend:
+      - "frontend/src/pages/system_tools/dataops_studio/DataOpsStudioPage.tsx"
+    backend: []
+  test_status: not_mapped
+  notes: "Replicated from 01practicev2 DatabaseClientPage"
+
+WebConsole:
+  screen: "Web Console"
+  module: "Platform"
+  sidebar: "Platform → System Tools → Web Console"
+  route: "/system-tools/web-console"
+  aliases: ["web browser", "iframe browser", "embedded browser"]
+  paths:
+    frontend:
+      - "frontend/src/pages/system_tools/web_console/WebConsolePage.tsx"
+    backend: []
+  test_status: not_mapped
+  notes: "Replicated from 01practicev2 WebConsole"
+
+HtmlPreviewTool:
+  screen: "HTML Preview Tool"
+  module: "Platform"
+  sidebar: "Platform → System Tools → HTML Preview Tool"
+  route: "/system-tools/html-preview"
+  aliases: ["html console", "wireframe inspector", "source viewer"]
+  paths:
+    frontend:
+      - "frontend/src/pages/system_tools/html_preview/HtmlPreviewPage.tsx"
+    backend: []
+  test_status: not_mapped
+  notes: "Replicated from 01practicev2 HtmlPreviewTool"
+
+WireframeLaunchpad:
+  screen: "Wireframe Launchpad"
+  module: "Platform"
+  sidebar: "Platform → System Tools → Wireframe Launchpad"
+  route: "/system-tools/wireframe-launchpad"
+  aliases: ["wireframes", "screen index", "quick launch"]
+  paths:
+    frontend:
+      - "frontend/src/pages/system_tools/wireframe_launchpad/WireframeLaunchpadPage.tsx"
+    backend: []
+  test_status: not_mapped
+  notes: "Replicated from 01practicev2 WireframeIndex"
+
+# ============================================================================
+# MODULE: RETAIL
+# ============================================================================
+
+TestConsole:
+  screen: "Test Console"
+  module: "Retail"
+  sidebar: "Retail → Test Console"
+  route: "/test-console"
+  aliases: ["permission prototyping", "test explorer", "tc"]
+  paths:
+    frontend:
+      - "frontend/src/pages/TestConsolePage.tsx"
+    backend: []
+  test_status: not_mapped
+
+ItemMaster:
+  screen: "Item Master"
+  module: "Retail"
+  sidebar: "Retail → Merchandising → Product Catalog → Item Master"
+  route: "/retail/inventory/item-master"
+  aliases: ["items", "products", "master list"]
+  paths:
+    frontend:
+      - "frontend/src/pages/inventory/ItemMasterPage.tsx"
+    backend: []
+  test_status: not_mapped
+
+SupplierMaster:
+  screen: "Supplier Master"
+  module: "Retail"
+  sidebar: "Retail → Procurement → Vendor Management → Supplier Master"
+  route: "/retail/procurement/suppliers"
+  aliases: ["suppliers", "vendors", "vendor master"]
+  paths:
+    frontend:
+      - "frontend/src/pages/partners/SupplierMasterPage.tsx"
+    backend: []
+  test_status: not_mapped

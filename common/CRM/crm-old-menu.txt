@@ -1,0 +1,228 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 8AFF-8E88
+D:.
+|   crm-old-menu.txt
+|   
++---01.CRM Dashboard & Analytics
+|       1.1 CRM Dashboard.md
+|       1.2 Sales Pipeline Overview.md
+|       
++---02.Lead Management
+|       2.1 Lead Capture.md
+|       2.10 Duplicate Lead Management.md
+|       2.11 Lead Reports.md
+|       2.2 Lead Import_Export.md
+|       2.3 Lead Qualification.md
+|       2.4 Lead Scoring.md
+|       2.5 Lead Assignment Rules.md
+|       2.6 Lead Routing.md
+|       2.7 Lead Nurturing Campaigns.md
+|       2.8 Lead Conversion.md
+|       2.9 Lead Source Tracking.md
+|       
++---03.Contact Management
+|       3.1 Contact Directory.md
+|       3.10 Contact Enrichment.md
+|       3.11 Social Media Integration.md
+|       3.2 Contact Profiles.md
+|       3.3 Contact Segmentation.md
+|       3.4 Contact Hierarchy.md
+|       3.5 Contact Roles.md
+|       3.6 Contact Activities.md
+|       3.7 Contact Timeline.md
+|       3.8 Contact Merge_Deduplication.md
+|       3.9 Contact Import_Export.md
+|       
++---04.Account Management
+|       4.1 Account Directory.md
+|       4.10 Account Activities.md
+|       4.11 Account Reports.md
+|       4.2 Account Profiles.md
+|       4.3 Account Hierarchy.md
+|       4.4 Parent-Child Accounts.md
+|       4.5 Account Teams.md
+|       4.6 Account Planning.md
+|       4.7 Account Health Score.md
+|       4.8 Account Segmentation.md
+|       4.9 Territory Management.md
+|       
++---05.Opportunity Management
+|       5.1 Opportunity Pipeline.md
+|       5.10 Opportunity Reports.md
+|       5.11 Sales Methodology.md
+|       5.12 Customer Health Score.md
+|       5.2 Opportunity Stages.md
+|       5.3 Opportunity Forecasting.md
+|       5.4 Win_Loss Analysis.md
+|       5.5 Opportunity Products.md
+|       5.6 Opportunity Teams.md
+|       5.7 Opportunity Splits.md
+|       5.8 Competitive Analysis.md
+|       5.9 Deal Registration.md
+|       
++---06.Sales Pipeline & Forecasting
+|       6.1 Pipeline Management.md
+|       6.10 Revenue Projections.md
+|       6.11 What-if Scenarios.md
+|       6.2 Sales Stages.md
+|       6.3 Pipeline Analytics.md
+|       6.4 Forecast Categories.md
+|       6.5 Quota Management.md
+|       6.6 Territory Planning.md
+|       6.7 Sales Forecasting.md
+|       6.8 Pipeline Velocity.md
+|       6.9 Conversion Rates.md
+|       
++---07.Quote & Proposal Management
+|       7.1 Quote Generation.md
+|       7.10 CPQ (Configure, Price, Quote).md
+|       7.2 Quote Templates.md
+|       7.3 Product Catalog.md
+|       7.4 Price Books.md
+|       7.5 Discount Management.md
+|       7.6 Quote Approval Workflow.md
+|       7.7 Quote Versioning.md
+|       7.8 E-signature Integration.md
+|       7.9 Quote Analytics.md
+|       
++---08.Campaign Management
+|       8.1 Campaign Planning.md
+|       8.10 Campaign Reports.md
+|       8.11 Marketing Attribution.md
+|       8.2 Campaign Execution.md
+|       8.3 Campaign Tracking.md
+|       8.4 Campaign ROI.md
+|       8.5 Target Lists.md
+|       8.6 Campaign Members.md
+|       8.7 Multi-channel Campaigns.md
+|       8.8 Campaign Automation.md
+|       8.9 A_B Testing.md
+|       
++---09.Email Marketing & Automation
+|       9.1 Email Templates.md
+|       9.10 Workflow Automation.md
+|       9.11 Trigger-based Emails.md
+|       9.2 Email Campaigns.md
+|       9.3 Email Sequences.md
+|       9.4 Drip Campaigns.md
+|       9.5 Email Tracking.md
+|       9.6 Email Analytics.md
+|       9.7 Unsubscribe Management.md
+|       9.8 Email Deliverability.md
+|       9.9 Marketing Automation.md
+|       
++---10.Customer Service & Support
+|       10.1 Case Management.md
+|       10.10 Service Analytics.md
+|       10.11 Customer Satisfaction (CSAT).md
+|       10.2 Ticket System.md
+|       10.3 Service Level Agreements (SLA).md
+|       10.4 Case Routing.md
+|       10.5 Case Escalation.md
+|       10.6 Knowledge Base.md
+|       10.7 Self-service Portal.md
+|       10.8 Live Chat.md
+|       10.9 Chatbot Integration.md
+|       
++---11.Customer Engagement & Communication
+|       11.1 Activity Timeline.md
+|       11.10 Communication History.md
+|       11.11 Engagement Scoring.md
+|       11.2 Email Integration.md
+|       11.3 Calendar Integration.md
+|       11.4 Task Management.md
+|       11.5 Meeting Scheduler.md
+|       11.6 Call Logging.md
+|       11.7 SMS Integration.md
+|       11.8 WhatsApp Integration.md
+|       11.9 Social Media Engagement.md
+|       
++---12.Customer Loyalty & Retention
+|       12.1 Loyalty Programs.md
+|       12.10 Customer Lifetime Value (CLV).md
+|       12.2 Points Management.md
+|       12.3 Rewards Catalog.md
+|       12.4 Tier Management.md
+|       12.5 Member Portal.md
+|       12.6 Redemption Management.md
+|       12.7 Loyalty Analytics.md
+|       12.8 Churn Prediction.md
+|       12.9 Win-back Campaigns.md
+|       
++---13.Partner & Channel Management
+|       13.1 Partner Portal.md
+|       13.10 Channel Conflict Resolution.md
+|       13.2 Partner Onboarding.md
+|       13.3 Partner Performance.md
+|       13.4 Deal Registration.md
+|       13.5 Partner Incentives.md
+|       13.6 Co-marketing Programs.md
+|       13.7 Partner Training.md
+|       13.8 Partner Resources.md
+|       13.9 Partner Analytics.md
+|       
++---14.Sales Enablement
+|       14.1 Sales Content Library.md
+|       14.10 Offline Access.md
+|       14.2 Sales Playbooks.md
+|       14.3 Competitive Intelligence.md
+|       14.4 Product Training.md
+|       14.5 Sales Scripts.md
+|       14.6 Objection Handling.md
+|       14.7 Best Practices.md
+|       14.8 Sales Tools.md
+|       14.9 Mobile Sales App.md
+|       
++---15.Analytics & Reporting
+|       15.1 Sales Performance Reports.md
+|       15.2 Win_Loss Analysis.md
+|       15.3 Sales Cycle Analysis.md
+|       15.4 Revenue Reports.md
+|       
++---16.Workflow & Automation
+|       16.1 Workflow Rules.md
+|       16.10 Record Updates.md
+|       16.11 Time-based Actions.md
+|       16.12 Custom Actions.md
+|       16.2 Process Builder.md
+|       16.3 Approval Processes.md
+|       16.4 Assignment Rules.md
+|       16.5 Auto-response Rules.md
+|       16.6 Escalation Rules.md
+|       16.7 Field Updates.md
+|       16.8 Email Alerts.md
+|       16.9 Task Creation.md
+|       
++---17.Integration & Data Management
+|       17.1 Email Integration.md
+|       17.10 Webhook Configuration.md
+|       17.11 Third-party Apps.md
+|       17.12 AppExchange_Marketplace.md
+|       17.13 Data Synchronization.md
+|       17.2 Calendar Sync.md
+|       17.3 Social Media Integration.md
+|       17.4 Telephony Integration.md
+|       17.5 Marketing Automation Integration.md
+|       17.6 E-commerce Integration.md
+|       17.7 Accounting Integration.md
+|       17.8 Data Import_Export.md
+|       17.9 API Management.md
+|       
+\---18.CRM Configuration & Administration
+        18.1 User Management.md
+        18.10 Custom Objects.md
+        18.11 Picklist Management.md
+        18.12 Email Templates.md
+        18.13 System Settings.md
+        18.14 Audit Trail.md
+        18.15 Data Backup & Recovery.md
+        18.16 System Monitoring.md
+        18.2 Roles & Permissions.md
+        18.3 Profiles & Permission Sets.md
+        18.4 Sharing Rules.md
+        18.5 Field-level Security.md
+        18.6 Page Layouts.md
+        18.7 Record Types.md
+        18.8 Validation Rules.md
+        18.9 Custom Fields.md
+        

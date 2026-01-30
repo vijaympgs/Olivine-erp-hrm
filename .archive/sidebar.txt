@@ -1,0 +1,35 @@
+ Volume in drive D is New Volume
+ Volume Serial Number is 8AFF-8E88
+
+ Directory of D:\olvine-erp\core\frontend\ui-canon\frontend\ui\components
+
+01/18/2026  09:37 PM            18,220 Sidebar.tsx
+01/18/2026  09:37 PM            42,943 SidebarSettingsAccordion.tsx
+               2 File(s)         61,163 bytes
+
+ Directory of D:\olvine-erp\core\frontend\ui_canon\frontend\ui\components
+
+01/18/2026  09:37 PM            18,263 Sidebar.tsx
+01/18/2026  09:37 PM            42,943 SidebarSettingsAccordion.tsx
+               2 File(s)         61,206 bytes
+
+ Directory of D:\olvine-erp\core\ui-canon\frontend\ui\components
+
+01/18/2026  09:37 PM            18,263 Sidebar.tsx
+01/18/2026  09:37 PM            42,948 SidebarSettingsAccordion.tsx
+               2 File(s)         61,211 bytes
+
+ Directory of D:\olvine-erp\core\ui_canon\frontend\ui\components
+
+01/18/2026  09:37 PM            18,263 Sidebar.tsx
+01/18/2026  09:37 PM            42,948 SidebarSettingsAccordion.tsx
+               2 File(s)         61,211 bytes
+
+ Directory of D:\olvine-erp\frontend\src-backup\components\layout
+
+01/18/2026  09:37 PM             1,752 Sidebar.tsx
+               1 File(s)          1,752 bytes
+
+     Total Files Listed:
+               9 File(s)        246,543 bytes
+               0 Dir(s)  253,028,106,240 bytes free

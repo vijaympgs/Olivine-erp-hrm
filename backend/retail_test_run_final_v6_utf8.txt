@@ -1,0 +1,432 @@
+﻿python : C:\Users\vijay\AppData\Local\Prog
+rams\Python\Python311\Lib\site-packages\dj
+ango\db\models\base.py:368: 
+RuntimeWarning: Model 
+'procurement.procurementconfig' was 
+already registered. Reloading models is 
+not advised as it can lead to 
+inconsistencies, most notably with 
+related models.
+At line:1 char:13
++ cd backend; python manage.py test 
+Retail.backend.inventory.tests Reta ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (C:\Users\vijay\...related models.  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+  new_class._meta.apps.register_model(new_
+class._meta.app_label, new_class)
+Creating test database for alias 
+'default' ('file:memorydb_default?mode=mem
+ory&cache=shared')...
+
+Found 48 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: company_master, corsheaders, django_filters, drf_spectacular, item, messages, reporting, rest_framework, staticfiles, supplier
+  Apply all migrations: admin, auth, authtoken, business_entities, company, contenttypes, crm, domain, finance, hrm, inventory, licensing, pos, procurement, qa_console, retail_domain, sales, sessions, toolbar_control, user_management
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying authtoken.0001_initial... OK
+  Applying authtoken.0002_auto_20160226_1747... OK
+  Applying authtoken.0003_tokenproxy... OK
+  Applying business_entities.0001_initial... OK
+  Applying company.0001_initial... OK
+  Applying business_entities.0002_initial... OK
+  Applying user_management.0001_initial... OK
+  Applying retail_domain.0001_initial... OK
+  Applying user_management.0002_alter_userlocationmapping_location... OK
+  Applying company.0002_alter_itemvariant_item... OK
+  Applying sales.0001_initial... OK
+  Applying domain.0001_initial... OK
+  Applying sales.0002_alter_salesinvoice_customer_and_more... OK
+  Applying procurement.0001_initial... OK
+  Applying procurement.0002_alter_purchaserequisitionline_item_variant... OK
+  Applying procurement.0003_requestforquotation_location... OK
+  Applying inventory.0001_initial... OK
+  Applying inventory.0002_inventoryparameter_valuationmethod_approvalrule... OK
+  Applying inventory.0003_remove_stockadjustment_qty_delta_and_more... OK
+  Applying inventory.0004_inventoryapprovallog... OK
+  Applying inventory.0005_cyclecountschedule_movementmastertype_serialnumber_and_more... OK
+  Applying procurement.0004_goodsreceiptline_batch_and_more... OK
+  Applying procurement.0005_alter_advanceshipmentnotice_supplier_and_more... OK
+  Applying pos.0001_initial... OK
+  Applying pos.0002_postransactionline_batch... OK
+  Applying pos.0003_alter_dayopen_location_and_more... OK
+  Applying inventory.0006_alter_batch_variant_and_more... OK
+  Applying company.0003_remove_location_company_and_more... OK
+  Applying company.0004_delete_location... OK
+  Applying company.0005_delete_location... OK
+  Applying crm.0001_initial... OK
+  Applying finance.0001_initial... OK
+  Applying hrm.0001_initial... OK
+  Applying hrm.0002_employeeposition_organizationalunit_position... OK
+  Applying hrm.0003_remove_organizationalunit_uk_org_unit_code_and_more... OK
+  Applying hrm.0004_employeeprofile_employeedocument_employeeskill_and_more... OK
+  Applying hrm.0005_applicationanswer_applicationcandidate_and_more... OK
+  Applying hrm.0006_erpmenuitem_erptoolbarcontrol_role_rolepermission_and_more... OK
+  Applying hrm.0007_add_enhanced_menu_item_fields... OK
+  Applying hrm.0008_alter_erpmenuitem_menu_type... OK
+  Applying hrm.0009_audittrailconfiguration_audittrail... OK
+  Applying hrm.0010_courselearningpath_profileendorsement_and_more... OK
+  Applying hrm.0011_employeerecord_hierarchy_level_and_more... OK
+  Applying hrm.0012_remove_employeerecord_manager_name... OK
+  Applying hrm.0013_language_alter_rolepermission_menu_item_and_more... OK
+  Applying inventory.0007_alter_intercompanytransferline_item_and_more... OK
+  Applying licensing.0001_initial... OK
+  Applying qa_console.0001_initial... OK
+  Applying qa_console.0002_testreadiness_bbp_path... OK
+  Applying sessions.0001_initial... OK
+  Applying user_management.0003_rolepermission_created_by_and_more... OK
+  Applying user_management.0004_erptoolbarcontrol_and_more... OK
+  Applying user_management.0005_alter_userpermission_options... OK
+  Applying toolbar_control.0001_initial... OK
+  Applying toolbar_control.0002_alter_toolbaritemproxy_options... OK
+  Applying toolbar_control.0003_alter_toolbaritemproxy_options... OK
+  Applying user_management.0006_alter_erpmenuitem_module_name_and_more... OK
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'C:\00
+mindra\olivine-platform\backend\static' 
+in the STATICFILES_DIRS setting does not 
+exist.
+
+System check identified 1 issue (0 
+silenced).
+WARNING:root:No active license found - 
+allowing company creation (fail-open).
+test_set_01_update_inventory_parameters (R
+etail.backend.inventory.tests.test_5_10_in
+ventory_setup.InventorySetupTestCase.test_
+set_01_update_inventory_parameters)
+SET-TS-01: Create/Update Inventory 
+Parameters ... ok
+test_set_02_custom_movement_type (Retail.b
+ackend.inventory.tests.test_5_10_inventory
+_setup.InventorySetupTestCase.test_set_02_
+custom_movement_type)
+SET-TS-02: Create Custom Movement Type 
+... ok
+test_set_03_adjustment_reasons (Retail.bac
+kend.inventory.tests.test_5_10_inventory_s
+etup.InventorySetupTestCase.test_set_03_ad
+justment_reasons)
+SET-TS-03: Manage Reason Codes ... ok
+WARNING:root:No active license found - 
+allowing company creation (fail-open).
+test_dash_01_stock_overview (Retail.backen
+d.inventory.tests.test_5_1_inventory_dashb
+oard.InventoryDashboardTestCase.test_dash_
+01_stock_overview)
+DASH-TS-01: Verify total stock quantity 
+and valuation across all locations ... ok
+test_dash_02_stock_by_location (Retail.bac
+kend.inventory.tests.test_5_1_inventory_da
+shboard.InventoryDashboardTestCase.test_da
+sh_02_stock_by_location)
+DASH-TS-02: Verify stock segmentation by 
+location ... ok
+test_dash_03_low_stock_alerts (Retail.back
+end.inventory.tests.test_5_1_inventory_das
+hboard.InventoryDashboardTestCase.test_das
+h_03_low_stock_alerts)
+DASH-TS-03: Verify variants below reorder 
+point trigger alerts ... ok
+test_dash_04_movement_trends (Retail.backe
+nd.inventory.tests.test_5_1_inventory_dash
+board.InventoryDashboardTestCase.test_dash
+_04_movement_trends)
+DASH-TS-04: Verify recent movements 
+appear in trend analysis ... ok
+test_dash_05_company_isolation (Retail.bac
+kend.inventory.tests.test_5_1_inventory_da
+shboard.InventoryDashboardTestCase.test_da
+sh_05_company_isolation)
+DASH-TS-05: Verify no data leak from 
+other companies ... ok
+WARNING:root:No active license found - 
+allowing company creation (fail-open).
+test_stock_01_filter_by_batch (Retail.back
+end.inventory.tests.test_5_2_stock_managem
+ent.StockManagementTestCase.test_stock_01_
+filter_by_batch)
+STOCK-TS-01: Verify system can retrieve 
+stock on hand for a specific batch ... ok
+test_stock_02_reorder_policy_crud (Retail.
+backend.inventory.tests.test_5_2_stock_man
+agement.StockManagementTestCase.test_stock
+_02_reorder_policy_crud)
+STOCK-TS-02: Verify creation and 
+validation of reorder policies ... ok
+test_stock_03_zero_stock_filtering (Retail
+.backend.inventory.tests.test_5_2_stock_ma
+nagement.StockManagementTestCase.test_stoc
+k_03_zero_stock_filtering)
+STOCK-TS-03: Verify stock levels with 0 
+qty are handled correctly (shown/hidden 
+based on view) ... ok
+test_stock_04_batch_expiry (Retail.backend
+.inventory.tests.test_5_2_stock_management
+.StockManagementTestCase.test_stock_04_bat
+ch_expiry)
+STOCK-TS-04: Verify batch expiry date 
+querying ... ok
+test_stock_05_serial_check (Retail.backend
+.inventory.tests.test_5_2_stock_management
+.StockManagementTestCase.test_stock_05_ser
+ial_check)
+STOCK-TS-05: Basic Serial Number fetch 
+check ... ok
+WARNING:root:No active license found - 
+allowing company creation (fail-open).
+test_move_01_grn_inbound (Retail.backend.i
+nventory.tests.test_5_3_stock_movements.St
+ockMovementTestCase.test_move_01_grn_inbou
+nd)
+MOVE-TS-01: Verify GRN increases Stock 
+Level and creates Movement Entry ... ok
+test_move_02_transfer_outbound (Retail.bac
+kend.inventory.tests.test_5_3_stock_moveme
+nts.StockMovementTestCase.test_move_02_tra
+nsfer_outbound)
+MOVE-TS-02: Verify Transfer OUT reduces 
+stock ... ok
+test_move_03_immutable_audit (Retail.backe
+nd.inventory.tests.test_5_3_stock_movement
+s.StockMovementTestCase.test_move_03_immut
+able_audit)
+MOVE-TS-03: Verify Ledger entries cannot 
+be modified easily (Application-level 
+check) ... ok
+test_move_04_negative_stock_prevention (Re
+tail.backend.inventory.tests.test_5_3_stoc
+k_movements.StockMovementTestCase.test_mov
+e_04_negative_stock_prevention)
+MOVE-TS-04: Verify logic validation 
+prevents negative stock if configured ... 
+ok
+test_move_05_double_entry (Retail.backend.
+inventory.tests.test_5_3_stock_movements.S
+tockMovementTestCase.test_move_05_double_e
+ntry)
+MOVE-TS-05: Verify Transfer creates 
+balanced entries (+ and -) ... ok
+WARNING:root:No active license found - 
+allowing company creation (fail-open).
+test_adj_01_create_draft (Retail.backend.i
+nventory.tests.test_5_4_stock_adjustments.
+StockAdjustmentTestCase.test_adj_01_create
+_draft)
+ADJ-TS-01: Verify Draft creation does NOT 
+affect stock ... ok
+test_adj_02_approval_flow (Retail.backend.
+inventory.tests.test_5_4_stock_adjustments
+.StockAdjustmentTestCase.test_adj_02_appro
+val_flow)
+ADJ-TS-02: Verify Submit -> Approve state 
+transitions ... ok
+test_adj_03_post_adjustment (Retail.backen
+d.inventory.tests.test_5_4_stock_adjustmen
+ts.StockAdjustmentTestCase.test_adj_03_pos
+t_adjustment)
+ADJ-TS-03: Verify Posted adjustment 
+updates Stock Level ... ok
+test_adj_04_positive_adjustment (Retail.ba
+ckend.inventory.tests.test_5_4_stock_adjus
+tments.StockAdjustmentTestCase.test_adj_04
+_positive_adjustment)
+ADJ-TS-04: Verify positive adjustment 
+(Found items) adds to stock ... ok
+test_adj_05_mandatory_reason (Retail.backe
+nd.inventory.tests.test_5_4_stock_adjustme
+nts.StockAdjustmentTestCase.test_adj_05_ma
+ndatory_reason)
+ADJ-TS-05: Verify Reason Code is 
+mandatory for lines ... ok
+WARNING:root:No active license found - 
+allowing company creation (fail-open).
+test_take_01_freeze_snapshot (Retail.backe
+nd.inventory.tests.test_5_5_physical_inven
+tory.StockTakeTestCase.test_take_01_freeze
+_snapshot)
+TAKE-TS-01: Verify starting Stock Take 
+freezes System Qty ... ok
+test_take_02_variance_calc (Retail.backend
+.inventory.tests.test_5_5_physical_invento
+ry.StockTakeTestCase.test_take_02_variance
+_calc)
+TAKE-TS-02: Verify Variance = Physical - 
+System ... ok
+test_take_03_post_result (Retail.backend.i
+nventory.tests.test_5_5_physical_inventory
+.StockTakeTestCase.test_take_03_post_resul
+t)
+TAKE-TS-03: Verify Posting creates 
+adjustment movement for Variance ... ok
+test_take_04_blind_count (Retail.backend.i
+nventory.tests.test_5_5_physical_inventory
+.StockTakeTestCase.test_take_04_blind_coun
+t)
+TAKE-TS-04: Verify new lines default to 0 
+physical qty ... ok
+test_take_05_cycle_count (Retail.backend.i
+nventory.tests.test_5_5_physical_inventory
+.StockTakeTestCase.test_take_05_cycle_coun
+t)
+TAKE-TS-05: Verify Cycle Count flag ... ok
+WARNING:root:No active license found - 
+allowing company creation (fail-open).
+test_val_01_default_method (Retail.backend
+.inventory.tests.test_5_6_inventory_valuat
+ion.ValuationTestCase.test_val_01_default_
+method)
+VAL-TS-01: Verify default method is FIFO 
+... ok
+test_val_02_total_value (Retail.backend.in
+ventory.tests.test_5_6_inventory_valuation
+.ValuationTestCase.test_val_02_total_value
+)
+VAL-TS-02: Verify Value = Qty * Cost 
+(Standard Cost Model) ... ok
+test_val_03_change_method (Retail.backend.
+inventory.tests.test_5_6_inventory_valuati
+on.ValuationTestCase.test_val_03_change_me
+thod)
+VAL-TS-03: Verify changing method is 
+persisted ... ok
+test_val_04_negative_value_check (Retail.b
+ackend.inventory.tests.test_5_6_inventory_
+valuation.ValuationTestCase.test_val_04_ne
+gative_value_check)
+VAL-TS-04: Verify negative stock results 
+in negative value (or flagged) ... ok
+WARNING:root:No active license found - 
+allowing company creation (fail-open).
+test_rep_01_create_reorder_policy (Retail.
+backend.inventory.tests.test_5_7_replenish
+ment.ReplenishmentTestCase.test_rep_01_cre
+ate_reorder_policy)
+REP-TS-01: Create and validate a Reorder 
+Policy (Min/Max/Reorder Qty) ... ok
+test_rep_02_low_stock_detection (Retail.ba
+ckend.inventory.tests.test_5_7_replenishme
+nt.ReplenishmentTestCase.test_rep_02_low_s
+tock_detection)
+REP-TS-02: Verify system detects stock 
+below min_qty ... ok
+test_rep_03_replenishment_suggestion_calc 
+(Retail.backend.inventory.tests.test_5_7_r
+eplenishment.ReplenishmentTestCase.test_re
+p_03_replenishment_suggestion_calc)
+REP-TS-03: Verify suggestion calculation 
+logic ... ok
+test_rep_04_policy_deactivation (Retail.ba
+ckend.inventory.tests.test_5_7_replenishme
+nt.ReplenishmentTestCase.test_rep_04_polic
+y_deactivation)
+REP-TS-04: Verify inactive policies are 
+ignored ... ok
+WARNING:root:No active license found - 
+allowing company creation (fail-open).
+test_trk_01_create_batch_lifecycle (Retail
+.backend.inventory.tests.test_5_8_item_tra
+cking.ItemTrackingTestCase.test_trk_01_cre
+ate_batch_lifecycle)
+TRK-TS-01: Create Batch with Expiry and 
+verify lifecycle ... ok
+test_trk_02_serial_number_lifecycle (Retai
+l.backend.inventory.tests.test_5_8_item_tr
+acking.ItemTrackingTestCase.test_trk_02_se
+rial_number_lifecycle)
+TRK-TS-02: Serial Number generation and 
+status changes ... ok
+test_trk_03_serial_linked_to_batch (Retail
+.backend.inventory.tests.test_5_8_item_tra
+cking.ItemTrackingTestCase.test_trk_03_ser
+ial_linked_to_batch)
+TRK-TS-03: Link Serial Number to a parent 
+Batch ... ok
+test_trk_04_expiry_management (Retail.back
+end.inventory.tests.test_5_8_item_tracking
+.ItemTrackingTestCase.test_trk_04_expiry_m
+anagement)
+TRK-TS-04: Expiry logic detection ... ok
+WARNING:root:No active license found - 
+allowing company creation (fail-open).
+test_rpt_01_stock_summary_report (Retail.b
+ackend.inventory.tests.test_5_9_inventory_
+reports.InventoryReportsTestCase.test_rpt_
+01_stock_summary_report)
+RPT-TS-01: Verify Stock Summary 
+Aggregation (Total Stock) ... ok
+test_rpt_02_location_breakdown (Retail.bac
+kend.inventory.tests.test_5_9_inventory_re
+ports.InventoryReportsTestCase.test_rpt_02
+_location_breakdown)
+RPT-TS-02: Verify Location Breakdown ... 
+ok
+test_rpt_03_valuation_report_logic (Retail
+.backend.inventory.tests.test_5_9_inventor
+y_reports.InventoryReportsTestCase.test_rp
+t_03_valuation_report_logic)
+RPT-TS-03: Verify Valuation Logic (Qty * 
+Cost) ... ok
+test_rpt_04_movement_report_query (Retail.
+backend.inventory.tests.test_5_9_inventory
+_reports.InventoryReportsTestCase.test_rpt
+_04_movement_report_query)
+RPT-TS-04: Verify Movement History Query 
+Capability ... ok
+test_quote_workflow (Retail.backend.sales.
+tests.test_6_1_sales_quotation.SalesQuotat
+ionTests.test_quote_workflow)
+Test full quote workflow: Create -> 
+Submit -> Approve -> Convert ... ok
+test_order_workflow (Retail.backend.sales.
+tests.test_6_2_sales_order.SalesOrderTests
+.test_order_workflow)
+Test Order: Draft -> Approved -> 
+Confirmed -> Shipped ... ok
+test_invoice_workflow (Retail.backend.sale
+s.tests.test_6_3_sales_invoice.SalesInvoic
+eTests.test_invoice_workflow)
+Test Invoice: Draft -> Validated -> 
+Approved -> Paid ... ok
+test_config_crud (Retail.backend.sales.tes
+ts.test_6_5_sales_configuration.SalesConfi
+gTests.test_config_crud)
+Test Config retrieval and update ... ok
+
+------------------------------------------
+----------------------------
+Ran 48 tests in 7.953s
+
+OK
+Destroying test database for alias 
+'default' ('file:memorydb_default?mode=mem
+ory&cache=shared')...
+
+  Applying user_management.0007_add_toolbar_permissions... OK

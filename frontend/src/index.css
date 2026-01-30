@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-height: 4rem;
+    /* 64px, matching h-16 tailwind class */
+    --workspace-bg-color: #f3f2f1;
+    /* Default light gray */
+
+    /* Sidebar Colors (Global fallback if not set by LayoutManager) */
+    --sidebar-rail-bg: #f0f0f0;
+    /* Computed match */
+    --sidebar-panel-bg: white;
+    --sidebar-rail-border: #e2e8f0;
+    /* slate-200 */
+    --sidebar-panel-border: #e2e8f0;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply font-sans antialiased text-olivine-text bg-olivine-bg;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Sidebar hairline + micro-dot scrollbar */
+.sidebar-scroll-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+  position: relative;
+}
+
+.sidebar-scroll-container::-webkit-scrollbar-track::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0.5px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.sidebar-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  min-height: 6px;
+}
+
+.sidebar-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* Firefox */
+.sidebar-scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+/* Hairline Type Scrollbar */
+.hairline-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.hairline-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hairline-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* slate-300 */
+  border-radius: 10px;
+}
+
+.hairline-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; /* slate-400 */
+}
+
+/* Firefox */
+.hairline-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
