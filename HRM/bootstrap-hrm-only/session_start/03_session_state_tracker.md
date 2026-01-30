@@ -78,21 +78,26 @@
 ## 3. NEXT SESSION ROADMAP
 
 ### Immediate Priorities (Next Session)
-1. **HRM Module Development**
-   - Continue HRM feature development
-   - Review any pending HRM tasks
-   - Check for any bugs or issues
-   - Ensure all fixtures are up to date
 
-2. **Documentation Updates**
+1. **Toolbar Stabilization - Employee Management**
+   - Stabilize toolbar in `02.1 Employee Records.md`
+   - Stabilize toolbar in `02.2 Organizational Chart.md`
+   - Stabilize toolbar in `02.3 Profile View.md`
+   - Stabilize toolbar in `02.4 Employee Self-Service.md`
+   - Stabilize toolbar in `02.5 Document Management.md`
+   - Stabilize toolbar in `02.6 Employee Lifecycle.md`
+
+2. **Talent & Onboarding Module Development**
+   - Start with `03.1 Application Capture.md`
+   - Develop `03.2 Screening.md`
+   - Develop `03.3 Interview Scheduling.md`
+   - Develop `03.4 Offer Management.md`
+   - Develop `03.5 New Hire Setup.md`
+
+3. **Documentation Updates**
    - Update session state tracker at end of each session
    - Maintain bootstrap documentation
    - Keep governance rules current
-
-3. **Repository Maintenance**
-   - Monitor git repository for any issues
-   - Ensure .gitignore remains up to date
-   - Handle any merge conflicts if they arise
 
 ### Short-Term Goals (Next 1-2 Weeks)
 1. **CRM Module Support**
