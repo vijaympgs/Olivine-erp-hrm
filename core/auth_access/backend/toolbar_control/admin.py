@@ -64,18 +64,44 @@ class ItemAdmin(admin.ModelAdmin):
     Toolbar Registry - Registered as 'Item' in Admin
     """
     list_display = (
+        'table_name',
         'id',
         'app_badge',
         'menu_id',
-        'menu_name_display',
+        'menu_name',
+        'module_name',
+        'submodule',
         'view_type',
+        'toolbar_config',
+        'toolbar_config_backup',
+        'applicable_toolbar_config',
+        'original_toolbar_string',
         'toolbar_list',
         'toolbar_view',
         'toolbar_edit',
         'toolbar_create',
-        'button_count_display',
+        'route_path',
+        'component_name',
+        'description',
+        'menu_order',
+        'display_order',
+        'is_license_controlled',
         'is_active',
+        'is_system_menu',
+        'parent_menu',
+        'created_by',
+        'updated_by',
+        'created_at',
+        'updated_at',
     )
+    
+    list_per_page = 20  # Show more items per page to see all columns
+    
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
     list_filter = (
         'view_type',
@@ -93,7 +119,6 @@ class ItemAdmin(admin.ModelAdmin):
     )
 
     list_editable = ('toolbar_list', 'toolbar_view', 'toolbar_edit', 'toolbar_create', 'is_active')
-    list_per_page = 50
     ordering = ('module_name', 'menu_order', 'menu_name')
 
     readonly_fields = ('created_at', 'updated_at')

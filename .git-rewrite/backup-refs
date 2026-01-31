@@ -1,0 +1,9 @@
+2355b89290acf958799a3df434b892451e463ed3 commit	refs/heads/docs/hrm-jan28-2026
+5fcef4d710fbe6ee9a2f54a103c666475e770157 commit	refs/heads/feature/hrm-jan28-2026-clean
+9d4c69a22558300c5d5962fcb95654754a171798 commit	refs/heads/main
+86da9eddf9b976b46d1d532bd1f5f306a9be8e56 commit	refs/remotes/origin/HEAD
+9d4c69a22558300c5d5962fcb95654754a171798 commit	refs/remotes/origin/docs/hrm-jan28-2026
+9d4c69a22558300c5d5962fcb95654754a171798 commit	refs/remotes/origin/feature/hrm-jan28-2026
+86da9eddf9b976b46d1d532bd1f5f306a9be8e56 commit	refs/remotes/origin/main
+86930d5d9a56777c091177f5a8b45c52c24a783b commit	refs/remotes/origin/master
+733adae9cf9abb9623fcf05eb6e751c0e60ca36a commit	refs/stash

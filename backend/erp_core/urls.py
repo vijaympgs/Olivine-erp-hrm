@@ -7,6 +7,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from erp_core.views.unified_admin_index import unified_admin_index
 from core.auth_access.backend.user_management.toolbar_views import get_toolbar_permissions
 from erp_core.file_search_views import SearchRootsView, FileSearchView, FileContentView, FileOpenView
+from erp_core.visual_extractor_views import VisualExtractionView
 
 # Import HRM Admin Sites for unified console
 from HRM.backend.hrm.admin_sites import (
@@ -54,6 +55,10 @@ urlpatterns = [
     path('api/file-search/search/', FileSearchView.as_view(), name='file-search'),
     path('api/file-search/file/', FileContentView.as_view(), name='file-content'),
     path('api/file-search/open/', FileOpenView.as_view(), name='file-open'),
+    
+    # System Tools API
+    path('api/system-tools/extract-text/', VisualExtractionView.as_view(), name='extract-text'),
+    
     path('', include('core.org_structure.backend.company.urls')),
 ]
 

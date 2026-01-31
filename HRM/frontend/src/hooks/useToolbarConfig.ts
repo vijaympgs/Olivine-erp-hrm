@@ -46,12 +46,41 @@ const ERP_MENU_ITEMS: Record<string, {
   toolbar_create: string;
 }> = {
   'EMPLOYEE_RECORDS': {
+    toolbar_list: 'NRQFVEDIOX',
+    toolbar_view: 'X',
+    toolbar_edit: 'SCX',
+    toolbar_create: 'SCX',
+  },
+  'HRM_ORG_CHART': {
     toolbar_list: 'NRQFVIOX',
     toolbar_view: 'X',
     toolbar_edit: 'SCX',
     toolbar_create: 'SCX',
   },
-  // Add more menu items as needed
+  'HRM_PROFILE_VIEW': {
+    toolbar_list: 'NRQFVIOX',
+    toolbar_view: 'X',
+    toolbar_edit: 'SCX',
+    toolbar_create: 'SCX',
+  },
+  'HRM_DOCUMENT_MANAGEMENT': {
+    toolbar_list: 'NESCKVDXRQF',
+    toolbar_view: 'X',
+    toolbar_edit: 'SCX',
+    toolbar_create: 'SCX',
+  },
+  'HRM_EMPLOYEE_SELF_SERVICE': {
+    toolbar_list: 'NESCKVDXRQF',
+    toolbar_view: 'X',
+    toolbar_edit: 'SCX',
+    toolbar_create: 'SCX',
+  },
+  'HRM_EMPLOYEE_LIFECYCLE': {
+    toolbar_list: 'NESCKVDXRQF',
+    toolbar_view: 'X',
+    toolbar_edit: 'SCX',
+    toolbar_create: 'SCX',
+  },
 };
 
 // Helper function to convert character string to permissions object

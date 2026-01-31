@@ -146,41 +146,12 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, level, expandedItems, toggleE
   // Get active item style based on selection style
   const getActiveStyle = () => {
     if (!isActive) return {};
-    
-    const selectionStyle = config.sidebar.menuSelection;
-    const activeItem = config.activeMenuItem;
-    
-    switch (selectionStyle.style) {
-      case 'flat':
-        return {
-          backgroundColor: activeItem.backgroundColor,
-          color: activeItem.textColor,
-          fontWeight: activeItem.fontWeight,
-        };
-      case 'left-border':
-        return {
-          borderLeft: `${activeItem.borderWidth}px solid ${activeItem.borderColor}`,
-          backgroundColor: activeItem.backgroundColor,
-          color: activeItem.textColor,
-        };
-      case 'rounded':
-        return {
-          backgroundColor: activeItem.backgroundColor,
-          color: activeItem.textColor,
-          borderRadius: selectionStyle.borderRadius,
-        };
-      case 'pill':
-        return {
-          backgroundColor: activeItem.backgroundColor,
-          color: activeItem.textColor,
-          borderRadius: '9999px',
-        };
-      default:
-        return {
-          backgroundColor: activeItem.backgroundColor,
-          color: activeItem.textColor,
-        };
-    }
+        
+    // Use sidebar panel active item colors
+    return {
+      backgroundColor: config.sidebar.panel.activeItemBg,
+      color: config.sidebar.panel.activeItemColor,
+    };
   };
 
   return (

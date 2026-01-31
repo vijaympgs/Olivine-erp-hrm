@@ -1,58 +1,232 @@
 # SESSION STATE TRACKER - Session Startup File
 
 **Purpose**: Track session progress, last session summary, next session roadmap  
-**Last Updated**: January 30, 2026
+**Last Updated**: January 31, 2026
+
+---
+
+## 📋 SESSION QUICK REFERENCE - January 31, 2026
+
+### CRITICAL CONSTRAINTS (NON-NEGOTIABLE)
+❌ NEVER import Location model (Retail-only)
+❌ NEVER create custom toolbars (use backend-driven system)
+❌ NEVER use different colors than UI canon
+❌ NEVER use different font sizes than UI canon
+❌ NEVER skip wiring checklists
+❌ NEVER modify core models (Company, User, etc.)
+❌ NEVER bypass governance rules
+
+✅ ALWAYS follow exact UI standards from UI canon
+✅ ALWAYS use backend-driven toolbar configuration
+✅ ALWAYS follow wiring checklists phase by phase
+✅ ALWAYS test with toolbar explorer
+✅ ALWAYS use canonical related_name patterns
+✅ ALWAYS reference steering folder for governance
+✅ ALWAYS maintain copy-paste mergeability
+✅ ALWAYS use full path for Django commands: `python backend/manage.py [command]`
+
+### UI STANDARDS QUICK REFERENCE
+**Typography:**
+- L1 (Page Title): 20px, 600 weight, #201f1e
+- L2 (Section Header): 16px, 600 weight, #323130
+- L3 (Field Label): 12px, 600 weight, #605e5c, uppercase
+- L4 (Body Text): 14px, 400 weight, #323130
+
+**Colors:**
+- Primary Button: #ff6600 (var(--button-primary-bg))
+- Primary Text: #ffffff (var(--button-primary-text))
+- Focus/Links: #0078d4
+- Border Radius: 2px (rounded-sm) except badges (rounded-full)
+
+**Spacing:**
+- Input padding: px-3 py-2 (12px horizontal, 8px vertical)
+- Button padding: px-3 py-1.5 (12px horizontal, 6px vertical)
+
+### TOOLBAR IMPLEMENTATION RULES
+**Modes:** VIEW, VIEW_FORM, CREATE, EDIT
+
+**API Endpoint:** `/api/toolbar-permissions/?view_id=X&mode=Y`
+
+**Component Usage:**
+```typescript
+<MasterToolbar 
+  viewId="MENU_ID" 
+  mode={mode} 
+  onAction={handleToolbarAction} 
+  hasSelection={!!selectedId} 
+/>
+```
+
+**Character Codes:**
+- N = New, E = Edit, R = Refresh, Q = Query/Search, F = Filter, X = Exit
+- V = View, D = Delete, I = Import, O = Export, L = Clone
+- B = Notes, U = Attach, G = Help, S = Save, C = Cancel, K = Clear
+- A = Authorize, T = Submit, J = Reject, W = Amend, P = Print, M = Email
+- 1 = First, 2 = Previous, 3 = Next, 4 = Last, H = Hold, Z = Void
+
+### DOMAIN BOUNDARIES
+**HRM Domain (My Ownership - STRICT):**
+- Employee → `HRM/backend/hrm/models/employee.py`
+- Department → `HRM/backend/hrm/models/department.py`
+- Position → `HRM/backend/hrm/models/organizational_unit.py`
+- Operates strictly at Company level
+- NO Location references allowed
+
+**Shared Domain (READ-ONLY):**
+- Company → `common/domain/models.py` (use lazy string reference)
+- User → `common/auth/`
+- Permission → `common/permissions/`
+- Role → `common/permissions/`
+
+**Other Domains (DO NOT TOUCH):**
+- Location → Retail domain only (STRICTLY FORBIDDEN in HRM)
+- Finance → FMS domain
+- Customer/Lead → CRM domain
+
+### KEY FILE LOCATIONS
+**Backend:**
+- `backend/manage.py` - Django management entry point
+- `backend/core/auth_access/backend/user_management/` - Toolbar system
+- `backend/core/auth_access/backend/toolbar_control/admin.py` - ERPMenuItem admin
+
+**Frontend:**
+- `frontend/src/components/ui/` - Shared UI components
+- `frontend/src/pages/` - Page components
+- `frontend/src/hooks/` - Custom hooks
+
+**HRM:**
+- `HRM/backend/hrm/` - HRM backend
+- `HRM/frontend/src/` - HRM frontend
+
+**Session Startup:**
+- `HRM/bootstrap-hrm-only/session_start/` - Session startup files
+
+### COMMON PATTERNS
+**Master Data (List + In-Place Form):**
+```typescript
+const [mode, setMode] = useState<MasterMode>('VIEW');
+const [showForm, setShowForm] = useState(false);
+const [editingId, setEditingId] = useState<string | null>(null);
+const [selectedId, setSelectedId] = useState<string | null>(null);
+
+const getToolbarMode = (): MasterMode => {
+  if (!showForm) return 'VIEW';
+  if (viewMode) return 'VIEW_FORM';
+  return editingId ? 'EDIT' : 'CREATE';
+};
+```
+
+**Form Ref Pattern:**
+```typescript
+const formRef = React.useRef<FormHandle>(null);
+
+// In form component:
+React.useImperativeHandle(ref, () => ({
+  submit: async () => { /* ... */ },
+  reset: () => { /* ... */ },
+  validate: () => { /* ... */ }
+}));
+```
+
+### DJANGO COMMAND PATTERN
+❌ WRONG: `cd backend && python manage.py check`
+✅ CORRECT: `python backend/manage.py check`
+
+**Standard Commands:**
+- `python backend/manage.py check` - System checks
+- `python backend/manage.py makemigrations` - Create migrations
+- `python backend/manage.py migrate` - Apply migrations
+- `python backend/manage.py runserver` - Start server
+- `python backend/manage.py createsuperuser` - Create admin user
+
+### AUTORETRY PREVENTION
+- Max 120 lines per response for large files
+- Write one section at a time
+- Use STOP MARKERS: `--- END OF SECTION X.Y.Z ---`
+- NEVER regenerate from beginning if context lost
+- ALWAYS continue from exact stopping point
 
 ---
 
 ## 1. CURRENT SESSION STATUS
 
 ### Session Information
-- **Date**: January 30, 2026 (Evening)
+- **Date**: January 31, 2026
 - **Agent**: Hindra (HRM Domain Owner)
-- **Session Type**: Git Repository Setup & Management
+- **Session Type**: HRM Module Bug Fixes & UI Improvements
 
 ### Current Session Tasks
-- [x] Create comprehensive .gitignore file
-- [x] Add all project directories to git
-- [x] Commit .gitignore file
-- [x] Commit all project files (2,411 files)
-- [x] Push changes to remote repository
-- [x] Remove unwanted CRM and FMS script files
-- [x] Commit file removal
-- [x] Push cleanup changes to remote
+- [x] Read all session startup files
+- [x] Read EmployeeRecords.tsx component
+- [x] Created script to check toolbar configuration
+- [x] Ran script to check database
+- [x] Identified issue: toolbar columns not populated
+- [x] Created script to fix toolbar columns
+- [x] Ran fix script - updated 78 HRM menu items
+- [x] Verified Employee Records toolbar fix
+- [x] Created TableNameDisplayMixin
+- [x] Updated ERPMenuItemAdmin to show all fields
+- [x] Fixed right rail sidebar settings - added missing 5 settings
+- [x] Fixed TypeScript errors in Button variants
+- [x] Fixed active item bg/fg to use correct config properties
+- [x] Simplified TableNameDisplayMixin to avoid get_list_display override
+- [x] Checked actual table structure
+- [x] Updated admin to use correct field names
+- [x] Added truncated display methods for toolbar fields (15 chars)
+- [x] Added descriptions for toolbar fields
+- [x] Fixed breadcrumb first item color to use sidebar selected item bg
+- [x] Added list_per_page to show more items
+- [x] Added admin_order_field to truncated methods for sorting
+- [x] Added table_name method directly to admin class
+- [x] Removed TableNameDisplayMixin inheritance to avoid conflicts
+- [x] Created verification script that confirms all 28 columns are configured
+- [x] Found the correct admin file location: core/auth_access/backend/toolbar_control/admin.py
+- [x] Updated the CORRECT admin file with all 28 fields
+- [x] Added table_name method to display database table name
+- [x] Added list_per_page = 20
+- [x] Removed duplicate list_per_page = 50
+- [x] User confirmed table name is displaying correctly
+- [x] HRM/admin.py is empty
+- [x] Found HRM admin file at HRM/backend/hrm/admin.py
+- [x] It already uses TableNameDisplayMixin for all admin classes
+- [x] Read TableNameDisplayMixin implementation - it only adds to context, not list_display
+- [x] Updated TableNameDisplayMixin to add table_name to list_display
+- [x] Added table_name method to display the database table name
+- [x] Created script to add table_name to all DefaultAdmin classes
+- [x] Fixed Unicode encoding error in script
+- [x] Ran script - added table_name to 78 admin classes
+- [x] Created script to add table_name method to all admin classes
+- [x] Ran script - added table_name method to 78 admin classes
+- [x] All HRM admin pages will now display table name automatically
+- [x] Created task template system (10-CPs, task-template, task_execution_prompt)
+- [x] Fixed Employee Records toolbar (database + frontend)
+- [x] Stabilized 5 Employee Management modules (Organizational Chart, Profile View, Employee Self-Service, Document Management, Employee Lifecycle)
+- [x] Updated registry system with System Tools menu items
+- [x] Added permanent search order instruction to startup protocol
+- [x] Added permanent 10-CPs reference to startup protocol
+- [x] Added System Tools frontend files to registry
+- [x] Fixed Visual Extractor issue (added URL pattern for extract-text endpoint)
 
 ### Session Deliverables
-1. `.gitignore` - Comprehensive gitignore file with proper exclusions
-2. Git repository at https://github.com/vijaympgs/Olivine-erp-hrm - Fully configured and up to date
+1. `backend/fix_hrm_toolbar_columns.py` - Script to fix toolbar columns for HRM menu items
+2. `backend/check_employee_toolbar_config.py` - Script to check toolbar configuration
+3. `backend/check_erp_menu_item_fields.py` - Script to check ERPMenuItem table structure
+4. `backend/check_admin_file.py` - Script to verify admin configuration
+5. `backend/verify_admin_config.py` - Script to verify admin configuration (Django setup)
+6. `backend/add_table_name_to_hrm_admin.py` - Script to add table_name to all HRM admin classes
+7. `backend/add_table_name_method_to_hrm_admin.py` - Script to add table_name method to all HRM admin classes
+8. `HRM/backend/hrm/admin_mixins.py` - Updated TableNameDisplayMixin to add table_name to list_display
+9. `HRM/backend/hrm/admin.py` - Updated with table_name in all 78 DefaultAdmin classes
+10. `core/auth_access/backend/toolbar_control/admin.py` - Updated ItemAdmin with all 28 fields
+11. `frontend/src/components/ui/Sidebar.tsx` - Fixed active item bg/fg colors
+12. `frontend/src/components/ui/AppHeader.tsx` - Fixed breadcrumb first item color
+13. `frontend/src/pages/admin/LayoutSettingsPage.tsx` - Added 5 missing sidebar settings
 
 ---
 
 ## 2. LAST SESSION SUMMARY
 
-### Previous Session (January 30, 2026 - Morning)
-**Focus**: Repository analysis and understanding
-
-**Completed**:
-- Analyzed Olivine ERP platform architecture
-- Reviewed HRM module status (100% complete)
-- Examined backend/frontend structure
-- Studied toolbar architecture
-- Reviewed documentation structure
-
-**Key Findings**:
-- HRM module is fully functional with 80 models
-- 0 Django system check errors
-- Extensive bootstrap documentation (22 files)
-- Backend-driven toolbar system implemented
-- Multi-tenancy support in place
-
-**Issues Identified**:
-- Need for faster session startup (too many files to read)
-- Context limit concerns with large documentation
-- Need for consolidated reference files
-
-### Current Session (January 30, 2026 - Evening)
+### Previous Session (January 30, 2026 - Evening)
 **Focus**: Git repository setup and management
 
 **Completed**:
@@ -73,61 +247,30 @@
 - Remote repository configured and connected
 - Branch alignment (master vs main) resolved
 
---- HINDRA SESSION SUMMARY ---
+### Current Session (January 31, 2026)
+**Focus**: HRM Module Bug Fixes and UI Improvements
 
-Session Date: January 30, 2026
-Session Duration: ~2 hours
-Agent: Hindra (HRM Domain Owner)
+**Completed**:
+- Fixed Employee Records toolbar configuration (78 HRM menu items updated)
+- Fixed active item background/foreground colors in sidebar
+- Fixed right rail sidebar settings (added 5 missing settings)
+- Fixed erp_menu_items admin display (all 28 fields visible)
+- Fixed breadcrumb first item color to use sidebar selected item's background
+- Fixed table name display for all 78 HRM admin pages
 
-Tasks Completed:
-- Created comprehensive .gitignore file with proper exclusions
-- Added all project directories to git (2,411 files, 1,302,434 lines)
-- Pushed all changes to remote repository
-- Removed 10 unwanted CRM and FMS script files (3,472 lines)
-- Updated session state tracker with evening session work
-- Updated next session priorities
+**Key Findings**:
+- Toolbar columns were NULL in database - fixed by populating based on view_type
+- Sidebar was using wrong config properties for active item colors
+- Admin was showing only 6 columns instead of all 28 fields
+- Table name was not displaying in admin list views
+- Right rail sidebar settings were incomplete (only 2 of 7 settings visible)
 
-Deliverables Created:
-- .gitignore file with comprehensive exclusions
-- Fully configured git repository at https://github.com/vijaympgs/Olivine-erp-hrm
-- Updated session state tracker with current session work
-- Documented next session priorities
-
-Files Modified:
-- .gitignore (created)
-- HRM/bootstrap-hrm-only/session_start/03_session_state_tracker.md (updated twice)
-
-Files Created:
-- .gitignore
-
-Lines of Code Written: 82
-Documentation Updated: 1
-
-Issues Resolved:
-- Git lock file conflicts resolved by terminating git processes
-- Remote repository configured and connected
-- Branch alignment (master vs main) resolved
-- Unwanted files removed from repository
-
-Issues Identified:
-- None
-
-Quality Checks:
-- [x] All governance rules followed
-- [x] All UI standards applied correctly
-- [x] All toolbar implementations use backend-driven system
-- [x] No Location leakage in HRM code
-- [x] All file updates use autoretry prevention
-- [x] Session state tracker updated
-- [x] All deliverables created
-- [x] All tasks completed
-
-Next Session Priorities:
-1. Toolbar Stabilization - Employee Management (6 BBPs)
-2. Talent & Onboarding Module Development (5 BBPs)
-3. Documentation Updates
-
-Session Status: ✅ COMPLETE
+**Issues Resolved**:
+- Employee Records toolbar now has all toolbar columns populated correctly
+- Active menu items now display with configured background (#fa3200) and foreground colors
+- All 28 fields are now visible in erp_menu_items admin
+- Table name displays as first column in all HRM admin pages
+- All 7 sidebar panel settings are now visible and configurable
 
 ---
 
@@ -139,7 +282,7 @@ Session Status: ✅ COMPLETE
    - Stabilize toolbar in `02.1 Employee Records.md`
    - Stabilize toolbar in `02.2 Organizational Chart.md`
    - Stabilize toolbar in `02.3 Profile View.md`
-   - Stabilize toolbar in `02.4 Employee Self-Service.md`
+   - Stabilize toolbar in `02.4 Employee Self-.md`
    - Stabilize toolbar in `02.5 Document Management.md`
    - Stabilize toolbar in `02.6 Employee Lifecycle.md`
 
@@ -220,12 +363,15 @@ Session Status: ✅ COMPLETE
 - **System Checks**: 0 Django errors ✅
 - **Database**: 20 master records loaded ✅
 - **Fixtures**: 7 fixture files loaded ✅
+- **Toolbar Configuration**: 78 HRM menu items with proper toolbar configs ✅
 
 ### Frontend Status
 - **Employee Directory**: Implemented ✅
 - **Employee Forms**: Implemented ✅
 - **Department Management**: Implemented ✅
 - **Payroll Interface**: Implemented ✅
+- **Sidebar Active Item Colors**: Fixed ✅
+- **Right Rail Settings**: Complete ✅
 
 ### Documentation Status
 - **Bootstrap Documentation**: 22 files ✅
@@ -319,6 +465,12 @@ The session end workflow is defined in `end.md`:
 - **January 30, 2026**: User requested consolidated session startup files
 - **January 30, 2026**: User requested git repository setup with .gitignore
 - **January 30, 2026**: User requested removal of unwanted CRM and FMS script files
+- **January 31, 2026**: User reported Employee Records toolbar not working
+- **January 31, 2026**: User reported active item colors not displaying correctly
+- **January 31, 2026**: User reported right rail sidebar settings incomplete
+- **January 31, 2026**: User reported erp_menu_items admin not showing all fields
+- **January 31, 2026**: User reported table name not displaying in admin
+- **January 31, 2026**: User requested table name display for all HRM admin pages
 
 ### Key Decisions
 - Create 4 consolidated session startup files
@@ -327,6 +479,10 @@ The session end workflow is defined in `end.md`:
 - Maintain original detailed documentation for reference
 - Configure git repository with comprehensive .gitignore
 - Remove unwanted script files from repository
+- Fix toolbar configuration by populating NULL columns based on view_type
+- Use correct config properties for sidebar active item colors
+- Display all 28 fields in erp_menu_items admin
+- Add table_name to all HRM admin classes
 
 ### Feedback Received
 - User approved session startup optimization approach
@@ -335,22 +491,28 @@ The session end workflow is defined in `end.md`:
 - User confirmed .gitignore exclusions were appropriate
 - User approved removal of unwanted files
 - User expressed satisfaction with git repository setup
+- User confirmed toolbar fix is working correctly
+- User confirmed active item colors are displaying correctly
+- User confirmed all 28 fields are visible in admin
+- User confirmed table name is displaying correctly
 
 ---
 
 ## 9. METRICS & TRACKING
 
 ### Session Metrics
-- **Total Sessions**: 2
+- **Total Sessions**: 3
 - **Average Session Duration**: TBD
-- **Tasks Completed**: 18 (10 from morning + 8 from evening)
-- **Deliverables Created**: 8 (6 from morning + 2 from evening)
+- **Tasks Completed**: 25 (10 + 8 + 7 from current session)
+- **Deliverables Created**: 13 (6 + 2 + 5 from current session)
 
 ### HRM Module Metrics
 - **Models**: 80
 - **Fixtures**: 7
 - **Documentation Files**: 22 (bootstrap) + 4 (session_start) + 2 (analysis)
 - **Completion**: 100%
+- **Toolbar Configurations Fixed**: 78 HRM menu items
+- **Admin Classes Updated**: 78 HRM admin classes with table_name display
 
 ### Quality Metrics
 - **Django Errors**: 0
@@ -363,9 +525,9 @@ The session end workflow is defined in `end.md`:
 ## 10. ACTION ITEMS
 
 ### Immediate Actions
-- [ ] Test new session startup workflow
-- [ ] Verify all critical information is captured
-- [ ] Update files based on usage patterns
+- [x] Test new session startup workflow
+- [x] Verify all critical information is captured
+- [x] Update files based on usage patterns
 
 ### Pending Actions
 - [ ] Run comprehensive HRM tests
@@ -401,6 +563,17 @@ The session end workflow is defined in `end.md`:
 - Shared infrastructure via common/
 - Copy-paste mergeable architecture
 
+### Bug Fixes Session
+- Toolbar configuration was NULL in database - fixed by populating based on view_type
+- Sidebar was using wrong config properties - fixed by using correct config.sidebar.panel properties
+- Admin was showing limited columns - fixed by updating list_display with all 28 fields
+- Table name not displaying - fixed by adding table_name to all admin classes
+
+### UI Improvements Session
+- Right rail sidebar settings were incomplete - added 5 missing settings
+- Active item colors not displaying - fixed by using correct config properties
+- Breadcrumb first item color not matching - fixed to use sidebar selected item's background
+
 ---
 
 ## 12. SESSION END CHECKLIST
@@ -430,11 +603,11 @@ The session end workflow is defined in `end.md`:
 - [ ] Record any database migrations that were applied
 
 ### Quality Checks
-- [ ] All deliverables created
-- [ ] All files in correct location
-- [ ] All governance rules followed
-- [ ] No Location leakage
-- [ ] UI consistency maintained
+- [x] All deliverables created
+- [x] All files in correct location
+- [x] All governance rules followed
+- [x] No Location leakage
+- [x] UI consistency maintained
 
 ### Next Session Start
 When starting the next session, say: `/start`

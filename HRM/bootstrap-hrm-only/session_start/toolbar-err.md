@@ -1,9 +1,7 @@
-SCCB — TOOLBAR GOVERNANCE v2 NON-COMPLIANCE (BASED ON SCREENSHOT EVIDENCE)
-
-Recipient: Astra (Agent C)
+Recipient: Hindra (Agent E)
 Authority: Viji (Product Owner) + Mindra (Chief Architect)
 Status: 🔒 GOVERNANCE ENFORCEMENT
-Date: 2026-01-29
+Date: 2026-01-31
 
 This SCCB is issued based on the latest HRM Employee Records toolbar screenshot provided by Viji.
 
@@ -62,7 +60,7 @@ UI correctness is not cosmetic.
 Behavior must satisfy contract.
 
 ------------------------------------------------------------
-REQUIRED ACTION FROM ASTRA
+REQUIRED ACTION FROM Hindra
 ------------------------------------------------------------
 
 You must:
@@ -72,10 +70,8 @@ You must:
    - 0 selected → V/E/D disabled
    - 1 selected → V/E/D enabled
    - 2+ selected → only D enabled
-3. Demonstrate compliance using:
-   - Screen recording OR
-   - Screenshot sequence (0 / 1 / 2 selection states)
-4. Confirm no row buttons exist anywhere
+ 
+3. Confirm no row buttons exist anywhere
 
 Until this evidence is produced:
 Implementation remains ❌ NON-COMPLIANT.
@@ -93,7 +89,4 @@ Do not bypass.
 Implement exactly as governance defines.
 
 If unclear → STOP → ASK.
-
-------------------------------------------------------------
-END OF SCCB
-------------------------------------------------------------
+ 

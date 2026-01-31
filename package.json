@@ -1,0 +1,32 @@
+{
+  "name": "olivine-platform",
+  "version": "1.0.0",
+  "description": "**Date**: 2026-01-17\r **Status**: Development Phase",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijaympgs/olvine-erp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vijaympgs/olvine-erp/issues"
+  },
+  "homepage": "https://github.com/vijaympgs/olvine-erp#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^25.0.10"
+  },
+  "dependencies": {
+    "idb": "8.0.3",
+    "react-markdown": "^10.1.0"
+  }
+}

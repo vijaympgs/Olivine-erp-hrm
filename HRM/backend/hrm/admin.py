@@ -777,380 +777,818 @@ class TaxExemptionAdmin(TableNameDisplayMixin, admin.ModelAdmin):
 # 1. Employee Management
 @admin.register(EmployeeRecord)
 class EmployeeRecordDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['company_code', 'employee_number', 'first_name', 'last_name', 'work_email', 'department_name', 'employment_status', 'is_active']
+    list_display = ['table_name', 'company_code', 'employee_number', 'first_name', 'last_name', 'work_email', 'department_name', 'employment_status', 'is_active']
     search_fields = ['employee_number', 'first_name', 'last_name', 'work_email']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(EmployeeAddress)
 class EmployeeAddressDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['employee', 'address_type', 'city', 'state', 'country']
+    list_display = ['table_name', 'employee', 'address_type', 'city', 'state', 'country']
     search_fields = ['employee__employee_number', 'city']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(EmployeeProfile)
 class EmployeeProfileDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['employee', 'is_active']
+    list_display = ['table_name', 'employee', 'is_active']
     search_fields = ['employee__employee_number']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(EmployeeSkill)
 class EmployeeSkillDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['employee', 'proficiency_level']
+    list_display = ['table_name', 'employee', 'proficiency_level']
     search_fields = ['employee__employee_number']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(SkillCategory)
 class SkillCategoryDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['is_active']
+    list_display = ['table_name', 'is_active']
     search_fields = []
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 # 2. Organization
 @admin.register(Department)
 class DepartmentDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'name', 'is_active']
+    list_display = ['table_name', 'id', 'name', 'is_active']
     search_fields = ['name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(OrganizationalUnit)
 class OrganizationalUnitDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'name', 'code', 'unit_type', 'level', 'is_active']
+    list_display = ['table_name', 'id', 'name', 'code', 'unit_type', 'level', 'is_active']
     search_fields = ['name', 'code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(Position)
 class PositionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'title', 'position_code', 'job_grade', 'employment_type', 'is_active']
+    list_display = ['table_name', 'id', 'title', 'position_code', 'job_grade', 'employment_type', 'is_active']
     search_fields = ['title', 'position_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(EmployeePosition)
 class EmployeePositionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'employee', 'position', 'assignment_type', 'is_primary', 'status']
+    list_display = ['table_name', 'id', 'employee', 'position', 'assignment_type', 'is_primary', 'status']
     search_fields = ['employee__employee_number', 'position__title']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(Company)
 class CompanyDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'name', 'code', 'is_active']
+    list_display = ['table_name', 'id', 'name', 'code', 'is_active']
     search_fields = ['name', 'code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 # 3. Salary & Compensation
 @admin.register(SalaryStructure)
 class SalaryStructureDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'structure_type', 'status']
+    list_display = ['table_name', 'id', 'structure_type', 'status']
     search_fields = ['structure_type']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(PayGrade)
 class PayGradeDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'grade_code', 'grade_level']
+    list_display = ['table_name', 'id', 'grade_code', 'grade_level']
     search_fields = ['grade_code', 'grade_level']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(CompensationRange)
 class CompensationRangeDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'pay_grade', 'range_name', 'geographic_area', 'adjusted_minimum', 'adjusted_maximum']
+    list_display = ['table_name', 'id', 'pay_grade', 'range_name', 'geographic_area', 'adjusted_minimum', 'adjusted_maximum']
     search_fields = ['pay_grade__grade_code', 'range_name', 'geographic_area']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(JobLevel)
 class JobLevelDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'level_number', 'level_name']
+    list_display = ['table_name', 'id', 'level_number', 'level_name']
     search_fields = ['level_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(MarketData)
 class MarketDataDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'job_family', 'job_level', 'geographic_area']
+    list_display = ['table_name', 'id', 'job_family', 'job_level', 'geographic_area']
     search_fields = ['job_family', 'job_level']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 # 4. Performance
 @admin.register(RatingScale)
 class RatingScaleDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'scale_name', 'scale_code', 'scale_type', 'status']
+    list_display = ['table_name', 'id', 'scale_name', 'scale_code', 'scale_type', 'status']
     search_fields = ['scale_name', 'scale_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(RatingLevel)
 class RatingLevelDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'level_name', 'level_code', 'rating_scale', 'numeric_value']
+    list_display = ['table_name', 'id', 'level_name', 'level_code', 'rating_scale', 'numeric_value']
     search_fields = ['level_name', 'level_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(RatingDistribution)
 class RatingDistributionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'rating_scale', 'rating_level', 'actual_count']
+    list_display = ['table_name', 'id', 'rating_scale', 'rating_level', 'actual_count']
     search_fields = ['rating_scale__scale_name', 'rating_level__level_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(RatingGuideline)
 class RatingGuidelineDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'rating_scale', 'guideline_title', 'guideline_type']
+    list_display = ['table_name', 'id', 'rating_scale', 'guideline_title', 'guideline_type']
     search_fields = ['guideline_title']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ReviewCycle)
 class ReviewCycleDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'cycle_name', 'cycle_code', 'start_date', 'end_date']
+    list_display = ['table_name', 'id', 'cycle_name', 'cycle_code', 'start_date', 'end_date']
     search_fields = ['cycle_name', 'cycle_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(CalibrationSession)
 class CalibrationSessionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'session_name', 'session_code', 'scheduled_date', 'status']
+    list_display = ['table_name', 'id', 'session_name', 'session_code', 'scheduled_date', 'status']
     search_fields = ['session_name', 'session_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 # 5. Learning & Development
 @admin.register(Course)
 class CourseDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'course_name', 'course_code', 'course_type', 'course_category', 'status']
+    list_display = ['table_name', 'id', 'course_name', 'course_code', 'course_type', 'course_category', 'status']
     search_fields = ['course_name', 'course_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(CourseContent)
 class CourseContentDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'content_title', 'course', 'content_type', 'sort_order']
+    list_display = ['table_name', 'id', 'content_title', 'course', 'content_type', 'sort_order']
     search_fields = ['content_title', 'course__course_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(CourseSession)
 class CourseSessionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'session_name', 'course', 'start_date', 'status']
+    list_display = ['table_name', 'id', 'session_name', 'course', 'start_date', 'status']
     search_fields = ['session_name', 'course__course_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(Instructor)
 class InstructorDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'instructor_name', 'instructor_code', 'is_active']
+    list_display = ['table_name', 'id', 'instructor_name', 'instructor_code', 'is_active']
     search_fields = ['instructor_name', 'instructor_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(CourseLearningPath)
 class CourseLearningPathDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'path_name', 'path_code', 'is_active']
+    list_display = ['table_name', 'id', 'path_name', 'path_code', 'is_active']
     search_fields = ['path_name', 'path_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 # 6. Badges & Recognition
 @admin.register(Badge)
 class BadgeDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'badge_code', 'badge_category', 'status']
+    list_display = ['table_name', 'id', 'badge_code', 'badge_category', 'status']
     search_fields = ['badge_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(BadgeAward)
 class BadgeAwardDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'badge', 'recipient_employee', 'awarded_by', 'status']
+    list_display = ['table_name', 'id', 'badge', 'recipient_employee', 'awarded_by', 'status']
     search_fields = ['badge__badge_code', 'recipient_employee__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(BadgeNomination)
 class BadgeNominationDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'badge', 'nominated_employee', 'nominated_by', 'status']
+    list_display = ['table_name', 'id', 'badge', 'nominated_employee', 'nominated_by', 'status']
     search_fields = ['badge__badge_code', 'nominated_employee__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(BadgeCategory)
 class BadgeCategoryDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'category_code']
+    list_display = ['table_name', 'id', 'category_code']
     search_fields = ['category_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(RecognitionFeed)
 class RecognitionFeedDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'badge_award']
+    list_display = ['table_name', 'id', 'badge_award']
     search_fields = ['badge_award__badge__badge_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 # 7. Recruitment
 @admin.register(OfferLetterTemplate)
 class OfferLetterTemplateDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'template_name', 'template_code', 'template_type', 'status']
+    list_display = ['table_name', 'id', 'template_name', 'template_code', 'template_type', 'status']
     search_fields = ['template_name', 'template_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(OfferLetter)
 class OfferLetterDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'candidate', 'job_position', 'offer_status', 'offer_date']
+    list_display = ['table_name', 'id', 'candidate', 'job_position', 'offer_status', 'offer_date']
     search_fields = ['candidate__first_name', 'job_position__title']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(OfferPosition)
 class OfferPositionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'position_code']
+    list_display = ['table_name', 'id', 'position_code']
     search_fields = ['position_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ContractTemplate)
 class ContractTemplateDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'template_name', 'template_code', 'contract_type', 'status']
+    list_display = ['table_name', 'id', 'template_name', 'template_code', 'contract_type', 'status']
     search_fields = ['template_name', 'template_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ContractPosition)
 class ContractPositionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'position_code']
+    list_display = ['table_name', 'id', 'position_code']
     search_fields = ['position_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ContractOrganizationalUnit)
 class ContractOrganizationalUnitDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'unit_code', 'unit_name', 'unit_type']
+    list_display = ['table_name', 'id', 'unit_code', 'unit_name', 'unit_type']
     search_fields = ['unit_name', 'unit_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(JobApplication)
 class JobApplicationDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'application_number', 'candidate', 'job_posting', 'status', 'application_date']
+    list_display = ['table_name', 'id', 'application_number', 'candidate', 'job_posting', 'status', 'application_date']
     search_fields = ['application_number', 'candidate__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ApplicationAnswer)
 class ApplicationAnswerDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'application', 'question']
+    list_display = ['table_name', 'id', 'application', 'question']
     search_fields = ['application__application_number']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ApplicationDocument)
 class ApplicationDocumentDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'application', 'document_type', 'document_name']
+    list_display = ['table_name', 'id', 'application', 'document_type', 'document_name']
     search_fields = ['application__application_number', 'document_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(JobPosting)
 class JobPostingDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'title']
+    list_display = ['table_name', 'id', 'title']
     search_fields = ['title']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ApplicationCandidate)
 class ApplicationCandidateDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'email', 'first_name', 'last_name']
+    list_display = ['table_name', 'id', 'email', 'first_name', 'last_name']
     search_fields = ['first_name', 'last_name', 'email']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ApplicationQuestion)
 class ApplicationQuestionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'question_text', 'question_type', 'is_required']
+    list_display = ['table_name', 'id', 'question_text', 'question_type', 'is_required']
     search_fields = ['question_text']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ScreeningProcess)
 class ScreeningProcessDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'screening_number', 'candidate', 'job_posting', 'status', 'screening_date']
+    list_display = ['table_name', 'id', 'screening_number', 'candidate', 'job_posting', 'status', 'screening_date']
     search_fields = ['screening_number', 'candidate__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ScreeningCriteria)
 class ScreeningCriteriaDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'screening_process', 'criteria_type', 'weight']
+    list_display = ['table_name', 'id', 'screening_process', 'criteria_type', 'weight']
     search_fields = ['screening_process__screening_number']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(BackgroundCheck)
 class BackgroundCheckDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'candidate', 'check_type', 'status']
+    list_display = ['table_name', 'id', 'candidate', 'check_type', 'status']
     search_fields = ['candidate__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(ScreeningTemplate)
 class ScreeningTemplateDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'template_name']
+    list_display = ['table_name', 'id', 'template_name']
     search_fields = ['template_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(BackgroundCheckProvider)
 class BackgroundCheckProviderDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'provider_name', 'is_active']
+    list_display = ['table_name', 'id', 'provider_name', 'is_active']
     search_fields = ['provider_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 # 8. Tax & Compliance
 @admin.register(TaxCalculation)
 class TaxCalculationDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'employee', 'tax_year', 'calculation_status']
+    list_display = ['table_name', 'id', 'employee', 'tax_year', 'calculation_status']
     search_fields = ['employee__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(TaxWithholding)
 class TaxWithholdingDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'employee']
+    list_display = ['table_name', 'id', 'employee']
     search_fields = ['employee__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(TaxJurisdiction)
 class TaxJurisdictionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'jurisdiction_name', 'state_code', 'jurisdiction_type', 'status']
+    list_display = ['table_name', 'id', 'jurisdiction_name', 'state_code', 'jurisdiction_type', 'status']
     search_fields = ['jurisdiction_name', 'state_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(TaxRate)
 class TaxRateDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'tax_jurisdiction', 'effective_date']
+    list_display = ['table_name', 'id', 'tax_jurisdiction', 'effective_date']
     search_fields = ['tax_jurisdiction__jurisdiction_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(TaxExemption)
 class TaxExemptionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'employee']
+    list_display = ['table_name', 'id', 'employee']
     search_fields = ['employee__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(TaxPayrollRun)
 class TaxPayrollRunDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id']
+    list_display = ['table_name', 'id']
     search_fields = []
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 # 9. Payroll
 @admin.register(PayrollRun)
 class PayrollRunDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'run_number', 'status']
+    list_display = ['table_name', 'id', 'run_number', 'status']
     search_fields = ['run_number']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(PayrollCalculation)
 class PayrollCalculationDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'payroll_run', 'employee']
+    list_display = ['table_name', 'id', 'payroll_run', 'employee']
     search_fields = ['payroll_run__run_number', 'employee__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(PayrollDisbursement)
 class PayrollDisbursementDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'payroll_run', 'employee']
+    list_display = ['table_name', 'id', 'payroll_run', 'employee']
     search_fields = ['payroll_run__run_number', 'employee__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(PayrollSchedule)
 class PayrollScheduleDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'schedule_name']
+    list_display = ['table_name', 'id', 'schedule_name']
     search_fields = ['schedule_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(EarningCode)
 class EarningCodeDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'code', 'description', 'earning_type', 'is_taxable']
+    list_display = ['table_name', 'id', 'code', 'description', 'earning_type', 'is_taxable']
     search_fields = ['code', 'description']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 # 10. Time & Attendance
 @admin.register(TimeEntry)
 class TimeEntryDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'employee', 'entry_date', 'clock_in_time', 'clock_out_time', 'status']
+    list_display = ['table_name', 'id', 'employee', 'entry_date', 'clock_in_time', 'clock_out_time', 'status']
     search_fields = ['employee__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(AttendanceException)
 class AttendanceExceptionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'employee', 'exception_type', 'status']
+    list_display = ['table_name', 'id', 'employee', 'exception_type', 'status']
     search_fields = ['employee__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(AttendancePolicy)
 class AttendancePolicyDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'policy_name', 'policy_code', 'policy_type']
+    list_display = ['table_name', 'id', 'policy_name', 'policy_code', 'policy_type']
     search_fields = ['policy_name', 'policy_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(Shift)
 class ShiftDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'shift_name', 'shift_code', 'start_time', 'end_time', 'is_active']
+    list_display = ['table_name', 'id', 'shift_name', 'shift_code', 'start_time', 'end_time', 'is_active']
     search_fields = ['shift_name', 'shift_code']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(AttendanceDevice)
 class AttendanceDeviceDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'device_name', 'device_type', 'is_active']
+    list_display = ['table_name', 'id', 'device_name', 'device_type', 'is_active']
     search_fields = ['device_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(Timesheet)
 class TimesheetDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'timesheet_number', 'employee', 'timesheet_period_start', 'status']
+    list_display = ['table_name', 'id', 'timesheet_number', 'employee', 'timesheet_period_start', 'status']
     search_fields = ['timesheet_number', 'employee__first_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(TimesheetEntry)
 class TimesheetEntryDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'timesheet', 'entry_date', 'status']
+    list_display = ['table_name', 'id', 'timesheet', 'entry_date', 'status']
     search_fields = ['timesheet__timesheet_number']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(TimesheetApproval)
 class TimesheetApprovalDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'timesheet', 'approver', 'approval_date']
+    list_display = ['table_name', 'id', 'timesheet', 'approver', 'approval_date']
     search_fields = ['timesheet__timesheet_number']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 # 11. Enrollment
 @admin.register(Enrollment)
 class EnrollmentDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'employee', 'course', 'enrollment_date', 'status']
+    list_display = ['table_name', 'id', 'employee', 'course', 'enrollment_date', 'status']
     search_fields = ['employee__employee_number', 'course__course_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(EnrollmentWaitlist)
 class EnrollmentWaitlistDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'employee', 'course', 'waitlist_date']
+    list_display = ['table_name', 'id', 'employee', 'course', 'waitlist_date']
     search_fields = ['employee__employee_number', 'course__course_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(EnrollmentApproval)
 class EnrollmentApprovalDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'enrollment']
+    list_display = ['table_name', 'id', 'enrollment']
     search_fields = ['enrollment__employee__employee_number']
 
 @admin.register(EnrollmentRule)
 class EnrollmentRuleDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'rule_name', 'rule_type', 'is_active']
+    list_display = ['table_name', 'id', 'rule_name', 'rule_type', 'is_active']
     search_fields = ['rule_name']
+    
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(EnrollmentTemplate)
 class EnrollmentTemplateDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id', 'template_name', 'is_active']
+    list_display = ['table_name', 'id', 'template_name', 'is_active']
     search_fields = ['template_name']
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(EnrollmentCourse)
 class EnrollmentCourseDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id']
+    list_display = ['table_name', 'id']
     search_fields = []
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
 
 @admin.register(EnrollmentCourseSession)
 class EnrollmentCourseSessionDefaultAdmin(TableNameDisplayMixin, admin.ModelAdmin):
-    list_display = ['id']
+    list_display = ['table_name', 'id']
     search_fields = []
+
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'

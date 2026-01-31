@@ -190,3 +190,80 @@ All agents must comply.
 Any deviation requires explicit approval from Viji.
 
 END OF SCCB
+
+
+┌──────────────────────────────────────────────────────────┐
+│                    GOVERNANCE LAYER                       │
+│  (Locked contracts: modes, actions, behavior, SCCB rules) │
+│  - LIST / VIEW / EDIT / CREATE                            │
+│  - Mode → Action law                                       │
+│  - No row actions, no component overrides                  │
+└──────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌──────────────────────────────────────────────────────────┐
+│                  POLICY BASELINE (STATIC)                 │
+│                  ERPMenuItem Table (DB)                   │
+│----------------------------------------------------------│
+│ menu_id                                                   │
+│ toolbar_list                                              │
+│ toolbar_view                                              │
+│ toolbar_edit                                              │
+│ toolbar_create                                            │
+│----------------------------------------------------------│
+│ Purpose: Defines MAXIMUM allowed actions per screen       │
+│ Stable, deterministic, environment-agnostic               │
+└──────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌──────────────────────────────────────────────────────────┐
+│           FUTURE OVERLAY: PERMISSION RESOLUTION           │
+│              (Not required today, supported)              │
+│----------------------------------------------------------│
+│ User → Role → Permission Matrix                            │
+│ License restrictions                                      │
+│ Company / Context overrides                                │
+│----------------------------------------------------------│
+│ Result: May only REDUCE actions from ERPMenuItem           │
+│ Never expands beyond baseline                              │
+└──────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌──────────────────────────────────────────────────────────┐
+│              BACKEND POLICY RESOLVER (API)                │
+│----------------------------------------------------------│
+│ Input: viewId, mode, user, context                         │
+│ Logic:                                                     │
+│   - Read ERPMenuItem baseline                              │
+│   - Apply permission overrides (future)                    │
+│   - Return final allowed actions                           │
+│ Output: ['N','R','Q','V','X'] etc                           │
+└──────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌──────────────────────────────────────────────────────────┐
+│            CENTRAL TOOLBAR ENGINE (Frontend)              │
+│----------------------------------------------------------│
+│ Receives allowedActions[]                                  │
+│ Renders toolbar buttons                                    │
+│ Enforces mode purity                                       │
+│ No business logic inside screens                           │
+│ One implementation for entire platform                     │
+└──────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌──────────────────────────────────────────────────────────┐
+│                 ALL SCREENS (DUMB CONSUMERS)              │
+│----------------------------------------------------------│
+│ Employee Records                                          │
+│ Item Master                                               │
+│ Purchase Orders                                           │
+│ Invoices                                                  │
+│ 200+ screens...                                           │
+│----------------------------------------------------------│
+│ Screens do ONLY:                                           │
+│   - Provide viewId                                         │
+│   - Track mode (LIST/VIEW/EDIT/CREATE)                     │
+│   - Never decide buttons                                  │
+│   - Never hardcode actions                                │
+└──────────────────────────────────────────────────────────┘

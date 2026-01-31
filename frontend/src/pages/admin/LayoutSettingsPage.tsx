@@ -395,8 +395,8 @@ const LayoutSettingsPage: React.FC = () => {
                             <p className="text-[11px] text-slate-500 font-medium">Configure global UI standards, sidebar behaviors and color schemes</p>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Button variant={expandAll ? 'default' : 'outline'} size="sm" onClick={() => handleExpandCollapseAll(true)} className="h-8 rounded-none text-[10px] font-bold uppercase tracking-widest px-4 shadow-sm">Expand All</Button>
-                            <Button variant={!expandAll ? 'default' : 'outline'} size="sm" onClick={() => handleExpandCollapseAll(false)} className="h-8 rounded-none text-[10px] font-bold uppercase tracking-widest px-4 shadow-sm">Collapse All</Button>
+                            <Button variant={expandAll ? 'primary' : 'ghost'} size="sm" onClick={() => handleExpandCollapseAll(true)} className="h-8 rounded-none text-[10px] font-bold uppercase tracking-widest px-4 shadow-sm">Expand All</Button>
+                            <Button variant={!expandAll ? 'primary' : 'ghost'} size="sm" onClick={() => handleExpandCollapseAll(false)} className="h-8 rounded-none text-[10px] font-bold uppercase tracking-widest px-4 shadow-sm">Collapse All</Button>
                         </div>
                     </div>
                 </div>
@@ -503,7 +503,7 @@ const LayoutSettingsPage: React.FC = () => {
                         </div>
                     )}
 
-                    <CategoryHeader index="2.2" title="Right Panel (L2/L3)" isExpanded={expandedSections['2.2']} onToggle={() => toggleSection('2.2')} count={5} icon={Layout} />
+                    <CategoryHeader index="2.2" title="Right Panel (L2/L3)" isExpanded={expandedSections['2.2']} onToggle={() => toggleSection('2.2')} count={7} icon={Layout} />
                     {expandedSections['2.2'] && (
                         <div className="space-y-px">
                             <SettingRow index="2.2.1" label="Panel Width" description="Width of the submenu panel">
@@ -513,6 +513,36 @@ const LayoutSettingsPage: React.FC = () => {
                                 <div className="flex space-x-2">
                                     <input type="color" value={settings.sidebarPanel.backgroundColor} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, backgroundColor: e.target.value })} className="w-8 h-8 rounded border cursor-pointer" />
                                     <input type="text" value={settings.sidebarPanel.backgroundColor} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, backgroundColor: e.target.value })} className="w-24 px-2 py-1 border rounded text-xs font-mono" />
+                                </div>
+                            </SettingRow>
+                            <SettingRow index="2.2.3" label="Border Color" description="Border color for panel edges">
+                                <div className="flex space-x-2">
+                                    <input type="color" value={settings.sidebarPanel.borderColor} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, borderColor: e.target.value })} className="w-8 h-8 rounded border cursor-pointer" />
+                                    <input type="text" value={settings.sidebarPanel.borderColor} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, borderColor: e.target.value })} className="w-24 px-2 py-1 border rounded text-xs font-mono" />
+                                </div>
+                            </SettingRow>
+                            <SettingRow index="2.2.4" label="Header Background" description="Background color for panel headers">
+                                <div className="flex space-x-2">
+                                    <input type="color" value={settings.sidebarPanel.headerBackgroundColor} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, headerBackgroundColor: e.target.value })} className="w-8 h-8 rounded border cursor-pointer" />
+                                    <input type="text" value={settings.sidebarPanel.headerBackgroundColor} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, headerBackgroundColor: e.target.value })} className="w-24 px-2 py-1 border rounded text-xs font-mono" />
+                                </div>
+                            </SettingRow>
+                            <SettingRow index="2.2.5" label="Header Text Color" description="Text color for panel headers">
+                                <div className="flex space-x-2">
+                                    <input type="color" value={settings.sidebarPanel.headerTextColor} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, headerTextColor: e.target.value })} className="w-8 h-8 rounded border cursor-pointer" />
+                                    <input type="text" value={settings.sidebarPanel.headerTextColor} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, headerTextColor: e.target.value })} className="w-24 px-2 py-1 border rounded text-xs font-mono" />
+                                </div>
+                            </SettingRow>
+                            <SettingRow index="2.2.6" label="Active Item Background" description="Background color for selected menu items">
+                                <div className="flex space-x-2">
+                                    <input type="color" value={settings.sidebarPanel.activeItemBg} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, activeItemBg: e.target.value })} className="w-8 h-8 rounded border cursor-pointer" />
+                                    <input type="text" value={settings.sidebarPanel.activeItemBg} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, activeItemBg: e.target.value })} className="w-24 px-2 py-1 border rounded text-xs font-mono" />
+                                </div>
+                            </SettingRow>
+                            <SettingRow index="2.2.7" label="Active Item Color" description="Text color for selected menu items">
+                                <div className="flex space-x-2">
+                                    <input type="color" value={settings.sidebarPanel.activeItemColor} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, activeItemColor: e.target.value })} className="w-8 h-8 rounded border cursor-pointer" />
+                                    <input type="text" value={settings.sidebarPanel.activeItemColor} onChange={(e) => handleChange('sidebarPanel', { ...settings.sidebarPanel, activeItemColor: e.target.value })} className="w-24 px-2 py-1 border rounded text-xs font-mono" />
                                 </div>
                             </SettingRow>
                         </div>

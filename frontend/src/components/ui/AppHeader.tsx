@@ -58,16 +58,20 @@ export const AppHeader: React.FC = () => {
           <nav className="flex items-center space-x-2">
             {breadcrumbs.map((crumb, index) => (
               <React.Fragment key={crumb.path}>
-                <span 
+                <span
                   className="text-sm font-medium hover:underline cursor-pointer"
-                  style={{ color: config.header.companyColor || '#374151' }}
+                  style={{ 
+                    color: index === 0 
+                      ? config.sidebar.panel.activeItemBg 
+                      : (config.header.companyColor || '#374151')
+                  }}
                 >
                   {crumb.label}
                 </span>
                 {index < breadcrumbs.length - 1 && (
-                  <ChevronRight 
-                    size={14} 
-                    className="text-gray-400" 
+                  <ChevronRight
+                    size={14}
+                    className="text-gray-400"
                   />
                 )}
               </React.Fragment>

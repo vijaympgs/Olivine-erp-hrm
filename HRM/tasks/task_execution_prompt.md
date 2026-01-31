@@ -1,27 +1,16 @@
 Continue HRM development session.
-n
-📚 MANDATORY BOOTSTRAP READING COMPLETED:
-✅ bootstrap/00_bootstrap_master_index.md
-✅ bootstrap/06_01_next_session_plan.md  
-✅ bootstrap/06_03_tasks.md
-✅ bootstrap/06_04_tracker.md
-✅ bootstrap/03_03_ui_typography_styling.md
-✅ bootstrap/04_01_agent_e_onboarding.md
-✅ bootstrap/04_02_toolbar_implementation_guide.md
-✅ bootstrap/04_03_toolbar_code_examples.md
-✅ bootstrap/05_01_wiring_checklists_overview.md
-✅ bootstrap/05_02_master_data_wiring_hrm.md
-✅ bootstrap/01_01_governance_foundation.md
-✅ bootstrap/01_02_platform_onboarding.md
-✅ bootstrap/06_02_tasks_checklist.md
-✅ bootstrap/06_05_findings_learnings.md (Task 02.1 patterns and solutions)
+
+📚 MANDATORY PRE-TASK READING:
+✅ @tasks/10-CPs.md - The 10 Critical Concerns (Non-Negotiable)
+✅ @session_start/00_hindra_registry_system.md - File, Table, and Route Registry
+✅ @session_start/00_hindra_binding_commitment.md - Binding Commitment
 
 🎯 CURRENT SESSION CONTEXT:
-- Current Task: Task 02.1 - Employee Records from bootstrap/06_03_tasks.md
-- Template Type: T1
-- Wiring Guide: bootstrap/05_02_master_data_wiring_hrm.md
-- UI Standards: bootstrap/03_03_ui_typography_styling.md
-- Django Root: D:\platform\hrm\backend\manage.py
+- Current Task: [Task Name]
+- Template Type: [Template Type]
+- Wiring Guide: [Wiring Guide]
+- UI Standards: @session_start/01_quick_reference_patterns.md
+- Django Root: D:\olivine-erp\backend\manage.py
 - Execution Environment: Windows PowerShell only
 
 📋 TASK EXECUTION:

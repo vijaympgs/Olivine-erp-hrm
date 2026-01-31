@@ -227,15 +227,67 @@ class ERPToolbarControlAdmin(admin.ModelAdmin):
 
 class ERPMenuItemAdmin(admin.ModelAdmin):
     list_display = [
+        'table_name',
+        'id',
         'menu_id',
         'menu_name',
         'module_name',
+        'submodule',
         'view_type',
+        'toolbar_config',
+        'toolbar_config_backup',
         'applicable_toolbar_config',
-        'button_count_display',
-        'config_type_display',
+        'original_toolbar_string',
+        'toolbar_list_truncated',
+        'toolbar_view_truncated',
+        'toolbar_edit_truncated',
+        'toolbar_create_truncated',
+        'route_path',
+        'component_name',
+        'description',
+        'menu_order',
+        'display_order',
+        'is_license_controlled',
         'is_active',
+        'is_system_menu',
+        'parent_menu',
+        'created_by',
+        'updated_by',
+        'created_at',
+        'updated_at',
     ]
+    
+    list_per_page = 20  # Show more items per page to see all columns
+    
+    def table_name(self, obj):
+        """Display the database table name"""
+        return obj._meta.db_table
+    table_name.short_description = 'Table Name'
+    table_name.admin_order_field = 'id'
+    
+    def toolbar_list_truncated(self, obj):
+        """Display toolbar_list truncated to 15 chars"""
+        return obj.toolbar_list[:15] if obj.toolbar_list else ''
+    toolbar_list_truncated.short_description = 'Toolbar List (N=New, E=Edit, S=Save, C=Cancel, K=Clear, V=View, D=Delete, P=Print)'
+    toolbar_list_truncated.admin_order_field = 'toolbar_list'
+    
+    def toolbar_view_truncated(self, obj):
+        """Display toolbar_view truncated to 15 chars"""
+        return obj.toolbar_view[:15] if obj.toolbar_view else ''
+    toolbar_view_truncated.short_description = 'Toolbar View (Toolbar config for VIEW mode)'
+    toolbar_view_truncated.admin_order_field = 'toolbar_view'
+    
+    def toolbar_edit_truncated(self, obj):
+        """Display toolbar_edit truncated to 15 chars"""
+        return obj.toolbar_edit[:15] if obj.toolbar_edit else ''
+    toolbar_edit_truncated.short_description = 'Toolbar Edit (Toolbar config for EDIT mode)'
+    toolbar_edit_truncated.admin_order_field = 'toolbar_edit'
+    
+    def toolbar_create_truncated(self, obj):
+        """Display toolbar_create truncated to 15 chars"""
+        return obj.toolbar_create[:15] if obj.toolbar_create else ''
+    toolbar_create_truncated.short_description = 'Toolbar Create (Toolbar config for CREATE mode)'
+    toolbar_create_truncated.admin_order_field = 'toolbar_create'
     
     list_filter = [
         'module_name',
